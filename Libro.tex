@@ -6,79 +6,69 @@
 	}
 \usepackage{graphicx} % Para insertar figuras
 \usepackage{fontawesome5} % Para iconos
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{helvet}
+\usepackage{float}
+\usepackage{latexsym,amsmath,amssymb,amsthm,amsfonts,cancel,calc,mathtools} % Paquetes para Matemáticas
+\usepackage[most]{tcolorbox}
+\usepackage[backend=biber,
+style=apa,
+sorting=nyt,
+natbib=true,
+doi=false,
+isbn=false,
+url=true,
+eprint=false]{biblatex}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\addbibresource{referencias.bib}
+
+% --- Configuración de fuente ---
+\renewcommand{\familydefault}{\sfdefault} % usar sans-serif
+
+% --- Espaciado de párrafos ---
+\setlength{\parindent}{0pt}  % sin sangría
+\setlength{\parskip}{0.8em}  % espacio entre párrafos
+\onehalfspacing              % interlineado 1.5
+
+% Colores recomendados
+\definecolor{chapterblue}{HTML}{003366}
+\definecolor{sectiongray}{HTML}{444444}
+
+\input{Config/Titulos}
+
+\input{Config/Matematica}
+
+\input{Config/Programacion}
+
+\usepackage[colorlinks=true,
+linkcolor=blue!60!black,
+urlcolor=blue!80!black,
+citecolor=blue!60!black,
+pdfstartview=FitH,
+bookmarksopen=true,
+pdfpagemode=UseOutlines]{hyperref}
 
 \begin{document}
 	
-	\begin{titlepage}
-		\vspace*{0.2cm}
-		\centering\large\bfseries UNIVERSIDAD NACIONAL DEL ALTIPLANO
-		
-		\vspace{2ex}
-		
-		\large FACULTAD DE ING. ESTADÍSTICA E INFORMÁTICA
-		
-		\vspace{2ex}
-		
-		\large ESCUELA PROFESIONAL DE ING. ESTADÍSTICA E INFORMÁTICA
-		
-		\vspace{2ex}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[width=0.5\linewidth]{Figuras/Logo.png}
-		\end{figure}
-		
-		\vspace{2ex}
-		
-		\large\bfseries PROGRAMACIÓN NUMÉRICA
-		
-		\vspace{2ex}
-		
-		\large\bfseries\raggedright\faInfoCircle\scshape  DOCENTE:
-		
-		\vspace{2ex}
-		
-		\begin{center}
-			\large\bfseries Dr. TORRES CRUZ FRED
-		\end{center}
-		
-		\vspace{2ex}
-		
-		\large\bfseries\raggedright\faInfoCircle\scshape  ALUMNOS:
-		
-		\vspace{2ex}
-		
-		\begin{itemize}
-			
-			\item \textbf{AQUINO SANDOVAL JEAN CARLOS}
-			\item \textbf{PARICAHUA PARI CLIDE NEIL}
-			\item \textbf{QUENAYA LOZA LUIS ANGEL}
-			\item \textbf{TICONA MIRAMIRA ROBERTO ANGEL}
-		
-		\end{itemize}
-		
-		\vspace{2ex}
-		
-		
-		
-		\large\bfseries\raggedright\faInfoCircle\scshape  SECCIÓN:
-		
-		\vspace{2ex}
-		
-		\begin{center}
-			
-		\large\bfseries "IV SEMESTRE - A"
-		
-		\vspace{2ex}
-		
-		\large\bfseries PUNO - PERÚ
-		
-		\vspace{2ex}
-		
-		\large\bfseries 2025
-		
-		\end{center}
-		
-	\end{titlepage}
-	
+\include{Otros/Caratula}
+
+\include{Otros/Introduccion}
+
+\tableofcontents
+
+\include{Unidades/Unidad I}
+
+\include{Unidades/Unidad II}
+
+\include{Otros/Conclusiones}
+
+\chapter*{Bibliografía}
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+\printbibliography
+
 \end{document}

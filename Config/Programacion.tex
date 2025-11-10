@@ -1,0 +1,41 @@
+% --- Definición de colores personalizados ---
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}  % Fondo gris muy claro
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}       % Gris para los números
+\definecolor{codepurple}{rgb}{0.58,0,0.82}     % Púrpura para strings
+\definecolor{keywordblue}{rgb}{0.2,0.2,0.8}    % Azul para palabras clave
+\definecolor{commentgreen}{rgb}{0,0.5,0}       % Verde para comentarios
+
+% --- Configuración general de listings ---
+\lstset{
+	backgroundcolor=\color{backcolour},        % Fondo claro
+	basicstyle=\ttfamily\footnotesize,         % Fuente monoespaciada pequeña
+	breaklines=true,                           % Permitir cortes de línea
+	captionpos=b,                              % Título debajo
+	keepspaces=true,                           % Mantener espacios
+	numbers=left,                              % Números a la izquierda
+	numbersep=5pt,                             % Espacio de margen para números
+	numberstyle=\tiny\color{codegray},         % Color de los números
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+	frame=single,                              % Marco alrededor del código
+	rulecolor=\color{gray!70},                 % Color del marco
+	keywordstyle=\color{keywordblue}\bfseries, % Palabras clave azules en negrita
+	commentstyle=\color{commentgreen}\itshape, % Comentarios verdes en cursiva
+	stringstyle=\color{codepurple},            % Strings púrpuras
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	linewidth=\textwidth                       % Ajuste al ancho del texto
+}
+
+% ==============================
+% ENTORNOS PERSONALIZADOS
+% ==============================
+
+% --- Entorno para Python ---
+\lstnewenvironment{pythoncode}[1][]
+{\lstset{language=Python, captionpos=b, #1}}{}
+
+% --- Entorno para R ---
+\lstnewenvironment{rcode}[1][]
+{\lstset{language=R, captionpos=b, #1}}{}

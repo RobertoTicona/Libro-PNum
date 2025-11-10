@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Introducción}{3}{chapter*.1}%
+\contentsline {part}{I\hspace {1em}Unidad I}{7}{part.1}%
+\contentsline {chapter}{\numberline {1}Programación Numérica}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Funciones}{11}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Restricciones}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{15}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Método de Bisección}{17}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Método de la Secante}{19}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{21}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{23}{chapter.8}%
+\contentsline {part}{II\hspace {1em}Unidad II}{25}{part.2}%
+\contentsline {chapter}{\numberline {9}Gradiente de una función}{27}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{29}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Interpolación}{31}{chapter.11}%
+\contentsline {chapter}{Conclusiones}{33}{chapter*.3}%
+\contentsline {chapter}{Bibliografía}{35}{chapter*.4}%

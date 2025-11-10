@@ -1,0 +1,29 @@
+% --- FORMATO DE CAPÍTULOS ---
+\titleformat{\chapter}[hang]
+{\normalfont\sffamily\bfseries\color{chapterblue}} % Fuente
+{\Huge\thechapter} % Número del capítulo
+{1ex} % Espacio entre número y título
+{\huge} % Estilo del título
+[\vspace{0.5ex}\titlerule] % Línea decorativa al final
+
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+% --- FORMATO DE SECCIONES ---
+\titleformat{\section}
+{\large\sffamily\bfseries\color{sectiongray}} % Fuente
+{\thesection}{1em}{}
+
+\titlespacing*{\section}{0pt}{12pt plus 2pt minus 2pt}{6pt}
+
+% --- FORMATO DE SUBSECCIONES ---
+\titleformat{\subsection}
+{\normalsize\sffamily\bfseries\color{sectiongray!90}} % Fuente
+{\thesubsection}{1em}{}
+
+\titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 2pt}{4pt}
+
+% --- FORMATO DE SUBSECCIONES ---
+\titleformat{\subsection}
+{\normalsize\sffamily\bfseries\color{black!85}} % estilo de fuente
+{\thesubsection}{1em}{}                         % número y espacio
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt minus 2pt}{4pt}
