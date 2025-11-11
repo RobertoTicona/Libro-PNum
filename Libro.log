@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.6.30)  10 NOV 2025 11:06
+This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.6.30)  11 NOV 2025 12:20
  restricted system commands enabled.
 **Libro.tex
 (./Libro.tex
@@ -1504,7 +1504,7 @@ Package hyperref Info: Link coloring ON on input line 55.
 LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
 (Font)              using `TU/phv/m/n' instead on input line 3.
 
-<Figuras/Logo.png, id=106, 1027.84pt x 1112.155pt>
+<Figuras/Logo.png, id=138, 1027.84pt x 1112.155pt>
 File: Figuras/Logo.png Graphic file (type png)
 <use Figuras/Logo.png>
 Package luatex.def Info: Figuras/Logo.png  used on input line 17.
@@ -1555,161 +1555,230 @@ LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
-\tf@toc=\write6
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 7.
 
-\openout6 = Libro.toc
- [5]
-\openout2 = Unidades/Unidad I.aux
- ("./Unidades/Unidad I.tex"
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [6
-
-
-] [7] [8]
-Capítulo 1.
-
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/l
-oadhyph-la.tex UTF-8 Latin hyphenation patterns
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/t
-ex/hyph-la.tex))
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 8.
 
 (C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
 
 (C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
 
 (C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 8.
+Underfull \vbox (badness 6032) has occurred while \output is active []
 
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang2.st
-y
-File: lstlang2.sty 2023/02/27 1.9 listings language file
+ [5])
+\tf@toc=\write6
+
+\openout6 = Libro.toc
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+
+[6] (./Libro.lof
+LaTeX Info: Redefining \sptext on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
 )
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-) [9
+\tf@lof=\write7
+
+\openout7 = Libro.lof
+ [7
 
 ]
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
- [10
+\openout2 = Unidades/Unidad I.aux
+ ("./Unidades/Unidad I.tex"
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [8
+
+
+] [9] [10]
+Capítulo 1.
+[11
 
 ]
-Capítulo 2.
-[11]
-LaTeX Info: Redefining \. on input line 17.
-LaTeX Info: Redefining \% on input line 17.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
  [12
 
 ]
-Capítulo 3.
+Capítulo 2.
 [13]
-LaTeX Info: Redefining \. on input line 19.
-LaTeX Info: Redefining \% on input line 19.
- [14
+<Figuras/Diagramaflechasf.png, id=257, 316.7835pt x 234.8775pt>
+File: Figuras/Diagramaflechasf.png Graphic file (type png)
+<use Figuras/Diagramaflechasf.png>
+Package luatex.def Info: Figuras/Diagramaflechasf.png  used on input line 57.
+(luatex.def)             Requested size: 181.18454pt x 134.33672pt.
+<Figuras/Representacionfunciones.png, id=260, 564.30824pt x 317.38576pt>
+File: Figuras/Representacionfunciones.png Graphic file (type png)
+<use Figuras/Representacionfunciones.png>
+Package luatex.def Info: Figuras/Representacionfunciones.png  used on input lin
+e 81.
+(luatex.def)             Requested size: 407.66867pt x 229.29243pt.
+
+Underfull \vbox (badness 2970) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+ [14<./Figuras/Diagramaflechasf.png>]
+<Figuras/Alturadegrafica.png, id=269, 214.401pt x 166.221pt>
+File: Figuras/Alturadegrafica.png Graphic file (type png)
+<use Figuras/Alturadegrafica.png>
+Package luatex.def Info: Figuras/Alturadegrafica.png  used on input line 104.
+(luatex.def)             Requested size: 181.18454pt x 140.47433pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+ [15<./Figuras/Representacionfunciones.png>]
+Missing character: There is no ó (U+00F3) in font cmmi10!
+Missing character: There is no ó (U+00F3) in font cmmi10!
+<Figuras/Funcionlicon.png, id=278, 509.5035pt x 199.947pt>
+File: Figuras/Funcionlicon.png Graphic file (type png)
+<use Figuras/Funcionlicon.png>
+Package luatex.def Info: Figuras/Funcionlicon.png  used on input line 113.
+(luatex.def)             Requested size: 271.7837pt x 106.65785pt.
+<Figuras/Pruebavertical.png, id=281, 464.33475pt x 185.493pt>
+File: Figuras/Pruebavertical.png Graphic file (type png)
+<use Figuras/Pruebavertical.png>
+Package luatex.def Info: Figuras/Pruebavertical.png  used on input line 133.
+(luatex.def)             Requested size: 271.7837pt x 108.57664pt.
+LaTeX Info: Redefining \. on input line 137.
+LaTeX Info: Redefining \% on input line 137.
+[16<./Figuras/Alturadegrafica.png><./Figuras/Funcionlicon.png>]
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <9> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 143.
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+[17<./Figuras/Pruebavertical.png>]
+<Figuras/FunPython.png, id=335, 709.4505pt x 434.8245pt>
+File: Figuras/FunPython.png Graphic file (type png)
+<use Figuras/FunPython.png>
+Package luatex.def Info: Figuras/FunPython.png  used on input line 182.
+(luatex.def)             Requested size: 407.66867pt x 249.86288pt.
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
+ [18<./Figuras/FunPython.png>]
+Capítulo 3.
+[19
 
 ]
-Capítulo 4.
-[15]
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
- [16
-
-]
-Capítulo 5.
-[17]
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
- [18
-
-]
-Capítulo 6.
-[19]
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \. on input line 189.
+LaTeX Info: Redefining \% on input line 189.
  [20
 
 ]
-Capítulo 7.
+Capítulo 4.
 [21]
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Info: Redefining \. on input line 191.
+LaTeX Info: Redefining \% on input line 191.
  [22
 
 ]
+Capítulo 5.
+[23]
+LaTeX Info: Redefining \. on input line 193.
+LaTeX Info: Redefining \% on input line 193.
+ [24
+
+]
+Capítulo 6.
+[25]
+LaTeX Info: Redefining \. on input line 195.
+LaTeX Info: Redefining \% on input line 195.
+ [26
+
+]
+Capítulo 7.
+[27]
+LaTeX Info: Redefining \. on input line 197.
+LaTeX Info: Redefining \% on input line 197.
+ [28
+
+]
 Capítulo 8.
-) [23]
+) [29]
 \openout2 = Unidades/Unidad II.aux
  ("./Unidades/Unidad II.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [24
+ [30
 
 
 
 
-] [25] [26]
+] [31] [32]
 Capítulo 9.
-[27
+
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/l
+oadhyph-la.tex UTF-8 Latin hyphenation patterns
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/t
+ex/hyph-la.tex)) [33
 
 ]
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
- [28
+ [34
 
 ]
 Capítulo 10.
-[29]
+[35]
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
- [30
+ [36
 
 ]
 Capítulo 11.
-) [31]
+) [37]
 \openout2 = Otros/Conclusiones.aux
  (./Otros/Conclusiones.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [32
+ [38
 
 
 
 
-]) [33]
-LaTeX Info: Redefining \. on input line 69.
-LaTeX Info: Redefining \% on input line 69.
- [34
-
-
-
-] [35]
+]) [39]
 LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
- [36
+ [40
+
+
+
+] [41]
+LaTeX Info: Redefining \. on input line 75.
+LaTeX Info: Redefining \% on input line 75.
+ [42
 
 ]
 
 LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
-(Font)              using `TU/phv/m/sl' instead on input line 72.
+(Font)              using `TU/phv/m/sl' instead on input line 75.
 
-[37] (./Libro.aux (./Otros/Caratula.aux)
+
+LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
+(Font)              using `TU/phv/m/sl' instead on input line 75.
+
+
+LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
+(Font)              using `TU/phv/m/sl' instead on input line 75.
+
+
+LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
+(Font)              using `TU/phv/m/sl' instead on input line 75.
+
+[43] (./Libro.aux (./Otros/Caratula.aux)
 LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -1725,35 +1794,45 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `Libro.out' has not changed.
-(rerunfilecheck)             Checksum: 3148FC9FDD6908900161DF90DF0C0019;2199.
+(rerunfilecheck)             Checksum: 297665BC6934844134D60E4F8D436FAB;3814.
 Package logreq Info: Writing requests to 'Libro.run.xml'.
 
 \openout1 = Libro.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 42798 strings out of 476497
- 125161,1977958 words of node,token memory allocated
+ 42427 strings out of 476497
+ 596928,1977958 words of node,token memory allocated
  1404 words of node memory still in use:
    31 hlist, 2 vlist, 14 rule, 4 glue, 4 kern, 1 glyph, 87 attribute, 70 glue_sp
 ec, 81 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:1161,3:201,4:726,5:705,6:50,7:6116,8:3,9:1489,10:11,11:906
- 63690 multiletter control sequences out of 65536+600000
- 47 fonts using 3438279 bytes
- 91i,6n,95p,677b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmo
-no9-regular.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentyp
-e/public/lm/lmmonolt10-bold.otf><//?/c:/users/lenovo/appdata/local/programs/mikt
-ex/fonts/opentype/public/lm/lmroman6-regular.otf><//?/c:/users/lenovo/appdata/lo
-cal/programs/miktex/fonts/opentype/public/lm/lmmono10-regular.otf><//?/c:/users/
-lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman17-regular.
-otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/
-lmroman10-regular.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/o
-pentype/public/fontawesome5/fontawesome5free-solid-900.otf><//?/c:/users/lenovo/
-appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on Libro.pdf (37 pages, 272851 bytes).
+   avail lists: 1:4,2:12430,3:322,4:13698,5:10921,6:86,7:15211,8:20,9:24930,10:4
+5,11:906
+ 63254 multiletter control sequences out of 65536+600000
+ 63 fonts using 4528935 bytes
+ 91i,7n,95p,909b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lmro
+man8-regular.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/openty
+pe/public/lm/lmmono10-italic.otf><//?/c:/users/lenovo/appdata/local/programs/mik
+tex/fonts/opentype/public/lm/lmmono9-regular.otf><//?/c:/users/lenovo/appdata/lo
+cal/programs/miktex/fonts/opentype/public/lm/lmmonolt10-bold.otf><//?/c:/users/l
+enovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman6-regular.ot
+f><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lm
+mono10-regular.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/open
+type/public/lm/lmroman17-regular.otf><//?/c:/users/lenovo/appdata/local/programs
+/miktex/fonts/opentype/public/lm/lmroman10-regular.otf><//?/c:/users/lenovo/appd
+ata/local/programs/miktex/fonts/opentype/public/fontawesome5/fontawesome5free-so
+lid-900.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/pu
+blic/lm/lmroman12-regular.otf><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/LENOVO/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/LENOVO/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/LENOVO/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/LENOVO/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users
+/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on Libro.pdf (43 pages, 683232 bytes).
 
-PDF statistics: 349 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 131072)
- 384 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 534 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 131072)
+ 448 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1,17 +1,25 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Introducción}{3}{chapter*.1}%
-\contentsline {part}{I\hspace {1em}Unidad I}{7}{part.1}%
-\contentsline {chapter}{\numberline {1}Programación Numérica}{9}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Funciones}{11}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Restricciones}{13}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Método de Bisección}{17}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Método de la Secante}{19}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{21}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{23}{chapter.8}%
-\contentsline {part}{II\hspace {1em}Unidad II}{25}{part.2}%
-\contentsline {chapter}{\numberline {9}Gradiente de una función}{27}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{29}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Interpolación}{31}{chapter.11}%
-\contentsline {chapter}{Conclusiones}{33}{chapter*.3}%
-\contentsline {chapter}{Bibliografía}{35}{chapter*.4}%
+\contentsline {chapter}{Índice de Figuras}{7}{chapter*.3}%
+\contentsline {part}{I\hspace {1em}Unidad I}{9}{part.1}%
+\contentsline {chapter}{\numberline {1}Programación Numérica}{11}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Funciones}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Funciones a nuestro alrededor}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Definición de función}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Cuatro formas de representar una función}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Gráficas de funciones}{15}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Gráficas de funciones por localización de puntos}{15}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}La prueba de la recta vertical}{16}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Aplicación}{17}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Restricciones}{19}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{21}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Método de Bisección}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Método de la Secante}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{27}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{29}{chapter.8}%
+\contentsline {part}{II\hspace {1em}Unidad II}{31}{part.2}%
+\contentsline {chapter}{\numberline {9}Gradiente de una función}{33}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{35}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Interpolación}{37}{chapter.11}%
+\contentsline {chapter}{Conclusiones}{39}{chapter*.4}%
+\contentsline {chapter}{Bibliografía}{41}{chapter*.5}%

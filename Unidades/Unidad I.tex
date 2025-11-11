@@ -2,17 +2,187 @@
 
 \chapter{Programación Numérica}
 
-\lipsum[1-2] \parencite{torvalds2001}
+La \textbf{programación numérica} es una disciplina que combina las matemáticas aplicadas y la informática con el objetivo de resolver problemas cuantitativos mediante métodos computacionales. Se centra en el diseño, análisis e implementación de algoritmos que permiten obtener soluciones aproximadas a ecuaciones, sistemas y modelos que, en la mayoría de los casos, no pueden resolverse de forma analítica \parencite{burden2016,chapra2015}.
 
-\begin{pythoncode}
-	print("Hola mundo")
-\end{pythoncode}
+A diferencia de la programación convencional, que busca desarrollar aplicaciones funcionales o sistemas de información, la programación numérica se orienta a la resolución eficiente y precisa de problemas matemáticos. Entre sus principales aplicaciones se encuentran la simulación de fenómenos físicos y biológicos, la modelización económica, la ingeniería de datos, la inteligencia artificial y el análisis estadístico en ciencias de la salud \parencite{press2007}.
 
-\begin{rcode}
-	x <- c(1, 2, 3)
-\end{rcode}
+El objetivo fundamental de esta área es transformar problemas continuos en representaciones discretas que puedan ser tratadas por un computador. De esta forma, se logra aproximar soluciones a problemas de optimización, integración, derivación, interpolación, ajuste de curvas y resolución de ecuaciones diferenciales.
+
+En términos prácticos, la programación numérica permite al investigador o profesional:
+\begin{itemize}
+	\item Resolver ecuaciones no lineales mediante métodos iterativos.
+	\item Aproximar derivadas e integrales de funciones cuando no se dispone de una forma analítica.
+	\item Interpolar o ajustar funciones a datos experimentales.
+	\item Optimizar funciones de una o varias variables bajo restricciones.
+	\item Analizar errores y estimar la estabilidad numérica de los métodos empleados.
+\end{itemize}
+
+Actualmente, lenguajes como \texttt{Python}, \texttt{R}, \texttt{MATLAB} y \texttt{Julia} ofrecen bibliotecas especializadas que facilitan el desarrollo de algoritmos numéricos de alto rendimiento. Estos entornos han hecho posible que la programación numérica sea una herramienta accesible y poderosa para la investigación científica, la ingeniería y la docencia \parencite{chapra2015}.
+
+En síntesis, la programación numérica constituye una base esencial para la solución computacional de problemas científicos y técnicos, integrando el razonamiento matemático con la capacidad de cómputo moderna.
+
 
 \chapter{Funciones}
+
+\section{Funciones a nuestro alrededor}
+
+En casi todos los fenómenos físicos observamos que una cantidad depende de otra. Por ejemplo, la estatura de una persona depende de su edad, la temperatura de la fecha, el costo de enviar un paquete por correo depende de su peso. Usamos el término función para describir esta dependencia de una cantidad con respecto a otra. Esto es, decimos lo siguiente: \parencite{stewart_redlin_watson_precalculo}
+
+\begin{itemize}
+	\item La estatura es una función de la edad.
+	\item La temperatura es una función de la fecha.
+	\item El costo de enviar un paquete por correo depende de su peso.
+\end{itemize}
+
+\section{Definición de función}
+
+\begin{tcolorbox}
+	Una \textbf{función} $f$ es una regla que asigna a cada elemento x de un conjunto A exactamente un elemento, llamado $f(x)$, de un conjunto B.
+\end{tcolorbox}
+
+Para hablar de una función, es necesario darle un nombre. Usaremos letras como $f, g, h, ...$ para representar funciones. Por ejemplo, podemos usar la letra $f$ para representar una regla como sigue:
+
+\begin{center}
+	$"f"$ es la regla "elevar al cuadrado el número"
+\end{center}
+
+cuando escribimos $f(2)$ queremos decir "aplicar la regla f al número 2". La aplicación de la regla da $f(2) = 2^2 = 4$. Del mismo modo, $f(3) = 3^2 = 9, f(4) = 4^2 = 16$, y en general $f(x) = x^2$. \parencite{stewart_redlin_watson_precalculo}
+
+Por lo general consideramos funciones para las cuales los conjuntos A y B son conjuntos de número reales. El símbolo $f(x)$ se lee "f de x" o "f en x" y se denomina \textbf{valor de $f$ en $x$}, o la \textbf{imagen de $x$ bajo $f$}. El conjunto A recibe el nombre de \textbf{dominio} de la función. El \textbf{rango} de $f$ es el conjunto de todos los valores posibles de $f(x)$ cuando $x$ varía en todo el dominio. El símbolo que representa un número arbitrario del dominio de una función $f$ se llama \textbf{variable independiente}. El símbolo que representa un número en el rango de $f$ se llama \textbf{variable dependiente}. Por tanto, si escribimos $y = f(x)$, entonces $x$ es la variable independiente y $y$ es la variable dependiente. \parencite{stewart_redlin_watson_precalculo}
+
+Es útil considerar una función como una \hyperref[Diagramaflechasf]{\textbf{máquina}}. Si $x$ está en el dominio de la función $f$, entonces cuando $x$ entra a la máquina, es aceptada como \textbf{entrada} y la máquina produce una \textbf{salida} $f(x)$ de acuerdo con la regla de la función. Así, podemos considerar el dominio como el conjunto de todas las posibles entradas y el rango como el conjunto de todas las posibles salidas. \parencite{stewart_redlin_watson_precalculo}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Figuras/Diagramaflechasf.png}
+	\caption{Diagrama de flechas de $f$}
+	\label{Diagramaflechasf}
+\end{figure}
+
+\section{Cuatro formas de representar una función}
+
+Para entender mejor lo que es una función, podemos describir una función específica en las siguientes cuatro formas: \parencite{stewart_redlin_watson_precalculo}
+
+\begin{itemize}
+	\item verbalmente (por descripción en palabras)
+	\item algebraicamente (por una fórmula explícita)
+	\item visualmente (por una gráfica)
+	\item numéricamente (por una tabla de valores)
+\end{itemize}
+
+Una función individual puede estar representada en las cuatro formas, y con frecuencia es útil pasar de una representación a otra para adquirir más conocimientos sobre la función. No obstante, ciertas funciones se describen en forma más natural por medio de un método que por los otros. Un ejemplo de una descripción verbal es la siguiente regla para convertir entres escalas de temperatura: \parencite{stewart_redlin_watson_precalculo}
+
+\begin{center}
+	"Para hallar el equivalente Fahrenheit de una temperatura Celsius, multiplicar por $\dfrac{9}{5}$ la temperatura Celsius y luego sumar 32"
+\end{center}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Representacionfunciones.png}
+	\caption{Cuatro formas de representar una función}
+	\label{Formasfunciones}
+\end{figure}
+
+\section{Gráficas de funciones}
+
+\subsection{Gráficas de funciones por localización de puntos}
+
+Para graficar una función $f$ localizamos los puntos $(x,f(x))$ en un plano de coordenadas. En otras palabras, localizamos los puntos $(x,y)$ cuya coordenada $x$ es una entrada y cuya coordenada $y$ es la correspondiente salida de la función. \parencite{stewart_redlin_watson_precalculo}
+
+\begin{tcolorbox}
+	Si $f$ es una función con dominio A, entonces la \textbf{gráfica} de $f$ es el conjunto de pares ordenados
+	\begin{center}
+		$(x, f(x)) | x \in A$
+	\end{center}
+	localizados en un plano de coordendas. En otras palabras, la gráfica de $f$ es el conjunto de todos los puntos $(x,y)$ tales que $y = f(x)$; esto es, la gráfica de f es la gráfica de la ecuación $y = f(x)$.
+\end{tcolorbox}
+
+La gráfica de una función $f$ da un retrato del comportamiento o "historia de la vida" de la función. Podemos leer el valor de $f(x)$ a partir de la gráfica como la altura de la gráfica arriba del punto $x$. \parencite{stewart_redlin_watson_precalculo}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Figuras/Alturadegrafica.png}
+	\caption{La altura de la gráfica arriba del punto x es el valor de $f(x)$}
+	\label{Alturadegrafica}
+\end{figure}
+
+Una función $f$ de la forma $f(x) = mx + b$ se denomina \textbf{función lineal} porque su gráfica es la gráfica de la ecuación $y = mx + b$, que representa una recta con pendiente $m$ y punto de intersección $b$ en $y$. Un caso especial de una función lineal se presenta cuando la pendiente es m = 0. La función $f(x) = b$, donde $b$ es un número determinado, recibe el nombre de $función constante$ porque todos sus valores son el mismo número, es decir, $b$. Su gráfica es la recta horizontal $y = b$. \parencite{stewart_redlin_watson_precalculo}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figuras/Funcionlicon.png}
+	\caption{Funciones lineal y constante}
+	\label{Funcionlinealconst}
+\end{figure}
+
+\subsection{La prueba de la recta vertical}
+
+La gráfica de una función es una curva en el plano $xy$. Pero surge la pregunta. ¿Cuáles curvas del plano $xy$ son gráficas de funciones? ESto se contesta por medio de la prueba siguiente. \parencite{stewart_redlin_watson_precalculo}
+
+\begin{tcolorbox}
+	Una curva en el plano de coordenadas es la gráfica de una función si y sólo si ninguna recta vertical cruza la curva más de una vez.
+\end{tcolorbox}
+
+Podemos ver la \hyperref[Pruebavertical]{\textbf{Figura~\ref*{Pruebavertical}}} para entender por qué la Prueba de la Recta Vertical es verdadera. 
+Si cada recta vertical \(x = a\) cruza la curva sólo una vez en \((a,b)\), entonces exactamente un valor funcional está definido por \(f(a) = b\). 
+Pero si una recta \(x = a\) cruza la curva dos veces, en \((a,b)\) y en \((a,c)\), entonces la curva no puede representar una función 
+porque una función no puede asignar dos valores diferentes a \(a\).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figuras/Pruebavertical.png}
+	\caption{Prueba de la recta vertical}
+	\label{Pruebavertical}
+\end{figure}
+
+\section{Aplicación}
+
+Se presentará un código en \textbf{Python} que sea capaz de graficar funciones, según los datos de entrada que se pidan.
+
+\begin{pythoncode}
+	import sympy as sp
+	import numpy as np
+	import matplotlib.pyplot as plt
+	
+	# === Ingreso de la función por el usuario ===
+	expr_str = input("Ingrese la función en términos de x (ejemplo: sin(x), x**2 + 3*x - 5, exp(-x)*cos(x)): ")
+	
+	# === Definición de variable simbólica ===
+	x = sp.Symbol('x')
+	
+	# === Conversión del texto a expresión simbólica ===
+	try:
+	expr = sp.sympify(expr_str)
+	except sp.SympifyError:
+	print("Error: la función ingresada no es válida.")
+	exit()
+	
+	# === Creación de función numérica evaluable ===
+	f = sp.lambdify(x, expr, modules=['numpy'])
+	
+	# === Intervalo de graficación ===
+	x_vals = np.linspace(-10, 10, 400)
+	y_vals = f(x_vals)
+	
+	# === Graficar ===
+	plt.figure(figsize=(7,5))
+	plt.plot(x_vals, y_vals, label=f"$f(x) = {sp.latex(expr)}$", color='navy')
+	plt.title("Gráfica de la función ingresada", fontsize=13)
+	plt.xlabel("x")
+	plt.ylabel("f(x)")
+	plt.grid(True, linestyle='--', alpha=0.6)
+	plt.axhline(0, color='black', linewidth=1)
+	plt.axvline(0, color='black', linewidth=1)
+	plt.legend()
+	plt.show()
+\end{pythoncode}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/FunPython.png}
+	\caption{Graficando funciones con Python}
+	\label{FunPy}
+\end{figure}
 
 \chapter{Restricciones}
 
