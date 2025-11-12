@@ -12,14 +12,20 @@
 \contentsline {subsection}{\numberline {2.4.2}La prueba de la recta vertical}{16}{subsection.2.4.2}%
 \contentsline {section}{\numberline {2.5}Aplicación}{17}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Restricciones}{19}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Método de Bisección}{23}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Método de la Secante}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{27}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{29}{chapter.8}%
-\contentsline {part}{II\hspace {1em}Unidad II}{31}{part.2}%
-\contentsline {chapter}{\numberline {9}Gradiente de una función}{33}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{35}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Interpolación}{37}{chapter.11}%
-\contentsline {chapter}{Conclusiones}{39}{chapter*.4}%
-\contentsline {chapter}{Bibliografía}{41}{chapter*.5}%
+\contentsline {section}{\numberline {3.1}Ejemplo}{19}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Fundamento teórico}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Condiciones de convergencia}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Criterio de parada}{24}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Algoritmo del método de Newton-Raphson}{24}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Aplicación del método en Python}{24}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Método de Bisección}{29}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Método de la Secante}{31}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{33}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{35}{chapter.8}%
+\contentsline {part}{II\hspace {1em}Unidad II}{37}{part.2}%
+\contentsline {chapter}{\numberline {9}Gradiente de una función}{39}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{41}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Interpolación}{43}{chapter.11}%
+\contentsline {chapter}{Conclusiones}{45}{chapter*.4}%
+\contentsline {chapter}{Bibliografía}{47}{chapter*.5}%

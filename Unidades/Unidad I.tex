@@ -140,41 +140,41 @@ porque una función no puede asignar dos valores diferentes a \(a\).
 Se presentará un código en \textbf{Python} que sea capaz de graficar funciones, según los datos de entrada que se pidan.
 
 \begin{pythoncode}
-	import sympy as sp
-	import numpy as np
-	import matplotlib.pyplot as plt
-	
-	# === Ingreso de la función por el usuario ===
-	expr_str = input("Ingrese la función en términos de x (ejemplo: sin(x), x**2 + 3*x - 5, exp(-x)*cos(x)): ")
-	
-	# === Definición de variable simbólica ===
-	x = sp.Symbol('x')
-	
-	# === Conversión del texto a expresión simbólica ===
-	try:
-	expr = sp.sympify(expr_str)
-	except sp.SympifyError:
-	print("Error: la función ingresada no es válida.")
-	exit()
-	
-	# === Creación de función numérica evaluable ===
-	f = sp.lambdify(x, expr, modules=['numpy'])
-	
-	# === Intervalo de graficación ===
-	x_vals = np.linspace(-10, 10, 400)
-	y_vals = f(x_vals)
-	
-	# === Graficar ===
-	plt.figure(figsize=(7,5))
-	plt.plot(x_vals, y_vals, label=f"$f(x) = {sp.latex(expr)}$", color='navy')
-	plt.title("Gráfica de la función ingresada", fontsize=13)
-	plt.xlabel("x")
-	plt.ylabel("f(x)")
-	plt.grid(True, linestyle='--', alpha=0.6)
-	plt.axhline(0, color='black', linewidth=1)
-	plt.axvline(0, color='black', linewidth=1)
-	plt.legend()
-	plt.show()
+import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+
+# === Ingreso de la función por el usuario ===
+expr_str = input("Ingrese la función en términos de x (ejemplo: sin(x), x**2 + 3*x - 5, exp(-x)*cos(x)): ")
+
+# === Definición de variable simbólica ===
+x = sp.Symbol('x')
+
+# === Conversión del texto a expresión simbólica ===
+try:
+expr = sp.sympify(expr_str)
+except sp.SympifyError:
+print("Error: la función ingresada no es válida.")
+exit()
+
+# === Creación de función numérica evaluable ===
+f = sp.lambdify(x, expr, modules=['numpy'])
+
+# === Intervalo de graficación ===
+x_vals = np.linspace(-10, 10, 400)
+y_vals = f(x_vals)
+
+# === Graficar ===
+plt.figure(figsize=(7,5))
+plt.plot(x_vals, y_vals, label=f"$f(x) = {sp.latex(expr)}$", color='navy')
+plt.title("Gráfica de la función ingresada", fontsize=13)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.axhline(0, color='black', linewidth=1)
+plt.axvline(0, color='black', linewidth=1)
+plt.legend()
+plt.show()
 \end{pythoncode}
 
 \begin{figure}[H]
@@ -186,7 +186,311 @@ Se presentará un código en \textbf{Python} que sea capaz de graficar funciones
 
 \chapter{Restricciones}
 
+Las restricciones son condiciones que limitan el conjunto de valores posibles que pueden tomar las variables en un problema matemático. Estas limitaciones definen el espacio factible o región factible, dentro del cual se busca una o más soluciones que cumplan con determinados criterios. Las restricciones pueden ser igualdades (por ejemplo, $x + y = 10$) o desigualdades (por ejemplo, $x \ge 0$), y desempeñan un papel fundamental en los problemas de optimización, programación lineal y análisis numérico.
+\parencite{chapra_canale_metodos, burden_faires_analisis, anton_bivens_davis_calculo}
+
+Un sistema de ecuaciones consiste en un conjunto de ecuaciones que comparten las mismas variables. Resolverlo implica encontrar los valores que satisfacen todas las ecuaciones simultáneamente. Estos sistemas pueden clasificarse en lineales y no lineales, y sus métodos de resolución varían desde técnicas algebraicas clásicas (como la sustitución o igualación) hasta procedimientos numéricos avanzados (como el método de Gauss-Seidel o Newton-Raphson).
+\parencite{chapra_canale_metodos, riley_hobson_bence_mathematical, burden_faires_analisis}
+
+En el contexto de la programación numérica, las restricciones se representan y manipulan mediante código, permitiendo no solo resolver el sistema de ecuaciones sino también visualizar gráficamente la región factible y el punto óptimo. Esta representación es especialmente útil para comprender la interacción entre las ecuaciones y las limitaciones impuestas, facilitando el análisis y la toma de decisiones en problemas aplicados de ingeniería, economía y ciencias computacionales.
+\parencite{stewart_redlin_watson_precalculo, chapra_canale_metodos}
+
+\section{Ejemplo}
+
+Un desarrollador tiene 15 horas semanales para dedicar al desarrollo de software de front-end (x) y back-end (y). Además:
+
+\begin{itemize}
+	\item Debe dedicar al menos 5 horas al desarrollo de front-end para cumplir con los entregables del cliente.
+	\item El tiempo total no puede exceder 15 horas por restricciones de tiempo del sprint.
+\end{itemize}
+
+Formule las restricciones, represéntelas gráficamente e identifique las combinaciones posibles de tiempo a invertir en cada actividad.
+
+\textbf{Variables}
+
+\begin{itemize}
+	\item x = horas dedicadas al front-end
+	\item y = horas dedicadas al back-end
+\end{itemize}
+
+\textbf{Restricciones}
+
+\begin{enumerate}
+	\item Debe dedicar al menos 5 horas al mes.
+	\begin{itemize}
+		\item $x \geq 5$
+	\end{itemize}
+	\item El tiempo total no puede exceder a 15 horas.
+	\begin{itemize}
+		\item $x + y \leq 15 $
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Gráfico generado con python}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Ejercicio1.png}
+	\caption{Aplicación de restricciones en Python}
+	\label{EjemploRestriccion}
+\end{figure}
+
+\textbf{Interpretación del gráfico}
+
+En la representación gráfica se observa la región factible determinada por las restricciones planteadas:
+
+\begin{itemize}
+	\item $x \geq 5$: el desarrollador debe dedicar al menos 5 horas al front-end. Esta condición aparece como una línea vertical en $x=5$ y la región válida se encuentra a la derecha de ella.
+	\item $y \geq 0$: el tiempo dedicado al back-end no puede ser negativo, por lo que la región se limita a la parte superior del eje $x$.
+	\item $x + y \leq 15$: la suma de horas asignadas a front-end y back-end no puede superar las 15 horas semanales. Gráficamente, corresponde a la semirrecta bajo la línea $x+y=15$.
+\end{itemize}
+
+La intersección de estas tres restricciones genera una región triangular factible delimitada por los puntos $(5,0)$, $(15,0)$ y $(5,10)$. Esto significa que cualquier combinación de horas ubicada dentro o sobre este triángulo cumple con las condiciones del problema. Por ejemplo, el desarrollador podría dedicar:
+\begin{itemize}
+	\item 5 horas a front-end y 10 horas a back-end,
+	\item 10 horas a front-end y 5 horas a back-end,
+	\item o bien 15 horas únicamente a front-end.
+\end{itemize}
+
+En conclusión, la región sombreada representa todas las combinaciones posibles de tiempo de trabajo entre front-end y back-end que respetan tanto el mínimo requerido en front-end como la restricción máxima de 15 horas semanales.
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+	# Función para preparar expresiones lineales
+def preparar_expresion(expr: str) -> str:
+expr = expr.replace(" ", "")          # quitar espacios
+expr = expr.replace("^", "**")        # potencia
+expr = expr.replace("-x", "-1*x")     # caso -x
+expr = expr.replace("+x", "+1*x")     # caso +x
+if expr.startswith("x"):              # si empieza con x
+expr = "1*" + expr
+expr = expr.replace("x", "*x")        # poner multiplicación
+expr = expr.replace("**x", "*x")      # corregir si se duplicó
+return expr
+
+# Restricciones:
+# 1) x = 5  (vertical)
+# 2) x + y = 15  ->  y = -x + 15
+func2 = preparar_expresion("-x+15")
+
+# Rango de la gráfica
+xmin, xmax = -5, 20
+ymin, ymax = -5, 20
+
+# Recorremos el plano
+for y in range(ymax, ymin - 1, -1):
+linea = ""
+for x in range(xmin, xmax + 1):
+# Recta 1: x = 5
+cond1 = (x == 5)
+
+# Recta 2: y = -x + 15
+try:
+y2 = eval(func2)
+except:
+y2 = None
+cond2 = (y2 is not None and abs(y - y2) < 0.5)
+
+# Región factible: x>=5, y>=0, x+y<=15
+region = (x >= 5 and y >= 0 and x + y <= 15)
+
+# Qué dibujar
+if cond1 and cond2:
+linea += "#"
+elif cond1:
+linea += "*"
+elif cond2:
+linea += "o"
+elif x == 0 and y == 0:
+linea += "+"
+elif x == 0:
+linea += "|"
+elif y == 0:
+linea += "-"
+elif region:
+linea += "."
+else:
+linea += " "
+print(linea)
+
+# Leyenda
+print("\nLeyenda del gráfico:")
+print("  * = x = 5")
+print("  o = x + y = 15")
+print("  # = Intersección")
+print("  . = Región factible")
+print("  | = Eje Y")
+print("  - = Eje X")
+print("  + = Origen (0,0)")
+\end{pythoncode}
+
 \chapter{Método de Newton Raphson}
+
+El \textbf{método de Newton-Raphson} es una técnica iterativa utilizada para encontrar raíces de ecuaciones no lineales de la forma:
+\[
+f(x) = 0
+\]
+Es uno de los métodos más eficaces y ampliamente utilizados debido a su rapidez de convergencia cuando se cumplen las condiciones necesarias. Fue propuesto originalmente por Isaac Newton y posteriormente generalizado por Joseph Raphson \parencite{chapra_canale_newton}.
+
+\section{Fundamento teórico}
+
+La idea básica del método consiste en aproximar la función $f(x)$ mediante su expansión de Taylor alrededor de un punto $x_i$ y despreciar los términos de orden superior:
+\[
+f(x) \approx f(x_i) + f'(x_i)(x - x_i)
+\]
+
+Para hallar la raíz, se hace $f(x) = 0$, y despejando $x$ se obtiene la fórmula iterativa:
+\[
+x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
+\]
+
+Esta expresión permite calcular una mejor aproximación de la raíz en cada iteración. El proceso continúa hasta que el valor de $x_{i+1}$ converge a la raíz real con una tolerancia previamente establecida \parencite{chapra_canale_newton}.
+
+\section{Condiciones de convergencia}
+
+El método de Newton-Raphson presenta convergencia cuadrática, es decir, el error disminuye aproximadamente al cuadrado en cada iteración, siempre que se cumplan las siguientes condiciones \parencite{suli_mayers_2003}:
+
+\begin{itemize}
+	\item La función $f(x)$ es continua y derivable en un intervalo que contiene la raíz buscada.
+	\item La derivada $f'(x)$ no se anula en el entorno de la raíz.
+	\item La estimación inicial $x_0$ está suficientemente cerca de la raíz real.
+\end{itemize}
+
+Sin embargo, si $f'(x_i)$ se aproxima a cero o si la estimación inicial está muy alejada, el método puede divergir o generar oscilaciones \parencite{burden_faires_2011}.
+
+\section{Criterio de parada}
+
+El proceso iterativo se detiene cuando se cumple alguna de las siguientes condiciones \parencite{chapra_canale_newton}:
+
+\begin{itemize}
+	\item $|f(x_{i+1})| < \varepsilon$
+	\item $|x_{i+1} - x_i| < \varepsilon$
+\end{itemize}
+
+donde $\varepsilon$ es la \textit{tolerancia} o el error máximo permitido.
+
+\section{Algoritmo del método de Newton-Raphson}
+
+\begin{tcolorbox}
+	\begin{enumerate}
+		\item Elegir una estimación inicial $x_0$.
+		\item Calcular $f(x_0)$ y $f'(x_0)$.
+		\item Evaluar:
+		\[
+		x_{1} = x_0 - \frac{f(x_0)}{f'(x_0)}
+		\]
+		\item Repetir el proceso:
+		\[
+		x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
+		\]
+		hasta que se cumpla el criterio de convergencia.
+	\end{enumerate}
+\end{tcolorbox}
+
+\section{Aplicación del método en Python}
+
+El objetivo fue desarrollar en el lenguaje de programación Python un programa que permita al usuario ingresar una función $f(x)$ y graficarla en un intervalo definido. Esta etapa inicial tiene como propósito ayudar al usuario a identificar visualmente las posibles raíces y decidir si desea aplicar el método de Newton-Raphson.
+
+En caso afirmativo, el programa solicita un valor inicial $x_1$ basado en la observación de la gráfica y ejecuta el algoritmo iterativo de Newton-Raphson hasta que la diferencia entre dos aproximaciones sucesivas sea menor a una tolerancia predefinida. Finalmente, el programa muestra en pantalla la raíz aproximada encontrada y el número de iteraciones necesarias para alcanzarla.
+
+Este enfoque combina la interpretación gráfica con el análisis numérico, promoviendo una comprensión más completa del comportamiento de la función y de la eficacia del método iterativo.
+
+\textbf{Entrada}
+
+Una cadena de texto que representa una función matemática.
+
+\begin{align*}
+	f(x) = x^3 - x - 1
+\end{align*}
+
+\textbf{Salida}
+
+\begin{itemize}
+	\item Gráfica para evaluar si realizar o no el método.
+	\item La raíz encontrada.
+	\item Número de iteraciones realizadas hasta encontrar la raíz.
+\end{itemize}
+
+\textbf{Código}
+
+\begin{pythoncode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# === 1. Ingreso de la función ===
+func_str = input("Ingrese la función f(x): ")  # Ejemplo: x**3 - x - 1
+
+# Definimos la función y su derivada (usando derivada numérica)
+def f(x):
+return eval(func_str)
+
+def f_prime(x, h=1e-6):  # derivada numérica
+return (f(x + h) - f(x - h)) / (2 * h)
+
+# === 2. Graficar la función ===
+xmin = float(input("Ingrese el valor mínimo de x: "))
+xmax = float(input("Ingrese el valor máximo de x: "))
+
+x = np.linspace(xmin, xmax, 400)
+y = f(x)
+
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, label=f"f(x) = {func_str}", color='blue')
+plt.axhline(0, color='black', linestyle='--')
+plt.axvline(0, color='black', linestyle='--')
+plt.title("Gráfico de la función ingresada")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# === 3. Pregunta si desea aplicar Newton-Raphson ===
+op = input("¿Desea encontrar una raíz con el método de Newton-Raphson? (s/n): ").lower()
+
+if op == "s":
+# === 4. Ingreso de punto inicial ===
+x0 = float(input("Basado en la gráfica, ingrese el valor inicial x1: "))
+
+# Parámetros del método
+tol = 1e-6
+max_iter = 100
+
+# Iteraciones
+for i in range(1, max_iter + 1):
+fx = f(x0)
+fpx = f_prime(x0)
+
+if fpx == 0:
+print(f"La derivada es cero en x = {x0}. El método no puede continuar.")
+break
+
+x1 = x0 - fx / fpx
+
+# Verificar convergencia
+if abs(x1 - x0) < tol:
+print(f"\n✅ Raíz aproximada encontrada: {x1:.6f}")
+print(f"Iteraciones realizadas: {i}")
+break
+
+x0 = x1
+else:
+print("\n⚠️ No se alcanzó la convergencia después de", max_iter, "iteraciones.")
+
+else:
+print("No se aplicó el método de Newton-Raphson.")
+\end{pythoncode}
+
+\textbf{Ejecución}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[width=0.75\linewidth]{Figuras/Newthon1.png}
+	\includegraphics[width=0.75\linewidth]{Figuras/Newthon2.png}
+	\caption{Método de Newthon-Rapshon en Python}
+	\label{Newthon-R}
+\end{figure}
 
 \chapter{Método de Bisección}
 
