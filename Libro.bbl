@@ -19,39 +19,24 @@
 
 \refsection{0}
   \datalist[entry]{nyt/apasortcite//global/global}
-    \entry{anton_bivens_davis_calculo}{book}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=a9468ec1d67f7ac3ff08cd5f7fa6d940}{%
-           family={Anton},
+    \entry{atkinson2009}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f9e8aec91056dae5c9beca62a35f4dd4}{%
+           family={Atkinson},
            familyi={A\bibinitperiod},
-           given={Howard},
-           giveni={H\bibinitperiod},
+           given={Kendall},
+           giveni={K\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=e1e98f1b0bbb8ae4ef0faba20b9f1221}{%
-           family={Bivens},
-           familyi={B\bibinitperiod},
-           given={Irl},
-           giveni={I\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=fa582bdfb4458ed9dbaecb4e0e82bea8}{%
-           family={Davis},
-           familyi={D\bibinitperiod},
-           given={Stephen},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México}%
       }
       \list{publisher}{1}{%
         {Wiley}%
       }
-      \strng{namehash}{b8a9f73a43759b4ca1295a1f7cd32327}
-      \strng{fullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
-      \strng{bibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
-      \strng{authorbibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
-      \strng{authornamehash}{b8a9f73a43759b4ca1295a1f7cd32327}
-      \strng{authorfullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{namehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{fullhash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{bibnamehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{authorbibnamehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{authornamehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{authorfullhash}{f9e8aec91056dae5c9beca62a35f4dd4}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{extradatescope}{labelyear}
@@ -59,11 +44,11 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{10}
-      \field{title}{Cálculo}
-      \field{year}{2012}
+      \field{edition}{2nd}
+      \field{title}{An Introduction to Numerical Analysis}
+      \field{year}{2009}
     \endentry
-    \entry{burden_faires_2011}{book}{}
+    \entry{burden2011}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=087f2271a0786e7c8db8fd33785aed18}{%
            family={Burden},
@@ -98,49 +83,9 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{9na ed.}
+      \field{edition}{9}
       \field{title}{Análisis Numérico}
       \field{year}{2011}
-    \endentry
-    \entry{burden_faires_analisis}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=087f2271a0786e7c8db8fd33785aed18}{%
-           family={Burden},
-           familyi={B\bibinitperiod},
-           given={Richard\bibnamedelima L.},
-           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4204928ced965b41fb12c0ed6d636f41}{%
-           family={Faires},
-           familyi={F\bibinitperiod},
-           given={J.\bibnamedelimi Douglas},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México}%
-      }
-      \list{publisher}{1}{%
-        {Cengage Learning}%
-      }
-      \strng{namehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{fullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{bibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{2}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradate}{1}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{10}
-      \field{title}{Análisis Numérico}
-      \field{year}{2016}
     \endentry
     \entry{burden2016}{book}{}
       \name{author}{2}{}{%
@@ -169,10 +114,9 @@
       \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{3}
+      \field{extraname}{2}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -182,7 +126,7 @@
       \field{title}{Análisis numérico}
       \field{year}{2016}
     \endentry
-    \entry{chapra_canale_metodos}{book}{}
+    \entry{chapra2015}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=7e3e8f9f0fe0cc26d7c4565cbbf9373a}{%
            family={Chapra},
@@ -209,90 +153,8 @@
       \strng{authorbibnamehash}{28c90087a02461e7987d0cb248faad97}
       \strng{authornamehash}{28c90087a02461e7987d0cb248faad97}
       \strng{authorfullhash}{28c90087a02461e7987d0cb248faad97}
-      \field{extraname}{1}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradate}{1}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{7}
-      \field{title}{Métodos Numéricos para Ingenieros}
-      \field{year}{2015}
-    \endentry
-    \entry{chapra_canale_newton}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=7e3e8f9f0fe0cc26d7c4565cbbf9373a}{%
-           family={Chapra},
-           familyi={C\bibinitperiod},
-           given={Steven\bibnamedelima C.},
-           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b9ce7e87a62b0781a9ca8b3cad8031c9}{%
-           family={Canale},
-           familyi={C\bibinitperiod},
-           given={Raymond\bibnamedelima P.},
-           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México D.F.}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill Education}%
-      }
-      \strng{namehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{fullhash}{28c90087a02461e7987d0cb248faad97}
-      \strng{bibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorbibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authornamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorfullhash}{28c90087a02461e7987d0cb248faad97}
-      \field{extraname}{2}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradate}{2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{7ma ed.}
-      \field{title}{Métodos Numéricos para Ingenieros}
-      \field{year}{2015}
-    \endentry
-    \entry{chapra2015}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=7e3e8f9f0fe0cc26d7c4565cbbf9373a}{%
-           family={Chapra},
-           familyi={C\bibinitperiod},
-           given={Steven\bibnamedelima C.},
-           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b9ce7e87a62b0781a9ca8b3cad8031c9}{%
-           family={Canale},
-           familyi={C\bibinitperiod},
-           given={Raymond\bibnamedelima P.},
-           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México D.F.}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill Education}%
-      }
-      \strng{namehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{fullhash}{28c90087a02461e7987d0cb248faad97}
-      \strng{bibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorbibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authornamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorfullhash}{28c90087a02461e7987d0cb248faad97}
-      \field{extraname}{3}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradate}{3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -301,6 +163,41 @@
       \field{edition}{7}
       \field{title}{Métodos numéricos para ingenieros}
       \field{year}{2015}
+    \endentry
+    \entry{cheney2009}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=518ffdffba5ad0325c63c3f990c02575}{%
+           family={Cheney},
+           familyi={C\bibinitperiod},
+           given={Ward},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c254dd180eb025652f115f44b0309beb}{%
+           family={Kincaid},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole}%
+      }
+      \strng{namehash}{6a389335e480dd257c424fe69548620e}
+      \strng{fullhash}{6a389335e480dd257c424fe69548620e}
+      \strng{bibnamehash}{6a389335e480dd257c424fe69548620e}
+      \strng{authorbibnamehash}{6a389335e480dd257c424fe69548620e}
+      \strng{authornamehash}{6a389335e480dd257c424fe69548620e}
+      \strng{authorfullhash}{6a389335e480dd257c424fe69548620e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6th}
+      \field{title}{Numerical Mathematics and Computing}
+      \field{year}{2009}
     \endentry
     \entry{press2007}{book}{}
       \name{author}{4}{}{%
@@ -352,51 +249,7 @@
       \field{title}{Numerical Recipes: The Art of Scientific Computing}
       \field{year}{2007}
     \endentry
-    \entry{riley_hobson_bence_mathematical}{book}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=472a518b9636a2472d23017a59043889}{%
-           family={Riley},
-           familyi={R\bibinitperiod},
-           given={K.\bibnamedelimi F.},
-           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=f81ebfc218ed573f729122c9112ee997}{%
-           family={Hobson},
-           familyi={H\bibinitperiod},
-           given={M.\bibnamedelimi P.},
-           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=dfbc319a09d77ddf6146efd4cf4f3428}{%
-           family={Bence},
-           familyi={B\bibinitperiod},
-           given={S.\bibnamedelimi J.},
-           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{7738495e97e2ed464d6e31d186a07ef7}
-      \strng{fullhash}{c41b519ee78de49eecfbe43f545302c8}
-      \strng{bibnamehash}{c41b519ee78de49eecfbe43f545302c8}
-      \strng{authorbibnamehash}{c41b519ee78de49eecfbe43f545302c8}
-      \strng{authornamehash}{7738495e97e2ed464d6e31d186a07ef7}
-      \strng{authorfullhash}{c41b519ee78de49eecfbe43f545302c8}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{title}{Mathematical Methods for Physics and Engineering}
-      \field{year}{2006}
-    \endentry
-    \entry{stewart_redlin_watson_precalculo}{book}{}
+    \entry{stewart2001}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=37b12c56a8629449e8994f442b4d8c35}{%
            family={Stewart},
@@ -429,6 +282,7 @@
       \strng{authorbibnamehash}{8747c025b4cf586b88a9830ca577dc62}
       \strng{authornamehash}{a1eb86fcb4ad54f9390b84de848380d8}
       \strng{authorfullhash}{8747c025b4cf586b88a9830ca577dc62}
+      \field{extraname}{1}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
@@ -440,7 +294,52 @@
       \field{title}{Precálculo: Matemáticas para el Cálculo}
       \field{year}{2001}
     \endentry
-    \entry{suli_mayers_2003}{book}{}
+    \entry{stewart2016}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=37b12c56a8629449e8994f442b4d8c35}{%
+           family={Stewart},
+           familyi={S\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb1c668e16b1c1c007478b4733dbcfe2}{%
+           family={Redlin},
+           familyi={R\bibinitperiod},
+           given={Lothar},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d7acf45b403627fe7addc3f58a5ab958}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Saleem},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Cengage Learning}%
+      }
+      \strng{namehash}{a1eb86fcb4ad54f9390b84de848380d8}
+      \strng{fullhash}{8747c025b4cf586b88a9830ca577dc62}
+      \strng{bibnamehash}{8747c025b4cf586b88a9830ca577dc62}
+      \strng{authorbibnamehash}{8747c025b4cf586b88a9830ca577dc62}
+      \strng{authornamehash}{a1eb86fcb4ad54f9390b84de848380d8}
+      \strng{authorfullhash}{8747c025b4cf586b88a9830ca577dc62}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Precálculo: Matemáticas para el Cálculo}
+      \field{year}{2016}
+    \endentry
+    \entry{suli2003}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=38d3a14c4a1c5448089a687a815acd4e}{%
            family={Süli},
@@ -476,42 +375,55 @@
       \field{labeltitlesource}{title}
       \field{title}{An Introduction to Numerical Analysis}
       \field{year}{2003}
+    \endentry
+    \entry{sullivan2004}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=58b79ae9e3efa7da41d2a788a17bfd68}{%
+           family={Sullivan},
+           familyi={S\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{fullhash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{bibnamehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{authorbibnamehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{authornamehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{authorfullhash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Numerical Methods for Engineers}
+      \field{year}{2004}
     \endentry
   \enddatalist
   \datalist[entry]{nyt/global//global/global}
-    \entry{anton_bivens_davis_calculo}{book}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=a9468ec1d67f7ac3ff08cd5f7fa6d940}{%
-           family={Anton},
+    \entry{atkinson2009}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f9e8aec91056dae5c9beca62a35f4dd4}{%
+           family={Atkinson},
            familyi={A\bibinitperiod},
-           given={Howard},
-           giveni={H\bibinitperiod},
+           given={Kendall},
+           giveni={K\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=e1e98f1b0bbb8ae4ef0faba20b9f1221}{%
-           family={Bivens},
-           familyi={B\bibinitperiod},
-           given={Irl},
-           giveni={I\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=fa582bdfb4458ed9dbaecb4e0e82bea8}{%
-           family={Davis},
-           familyi={D\bibinitperiod},
-           given={Stephen},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México}%
       }
       \list{publisher}{1}{%
         {Wiley}%
       }
-      \strng{namehash}{b8a9f73a43759b4ca1295a1f7cd32327}
-      \strng{fullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
-      \strng{bibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
-      \strng{authorbibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
-      \strng{authornamehash}{b8a9f73a43759b4ca1295a1f7cd32327}
-      \strng{authorfullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{namehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{fullhash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{bibnamehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{authorbibnamehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{authornamehash}{f9e8aec91056dae5c9beca62a35f4dd4}
+      \strng{authorfullhash}{f9e8aec91056dae5c9beca62a35f4dd4}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{extradatescope}{labelyear}
@@ -519,11 +431,11 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{10}
-      \field{title}{Cálculo}
-      \field{year}{2012}
+      \field{edition}{2nd}
+      \field{title}{An Introduction to Numerical Analysis}
+      \field{year}{2009}
     \endentry
-    \entry{burden_faires_2011}{book}{}
+    \entry{burden2011}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=087f2271a0786e7c8db8fd33785aed18}{%
            family={Burden},
@@ -558,49 +470,9 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{9na ed.}
+      \field{edition}{9}
       \field{title}{Análisis Numérico}
       \field{year}{2011}
-    \endentry
-    \entry{burden_faires_analisis}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=087f2271a0786e7c8db8fd33785aed18}{%
-           family={Burden},
-           familyi={B\bibinitperiod},
-           given={Richard\bibnamedelima L.},
-           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=4204928ced965b41fb12c0ed6d636f41}{%
-           family={Faires},
-           familyi={F\bibinitperiod},
-           given={J.\bibnamedelimi Douglas},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México}%
-      }
-      \list{publisher}{1}{%
-        {Cengage Learning}%
-      }
-      \strng{namehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{fullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{bibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{2}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradate}{1}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{10}
-      \field{title}{Análisis Numérico}
-      \field{year}{2016}
     \endentry
     \entry{burden2016}{book}{}
       \name{author}{2}{}{%
@@ -629,10 +501,9 @@
       \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{3}
+      \field{extraname}{2}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -642,7 +513,7 @@
       \field{title}{Análisis numérico}
       \field{year}{2016}
     \endentry
-    \entry{chapra_canale_metodos}{book}{}
+    \entry{chapra2015}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=7e3e8f9f0fe0cc26d7c4565cbbf9373a}{%
            family={Chapra},
@@ -669,90 +540,8 @@
       \strng{authorbibnamehash}{28c90087a02461e7987d0cb248faad97}
       \strng{authornamehash}{28c90087a02461e7987d0cb248faad97}
       \strng{authorfullhash}{28c90087a02461e7987d0cb248faad97}
-      \field{extraname}{1}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradate}{1}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{7}
-      \field{title}{Métodos Numéricos para Ingenieros}
-      \field{year}{2015}
-    \endentry
-    \entry{chapra_canale_newton}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=7e3e8f9f0fe0cc26d7c4565cbbf9373a}{%
-           family={Chapra},
-           familyi={C\bibinitperiod},
-           given={Steven\bibnamedelima C.},
-           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b9ce7e87a62b0781a9ca8b3cad8031c9}{%
-           family={Canale},
-           familyi={C\bibinitperiod},
-           given={Raymond\bibnamedelima P.},
-           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México D.F.}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill Education}%
-      }
-      \strng{namehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{fullhash}{28c90087a02461e7987d0cb248faad97}
-      \strng{bibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorbibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authornamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorfullhash}{28c90087a02461e7987d0cb248faad97}
-      \field{extraname}{2}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradate}{2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{7ma ed.}
-      \field{title}{Métodos Numéricos para Ingenieros}
-      \field{year}{2015}
-    \endentry
-    \entry{chapra2015}{book}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=7e3e8f9f0fe0cc26d7c4565cbbf9373a}{%
-           family={Chapra},
-           familyi={C\bibinitperiod},
-           given={Steven\bibnamedelima C.},
-           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=b9ce7e87a62b0781a9ca8b3cad8031c9}{%
-           family={Canale},
-           familyi={C\bibinitperiod},
-           given={Raymond\bibnamedelima P.},
-           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {México D.F.}%
-      }
-      \list{publisher}{1}{%
-        {McGraw-Hill Education}%
-      }
-      \strng{namehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{fullhash}{28c90087a02461e7987d0cb248faad97}
-      \strng{bibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorbibnamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authornamehash}{28c90087a02461e7987d0cb248faad97}
-      \strng{authorfullhash}{28c90087a02461e7987d0cb248faad97}
-      \field{extraname}{3}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradate}{3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -761,6 +550,41 @@
       \field{edition}{7}
       \field{title}{Métodos numéricos para ingenieros}
       \field{year}{2015}
+    \endentry
+    \entry{cheney2009}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=518ffdffba5ad0325c63c3f990c02575}{%
+           family={Cheney},
+           familyi={C\bibinitperiod},
+           given={Ward},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c254dd180eb025652f115f44b0309beb}{%
+           family={Kincaid},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Brooks/Cole}%
+      }
+      \strng{namehash}{6a389335e480dd257c424fe69548620e}
+      \strng{fullhash}{6a389335e480dd257c424fe69548620e}
+      \strng{bibnamehash}{6a389335e480dd257c424fe69548620e}
+      \strng{authorbibnamehash}{6a389335e480dd257c424fe69548620e}
+      \strng{authornamehash}{6a389335e480dd257c424fe69548620e}
+      \strng{authorfullhash}{6a389335e480dd257c424fe69548620e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6th}
+      \field{title}{Numerical Mathematics and Computing}
+      \field{year}{2009}
     \endentry
     \entry{press2007}{book}{}
       \name{author}{4}{}{%
@@ -812,51 +636,7 @@
       \field{title}{Numerical Recipes: The Art of Scientific Computing}
       \field{year}{2007}
     \endentry
-    \entry{riley_hobson_bence_mathematical}{book}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=472a518b9636a2472d23017a59043889}{%
-           family={Riley},
-           familyi={R\bibinitperiod},
-           given={K.\bibnamedelimi F.},
-           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=f81ebfc218ed573f729122c9112ee997}{%
-           family={Hobson},
-           familyi={H\bibinitperiod},
-           given={M.\bibnamedelimi P.},
-           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=dfbc319a09d77ddf6146efd4cf4f3428}{%
-           family={Bence},
-           familyi={B\bibinitperiod},
-           given={S.\bibnamedelimi J.},
-           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {Cambridge}%
-      }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{7738495e97e2ed464d6e31d186a07ef7}
-      \strng{fullhash}{c41b519ee78de49eecfbe43f545302c8}
-      \strng{bibnamehash}{c41b519ee78de49eecfbe43f545302c8}
-      \strng{authorbibnamehash}{c41b519ee78de49eecfbe43f545302c8}
-      \strng{authornamehash}{7738495e97e2ed464d6e31d186a07ef7}
-      \strng{authorfullhash}{c41b519ee78de49eecfbe43f545302c8}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{3}
-      \field{title}{Mathematical Methods for Physics and Engineering}
-      \field{year}{2006}
-    \endentry
-    \entry{stewart_redlin_watson_precalculo}{book}{}
+    \entry{stewart2001}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=37b12c56a8629449e8994f442b4d8c35}{%
            family={Stewart},
@@ -889,6 +669,7 @@
       \strng{authorbibnamehash}{8747c025b4cf586b88a9830ca577dc62}
       \strng{authornamehash}{a1eb86fcb4ad54f9390b84de848380d8}
       \strng{authorfullhash}{8747c025b4cf586b88a9830ca577dc62}
+      \field{extraname}{1}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
@@ -900,7 +681,52 @@
       \field{title}{Precálculo: Matemáticas para el Cálculo}
       \field{year}{2001}
     \endentry
-    \entry{suli_mayers_2003}{book}{}
+    \entry{stewart2016}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=37b12c56a8629449e8994f442b4d8c35}{%
+           family={Stewart},
+           familyi={S\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb1c668e16b1c1c007478b4733dbcfe2}{%
+           family={Redlin},
+           familyi={R\bibinitperiod},
+           given={Lothar},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d7acf45b403627fe7addc3f58a5ab958}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={Saleem},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Cengage Learning}%
+      }
+      \strng{namehash}{a1eb86fcb4ad54f9390b84de848380d8}
+      \strng{fullhash}{8747c025b4cf586b88a9830ca577dc62}
+      \strng{bibnamehash}{8747c025b4cf586b88a9830ca577dc62}
+      \strng{authorbibnamehash}{8747c025b4cf586b88a9830ca577dc62}
+      \strng{authornamehash}{a1eb86fcb4ad54f9390b84de848380d8}
+      \strng{authorfullhash}{8747c025b4cf586b88a9830ca577dc62}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{title}{Precálculo: Matemáticas para el Cálculo}
+      \field{year}{2016}
+    \endentry
+    \entry{suli2003}{book}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=38d3a14c4a1c5448089a687a815acd4e}{%
            family={Süli},
@@ -936,6 +762,34 @@
       \field{labeltitlesource}{title}
       \field{title}{An Introduction to Numerical Analysis}
       \field{year}{2003}
+    \endentry
+    \entry{sullivan2004}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=58b79ae9e3efa7da41d2a788a17bfd68}{%
+           family={Sullivan},
+           familyi={S\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{fullhash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{bibnamehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{authorbibnamehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{authornamehash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \strng{authorfullhash}{58b79ae9e3efa7da41d2a788a17bfd68}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Numerical Methods for Engineers}
+      \field{year}{2004}
     \endentry
   \enddatalist
 \endrefsection

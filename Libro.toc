@@ -20,12 +20,22 @@
 \contentsline {section}{\numberline {4.4}Algoritmo del método de Newton-Raphson}{24}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Aplicación del método en Python}{24}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Método de Bisección}{29}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Método de la Secante}{31}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{33}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{35}{chapter.8}%
-\contentsline {part}{II\hspace {1em}Unidad II}{37}{part.2}%
-\contentsline {chapter}{\numberline {9}Gradiente de una función}{39}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{41}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Interpolación}{43}{chapter.11}%
-\contentsline {chapter}{Conclusiones}{45}{chapter*.4}%
-\contentsline {chapter}{Bibliografía}{47}{chapter*.5}%
+\contentsline {subsection}{\numberline {5.0.1}Idea fundamental del método}{29}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Criterios de parada}{29}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Ventajas del método}{30}{subsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.0.4}Desventajas}{30}{subsection.5.0.4}%
+\contentsline {section}{\numberline {5.1}Aplicación del método en Python}{30}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Método de la Secante}{35}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Fundamento teórico}{35}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}Interpretación geométrica}{35}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Convergencia}{35}{subsection.6.0.3}%
+\contentsline {subsection}{\numberline {6.0.4}Ventajas y limitaciones}{36}{subsection.6.0.4}%
+\contentsline {section}{\numberline {6.1}Aplicación del método en Python}{36}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{41}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{43}{chapter.8}%
+\contentsline {part}{II\hspace {1em}Unidad II}{45}{part.2}%
+\contentsline {chapter}{\numberline {9}Gradiente de una función}{47}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{49}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Interpolación}{51}{chapter.11}%
+\contentsline {chapter}{Conclusiones}{53}{chapter*.4}%
+\contentsline {chapter}{Bibliografía}{55}{chapter*.5}%
