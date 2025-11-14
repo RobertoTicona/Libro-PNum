@@ -505,7 +505,7 @@ f(a)\, f(b) < 0.
 \]
 Esto indica que en el intervalo ocurre un cambio de signo y, por tanto, debe existir al menos una raíz en su interior \parencite{burden2016}.
 
-\subsection{Idea fundamental del método}
+\section{Idea fundamental del método}
 
 El método consiste en dividir sucesivamente el intervalo $[a,b]$ por su punto medio. Si llamamos
 \[
@@ -520,7 +520,7 @@ entonces evaluamos $f(c)$ y determinamos en qué subintervalo persiste el cambio
 
 Este proceso se repite recursivamente, produciendo intervalos cada vez más pequeños. Debido a su naturaleza, el método \textbf{siempre converge} cuando la función es continua y se inicia con un intervalo válido, aunque la convergencia es relativamente lenta \parencite{chapra2015}.
 
-\subsection{Criterios de parada}
+\section{Criterios de parada}
 
 El método se detiene cuando se cumple alguna de las siguientes condiciones:
 
@@ -545,7 +545,7 @@ El error después de $n$ iteraciones está acotado por
 \]
 lo cual permite estimar de manera precisa el número de pasos necesarios para obtener una tolerancia deseada \parencite{suli2003}.
 
-\subsection{Ventajas del método}
+\section{Ventajas del método}
 
 El método de bisección posee varias ventajas importantes:
 
@@ -558,7 +558,7 @@ El método de bisección posee varias ventajas importantes:
 
 Estas características lo convierten en un método ideal para iniciar procesos de localización de raíces o para validar aproximaciones obtenidas mediante métodos más rápidos pero menos robustos, como Newton-Raphson o la secante \parencite{press2007}.
 
-\subsection{Desventajas}
+\section{Desventajas}
 
 A pesar de su robustez, el método de bisección presenta algunas limitaciones:
 
@@ -688,7 +688,7 @@ print("No se aplicó el método de Bisección.")
 
 El método de la secante es una técnica numérica ampliamente utilizada para la resolución de ecuaciones no lineales, especialmente en contextos donde la derivada de la función no está disponible o resulta difícil de calcular. A diferencia del método de Newton–Raphson, que requiere la evaluación explícita de la derivada, la secante se basa en una aproximación numérica de la misma utilizando dos puntos consecutivos de la función \parencite{burden2011,chapra2015}. 
 
-\subsection{Fundamento teórico}
+\section{Fundamento teórico}
 
 El método surge de la idea de aproximar la derivada de la función mediante un cociente incremental, reemplazando la derivada verdadera por:
 
@@ -704,17 +704,17 @@ x_{n+1} = x_n - f(x_n)\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}.
 
 La deducción formal y el análisis matemático del método pueden consultarse en textos clásicos de análisis numérico \parencite{burden2011}, así como en manuales modernos de métodos computacionales \parencite{chapra2015,atkinson2009}.
 
-\subsection{Interpretación geométrica}
+\section{Interpretación geométrica}
 
 Geométricamente, el método consiste en trazar la recta secante que pasa por los puntos \((x_{n-1}, f(x_{n-1}))\) y \((x_n, f(x_n))\), y encontrar su intersección con el eje \(x\). Esta construcción geométrica proporciona una aproximación sucesiva a la raíz de la ecuación \(f(x)=0\) \parencite{sullivan2004}.
 
 La secante generada en cada iteración reemplaza el uso de la tangente del método de Newton, permitiendo que el método avance sin necesidad de calcular derivadas. Esta propiedad convierte a la secante en un algoritmo eficiente en problemas aplicados donde la evaluación de \(f'(x)\) puede ser costosa o inestable \parencite{cheney2009}.
 
-\subsection{Convergencia}
+\section{Convergencia}
 
 El método posee una convergencia superlineal, cuya razón de convergencia es aproximadamente \(1.618\), el número áureo. Aunque es menos rápido que Newton–Raphson, suele ser más eficiente cuando la derivada no está disponible o cuando su cálculo es propenso a errores numéricos \parencite{atkinson2009}. Sin embargo, su éxito requiere seleccionar dos valores iniciales adecuados para evitar divisiones entre valores de función muy pequeños o iteraciones divergentes \parencite{burden2011}.
 
-\subsection{Ventajas y limitaciones}
+\section{Ventajas y limitaciones}
 
 Entre sus principales ventajas destacan:
 
@@ -849,4 +849,418 @@ print("No se aplicó el método de la Secante.")
 
 \chapter{Método de Punto Fijo}
 
+El método de punto fijo es uno de los procedimientos fundamentales para resolver ecuaciones no lineales de la forma
+\[
+f(x) = 0.
+\]
+A diferencia de otros métodos basados directamente en la función $f(x)$, el método de punto fijo se construye a partir de una transformación adecuada de la ecuación original en una función equivalente
+\[
+x = g(x),
+\]
+de modo que la raíz buscada es un \textbf{punto fijo} de la función $g$, es decir, un valor $r$ tal que $g(r) = r$ \parencite{burden2016}. 
+
+La ecuación original puede expresarse de diversas maneras para obtener distintas funciones de iteración $g(x)$. La elección de esta función es crucial para garantizar la convergencia y determinar la eficiencia del método.
+
+\section{Definición y formulación básica}
+
+Dado un valor inicial $x_0$, la aproximación iterativa se construye mediante el proceso repetitivo:
+\[
+x_{n+1} = g(x_n), \qquad n = 0,1,2,\ldots
+\]
+Si esta sucesión converge a un valor $r$, entonces
+\[
+\lim_{n \to \infty} x_{n} = r \quad \Rightarrow \quad r = g(r),
+\]
+lo que confirma que $r$ es un punto fijo de $g$ y, por ende, una solución de la ecuación original \parencite{chapra2015}.
+
+\section{Condición de convergencia}
+
+El comportamiento del método depende de las propiedades de la función $g(x)$. Uno de los resultados más importantes para garantizar convergencia es el siguiente:
+
+\textbf{Criterio de convergencia.}
+Supongamos que la función $g$ es continua en un intervalo $I$ y que además su derivada $g'(x)$ es continua en el mismo intervalo. Si existe una constante $0 < k < 1$ tal que
+\[
+|g'(x)| \le k \qquad \text{para todo } x \in I,
+\]
+entonces el método de punto fijo es convergente para cualquier elección de $x_0 \in I$, y la sucesión generada converge a un único punto fijo en dicho intervalo \parencite{burden2011}.
+
+Este criterio implica que la derivada de $g$ controla la “fuerza” con la que la iteración se acerca al punto fijo. En términos prácticos:
+
+\[
+|g'(r)| < 1 \quad \Rightarrow \quad \text{convergencia local},
+\]
+\[
+|g'(r)| > 1 \quad \Rightarrow \quad \text{divergencia}.
+\]
+
+Esto hace evidente que la elección de la forma $g(x)$ no es arbitraria. Algunas transformaciones del tipo $x = g(x)$ producen convergencia, otras generan oscilaciones y otras divergencia total \parencite{cheney2009}.
+
+\section{Orden de convergencia}
+
+El método de punto fijo tiene convergencia lineal bajo las condiciones mencionadas. Esto significa que existe una constante $C$ tal que
+\[
+|x_{n+1} - r| \approx C\, |x_n - r|,
+\]
+lo cual sugiere una velocidad de aproximación más lenta frente a métodos como Newton-Raphson, cuya convergencia es cuadrática \parencite{atkinson2009}. Sin embargo, su simplicidad lo convierte en una herramienta útil para la enseñanza y para establecer intervalos iniciales seguros para otros métodos más rápidos.
+
+\section{Errores y criterios de parada}
+
+El error en la iteración puede estimarse mediante:
+\[
+|x_{n+1} - x_n| < \varepsilon \quad \text{o bien} \quad |g(x_n) - x_n| < \varepsilon,
+\]
+donde $\varepsilon$ es una tolerancia escogida. Otra forma consiste en fijar un número máximo de iteraciones si la función converge lentamente o presenta oscilaciones \parencite{press2007}.
+
+\section{Ventajas del método}
+
+El método de punto fijo presenta varias virtudes importantes:
+
+\begin{itemize}
+	\item Su implementación es extremadamente sencilla.
+	\item No requiere derivadas como Newton-Raphson.
+	\item Es útil para analizar transformaciones funcionales equivalentes.
+	\item Proporciona un marco general para estudiar muchos métodos iterativos.
+	\item Permite visualizar la convergencia mediante diagramas cobweb (trampas de telaraña), muy utilizados en la enseñanza \parencite{anton2012}.
+\end{itemize}
+
+Además, su estructura simple hace posible analizar la estabilidad de los puntos fijos en modelos matemáticos aplicados, como ecuaciones diferenciales, sistemas dinámicos y procesos iterativos en ingeniería \parencite{suli2003}.
+
+\section{Desventajas}
+
+A pesar de su utilidad conceptual y didáctica, el método presenta ciertas limitaciones:
+
+\begin{itemize}
+	\item La convergencia depende fuertemente de la elección de $g(x)$.
+	\item Incluso con una buena elección, la convergencia es lineal, por lo que puede ser lenta.
+	\item Si $|g'(x)| \ge 1$, la iteración diverge.
+	\item No siempre es sencillo encontrar una transformación apropiada.
+\end{itemize}
+
+En aplicaciones industriales o científicas, suele preferirse utilizar punto fijo como método preliminar para garantizar la existencia de una raíz antes de usar algoritmos más robustos o rápidos, como Newton-Raphson, la secante o métodos híbridos \parencite{chapra2015}.
+
+\section{Interpretación gráfica}
+
+Gráficamente, el método consiste en trazar la curva $y = g(x)$ junto con la recta $y = x$. El punto donde ambas se intersectan es el punto fijo. La iteración sigue los pasos:
+
+\begin{enumerate}
+	\item Comenzar en $(x_0, g(x_0))$.
+	\item Proyectar verticalmente hacia la curva.
+	\item Proyectar horizontalmente hacia la recta $y=x$.
+\end{enumerate}
+
+Este proceso se repite hasta alcanzar una convergencia visual. Este tipo de representación, conocida como \textit{diagrama cobweb}, es muy útil para estudiar estabilidad y para reforzar la intuición del método \parencite{riley2006}.
+
+\section{Conclusión}
+
+El método de punto fijo constituye una herramienta esencial en el análisis numérico. Aunque no es el método más rápido ni el más eficiente, su simplicidad, su fundamento teórico sólido y su relación con otros métodos iterativos lo hacen indispensable en la formación matemática y en el estudio formal de la convergencia de algoritmos numéricos.
+
+Su aplicación correcta depende de una adecuada elección de la función $g(x)$ y de un análisis cuidadoso de las condiciones de convergencia. Esto permite utilizarlo como punto de partida en el estudio y aplicación de métodos más avanzados para la resolución de ecuaciones no lineales \parencite{burden2016}.
+
+\section{Aplicación del método en Python}
+
+El objetivo fue desarrollar un programa en Python que permita ingresar una función $f(x)$ y su forma iterativa $g(x)$, graficar la función y luego aplicar el método de Punto Fijo si el usuario lo desea.  
+El programa calcula sucesivamente los valores de $x_{n+1} = g(x_n)$ hasta alcanzar una precisión deseada y muestra los resultados obtenidos.
+
+\textbf{Entrada}
+
+\begin{itemize}
+	\item Una cadena de texto que representa la función original $f(x)$.
+	\item La forma iterativa correspondiente $g(x)$.
+	\item El intervalo para graficar.
+	\item El valor inicial $x_0$.
+\end{itemize}
+
+\begin{align*}
+	f(x) = \cos(x) - x \\
+	g(x) = \cos(x)
+\end{align*}
+
+\textbf{Salida}
+
+\begin{itemize}
+	\item Gráfica de la función $f(x)$.
+	\item La raíz aproximada encontrada.
+	\item Número de iteraciones realizadas hasta cumplir la tolerancia.
+\end{itemize}
+
+\textbf{Restricciones}
+
+\begin{itemize}
+	\item El método requiere que $|g'(x)| < 1$ en el entorno de la raíz para garantizar la convergencia.
+	\item La función debe ser continua y evaluable en todo el intervalo seleccionado.
+\end{itemize}
+
+\textbf{Código}
+
+\begin{pythoncode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# === 1. Ingreso de la función y su forma iterativa g(x) ===
+print("=== MÉTODO DEL PUNTO FIJO ===")
+print("Recuerde que f(x) = 0 se reescribe como x = g(x)")
+print("Ejemplo: Si f(x) = cos(x) - x, entonces g(x) = cos(x)\n")
+
+func_str = input("Ingrese la función original f(x): ")   # Ejemplo: np.cos(x) - x
+g_str = input("Ingrese la función iterativa g(x): ")     # Ejemplo: np.cos(x)
+
+# Definición de funciones
+def f(x):
+return eval(func_str, {"np": np, "x": x})
+
+def g(x):
+return eval(g_str, {"np": np, "x": x})
+
+# === 2. Graficar la función f(x) ===
+xmin = float(input("Ingrese el valor mínimo de x: "))
+xmax = float(input("Ingrese el valor máximo de x: "))
+
+x = np.linspace(xmin, xmax, 400)
+y = f(x)
+
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, label=f"f(x) = {func_str}", color='blue')
+plt.axhline(0, color='black', linestyle='--')
+plt.axvline(0, color='black', linestyle='--')
+plt.title("Gráfico de la función ingresada")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# === 3. Pregunta si desea aplicar el método de punto fijo ===
+op = input("¿Desea aplicar el método de Punto Fijo? (s/n): ").lower()
+
+if op == "s":
+# === 4. Ingreso de valor inicial ===
+x0 = float(input("Ingrese el valor inicial x0: "))
+
+tol = 1e-6
+max_iter = 100
+
+print("\nIteración |     x0      |     g(x0)     |     f(x0)     |   Error")
+print("---------------------------------------------------------------")
+
+for i in range(1, max_iter + 1):
+x1 = g(x0)
+error = abs(x1 - x0)
+
+print(f"{i:9d} | {x0:10.6f} | {x1:12.6f} | {f(x1):12.6f} | {error:10.6f}")
+
+if error < tol:
+print(f"\n✅ Raíz aproximada encontrada: {x1:.6f}")
+print(f"Iteraciones realizadas: {i}")
+break
+
+x0 = x1
+else:
+print("\n⚠️ No se alcanzó la convergencia después de", max_iter, "iteraciones.")
+else:
+print("No se aplicó el método de Punto Fijo.")
+\end{pythoncode}
+
+\textbf{Ejecución}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Puntof1.png}
+	\includegraphics[width=0.60\linewidth]{Figuras/Puntof2.png}
+	\includegraphics[width=0.60\linewidth]{Figuras/Puntof3.png}
+	\caption{Método de Punto Fijo en Python}
+	\label{Puntofijo}
+\end{figure}
+
 \chapter{Método de Regula Falsi}
+
+El método de \textit{regula falsi}, también conocido como \textit{método de la falsa posición}, es una técnica clásica para la solución numérica de ecuaciones no lineales de la forma
+\[
+f(x) = 0.
+\]
+Este método combina aspectos del método de la bisección y del método de la secante, manteniendo siempre un intervalo que contiene la raíz mientras utiliza una aproximación lineal similar a la secante para generar nuevas aproximaciones. Su origen se remonta a prácticas matemáticas antiguas, pero su formalización moderna aparece descrita en textos fundamentales de análisis numérico \parencite{burden2011, chapra2015, cheney2009}.
+
+\section{Idea fundamental del método}
+
+Sea un intervalo cerrado $[a,b]$ tal que la función $f$ sea continua en él y satisfaga la condición
+\[
+f(a)\, f(b) < 0,
+\]
+lo cual garantiza, mediante el Teorema del Valor Intermedio, la existencia de al menos una raíz en dicho intervalo. A diferencia del método de la bisección, que toma el punto medio como nueva aproximación, el método de regula falsi utiliza la recta secante que une los puntos $(a, f(a))$ y $(b, f(b))$ para obtener una aproximación más refinada a la raíz \parencite{burden2016, chapra2015}.
+
+El punto donde esta recta corta al eje $x$ se calcula mediante la fórmula:
+\[
+x_r = b - \frac{f(b)\,(a - b)}{f(a) - f(b)}.
+\]
+Este $x_r$ se denomina \textit{falsa posición} y representa la aproximación actual de la raíz.
+
+\section{Actualización del intervalo}
+
+Una vez calculado $x_r$, se evalúa $f(x_r)$ y se conserva el intervalo que garantice el cambio de signo. Es decir:
+\[
+\begin{cases}
+	a = x_r & \text{si } f(a)\, f(x_r) < 0,\\[4pt]
+	b = x_r & \text{si } f(a)\, f(x_r) > 0.
+\end{cases}
+\]
+
+Este proceso asegura que la raíz permanece dentro del intervalo, proporcionando la robustez característica del método de bisección, pero con un paso adicional guiado por la pendiente de la secante, lo que permite avanzar de manera más eficiente en muchas situaciones \parencite{atkinson2009, suli2003}.
+
+\section{Convergencia}
+
+El método de regula falsi es linealmente convergente, aunque en algunos casos su velocidad puede ser lenta. Esto ocurre especialmente cuando uno de los extremos del intervalo permanece fijo durante muchas iteraciones, lo cual puede suceder si la función presenta curvaturas pronunciadas o cambios de pendiente que provocan que la secante tienda a acercarse preferentemente a uno de los extremos \parencite{press2007, burden2011}.
+
+A pesar de ello, su principal ventaja es que **nunca pierde la raíz**, ya que siempre mantiene el intervalo acotado con un cambio de signo, lo que lo hace más seguro que métodos que no usan acotamiento, como el método de la secante clásico.
+
+\section{Criterios de parada}
+
+Los criterios más empleados para finalizar el proceso iterativo son:
+
+\begin{itemize}
+	\item \textbf{Error relativo entre iteraciones:}
+	\[
+	\left| \frac{x_{r}^{(k)} - x_{r}^{(k-1)}}{x_{r}^{(k)}} \right| < \varepsilon.
+	\]
+	\item \textbf{Evaluación de la función:}
+	\[
+	|f(x_r)| < \varepsilon.
+	\]
+	\item \textbf{Máximo número de iteraciones:} Se detiene el proceso cuando se supera un número preestablecido de iteraciones.
+\end{itemize}
+
+Estos criterios permiten controlar la precisión deseada y asegurar que la aproximación obtenida es suficientemente cercana a la raíz \parencite{chapra2015, burden2016}.
+
+\section{Ventajas y desventajas}
+
+\textbf{Ventajas:}
+\begin{itemize}
+	\item Conserva la propiedad de acotamiento del método de la bisección.
+	\item Puede converger más rápido que la bisección en muchas funciones.
+	\item No requiere cálculo de derivadas.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+	\item La convergencia puede ser muy lenta si uno de los extremos del intervalo queda ``atrapado''.
+	\item Usualmente tiene una convergencia lineal, más lenta que la del método de la secante o Newton-Raphson.
+\end{itemize}
+
+\section{Resumen conceptual}
+
+El método de regula falsi representa un compromiso entre estabilidad y velocidad: mantiene la seguridad del acotamiento, pero intenta mejorar la rapidez usando una aproximación lineal. Por ello, es especialmente útil cuando se requiere una garantía estricta de que la raíz no se perderá, pero se desea evitar la lentitud del método de la bisección tradicional \parencite{burden2011, chapra2015, cheney2009}.
+
+\section{Aplicación del método en Python}
+
+El objetivo fue desarrollar un programa en Python que permita al usuario ingresar una función $f(x)$, graficarla en un intervalo definido y aplicar el método de Regula Falsi si así lo desea.  
+El programa realiza iteraciones hasta que se cumpla un criterio de tolerancia, mostrando en cada paso los valores de $a$, $b$, $c$, $f(c)$ y el error estimado.
+
+\textbf{Entrada}
+
+\begin{itemize}
+	\item Una cadena de texto que representa la función matemática $f(x)$.
+	\item Los valores iniciales $a$ y $b$ que delimitan el intervalo de búsqueda.
+	\item El intervalo para graficar la función.
+\end{itemize}
+
+\begin{align*}
+	f(x) = x^3 - x - 1
+\end{align*}
+
+\textbf{Salida}
+
+\begin{itemize}
+	\item Gráfica de la función $f(x)$ en el intervalo ingresado.
+	\item La raíz aproximada encontrada.
+	\item Número de iteraciones realizadas hasta cumplir la tolerancia.
+\end{itemize}
+
+\textbf{Restricciones}
+
+\begin{itemize}
+	\item La función debe ser continua en el intervalo $[a, b]$.
+	\item Debe cumplirse la condición de cambio de signo $f(a)f(b) < 0$.
+\end{itemize}
+
+\textbf{Código}
+
+\begin{pythoncode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# === 1. Ingreso de la función ===
+print("=== MÉTODO DE REGULA FALSI (FALSA POSICIÓN) ===")
+func_str = input("Ingrese la función f(x): ")  # Ejemplo: x**3 - x - 1
+
+# Definición de la función
+def f(x):
+return eval(func_str, {"np": np, "x": x})
+
+# === 2. Graficar la función ===
+xmin = float(input("Ingrese el valor mínimo de x: "))
+xmax = float(input("Ingrese el valor máximo de x: "))
+
+x = np.linspace(xmin, xmax, 400)
+y = f(x)
+
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, label=f"f(x) = {func_str}", color='blue')
+plt.axhline(0, color='black', linestyle='--')
+plt.axvline(0, color='black', linestyle='--')
+plt.title("Gráfico de la función ingresada")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# === 3. Pregunta si desea aplicar el método de Regula Falsi ===
+op = input("¿Desea aplicar el método de Regula Falsi? (s/n): ").lower()
+
+if op == "s":
+# === 4. Ingreso de los extremos del intervalo ===
+a = float(input("Ingrese el valor de a (extremo izquierdo): "))
+b = float(input("Ingrese el valor de b (extremo derecho): "))
+
+# Comprobación del cambio de signo
+if f(a) * f(b) > 0:
+print("⚠️ La función no cambia de signo en el intervalo. No se puede aplicar el método.")
+else:
+tol = 1e-6
+max_iter = 100
+
+print("\nIteración |      a      |      b      |      c      |    f(c)     |   Error")
+print("--------------------------------------------------------------")
+
+c_old = a
+for i in range(1, max_iter + 1):
+# Fórmula de Regula Falsi
+c = b - (f(b) * (a - b)) / (f(a) - f(b))
+error = abs(c - c_old)
+c_old = c
+
+print(f"{i:9d} | {a:10.6f} | {b:10.6f} | {c:10.6f} | {f(c):10.6f} | {error:10.6f}")
+
+if abs(f(c)) < tol or error < tol:
+print(f"\n✅ Raíz aproximada encontrada: {c:.6f}")
+print(f"Iteraciones realizadas: {i}")
+break
+
+# Actualización de intervalos
+if f(a) * f(c) < 0:
+b = c
+else:
+a = c
+else:
+print("\n⚠️ No se alcanzó la convergencia después de", max_iter, "iteraciones.")
+else:
+print("No se aplicó el método de Regula Falsi.")
+\end{pythoncode}
+
+\textbf{Ejecución}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Regula1.png}
+	\includegraphics[width=0.60\linewidth]{Figuras/Regula2.png}
+	\caption{Método de Regula Falsi en Python}
+	\label{RegulaFalsi}
+\end{figure}

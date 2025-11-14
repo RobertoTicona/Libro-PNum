@@ -19,6 +19,50 @@
 
 \refsection{0}
   \datalist[entry]{nyt/apasortcite//global/global}
+    \entry{anton2012}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=a9468ec1d67f7ac3ff08cd5f7fa6d940}{%
+           family={Anton},
+           familyi={A\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1e98f1b0bbb8ae4ef0faba20b9f1221}{%
+           family={Bivens},
+           familyi={B\bibinitperiod},
+           given={Irl},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa582bdfb4458ed9dbaecb4e0e82bea8}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{b8a9f73a43759b4ca1295a1f7cd32327}
+      \strng{fullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{bibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{authorbibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{authornamehash}{b8a9f73a43759b4ca1295a1f7cd32327}
+      \strng{authorfullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10}
+      \field{title}{Cálculo}
+      \field{year}{2012}
+    \endentry
     \entry{atkinson2009}{book}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=f9e8aec91056dae5c9beca62a35f4dd4}{%
@@ -248,6 +292,50 @@
       \field{edition}{3}
       \field{title}{Numerical Recipes: The Art of Scientific Computing}
       \field{year}{2007}
+    \endentry
+    \entry{riley2006}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=472a518b9636a2472d23017a59043889}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={K.\bibnamedelimi F.},
+           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f81ebfc218ed573f729122c9112ee997}{%
+           family={Hobson},
+           familyi={H\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dfbc319a09d77ddf6146efd4cf4f3428}{%
+           family={Bence},
+           familyi={B\bibinitperiod},
+           given={S.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{7738495e97e2ed464d6e31d186a07ef7}
+      \strng{fullhash}{c41b519ee78de49eecfbe43f545302c8}
+      \strng{bibnamehash}{c41b519ee78de49eecfbe43f545302c8}
+      \strng{authorbibnamehash}{c41b519ee78de49eecfbe43f545302c8}
+      \strng{authornamehash}{7738495e97e2ed464d6e31d186a07ef7}
+      \strng{authorfullhash}{c41b519ee78de49eecfbe43f545302c8}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Mathematical Methods for Physics and Engineering}
+      \field{year}{2006}
     \endentry
     \entry{stewart2001}{book}{}
       \name{author}{3}{}{%
@@ -406,6 +494,50 @@
     \endentry
   \enddatalist
   \datalist[entry]{nyt/global//global/global}
+    \entry{anton2012}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=a9468ec1d67f7ac3ff08cd5f7fa6d940}{%
+           family={Anton},
+           familyi={A\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e1e98f1b0bbb8ae4ef0faba20b9f1221}{%
+           family={Bivens},
+           familyi={B\bibinitperiod},
+           given={Irl},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fa582bdfb4458ed9dbaecb4e0e82bea8}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {México}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{b8a9f73a43759b4ca1295a1f7cd32327}
+      \strng{fullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{bibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{authorbibnamehash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \strng{authornamehash}{b8a9f73a43759b4ca1295a1f7cd32327}
+      \strng{authorfullhash}{17f3c1e6b68f9a0183a82ec97e94229f}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{10}
+      \field{title}{Cálculo}
+      \field{year}{2012}
+    \endentry
     \entry{atkinson2009}{book}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=f9e8aec91056dae5c9beca62a35f4dd4}{%
@@ -635,6 +767,50 @@
       \field{edition}{3}
       \field{title}{Numerical Recipes: The Art of Scientific Computing}
       \field{year}{2007}
+    \endentry
+    \entry{riley2006}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=472a518b9636a2472d23017a59043889}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={K.\bibnamedelimi F.},
+           giveni={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f81ebfc218ed573f729122c9112ee997}{%
+           family={Hobson},
+           familyi={H\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dfbc319a09d77ddf6146efd4cf4f3428}{%
+           family={Bence},
+           familyi={B\bibinitperiod},
+           given={S.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{7738495e97e2ed464d6e31d186a07ef7}
+      \strng{fullhash}{c41b519ee78de49eecfbe43f545302c8}
+      \strng{bibnamehash}{c41b519ee78de49eecfbe43f545302c8}
+      \strng{authorbibnamehash}{c41b519ee78de49eecfbe43f545302c8}
+      \strng{authornamehash}{7738495e97e2ed464d6e31d186a07ef7}
+      \strng{authorfullhash}{c41b519ee78de49eecfbe43f545302c8}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{title}{Mathematical Methods for Physics and Engineering}
+      \field{year}{2006}
     \endentry
     \entry{stewart2001}{book}{}
       \name{author}{3}{}{%
