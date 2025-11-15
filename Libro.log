@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.6.30)  14 NOV 2025 12:50
+This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.6.30)  15 NOV 2025 16:34
  restricted system commands enabled.
 **Libro.tex
 (./Libro.tex
@@ -1504,7 +1504,7 @@ Package hyperref Info: Link coloring ON on input line 55.
 LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
 (Font)              using `TU/phv/m/n' instead on input line 3.
 
-<Figuras/Logo.png, id=266, 1027.84pt x 1112.155pt>
+<Figuras/Logo.png, id=466, 1027.84pt x 1112.155pt>
 File: Figuras/Logo.png Graphic file (type png)
 <use Figuras/Logo.png>
 Package luatex.def Info: Figuras/Logo.png  used on input line 17.
@@ -1577,17 +1577,28 @@ Underfull \vbox (badness 3954) has occurred while \output is active []
 LaTeX Info: Redefining \sptext on input line 50.
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
- [6])
+ [6]
+LaTeX Info: Redefining \sptext on input line 76.
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
+
+[7]
+Underfull \vbox (badness 4846) has occurred while \output is active []
+
+LaTeX Info: Redefining \sptext on input line 103.
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
+ [8])
 \tf@toc=\write6
 
 \openout6 = Libro.toc
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
 
-[7]
+[9]
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
- [8
+ [10
 
 ] (./Libro.lof
 LaTeX Info: Redefining \sptext on input line 1.
@@ -1597,32 +1608,32 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lof=\write7
 
 \openout7 = Libro.lof
- [9]
+ [11]
 \openout2 = Unidades/Unidad I.aux
  ("./Unidades/Unidad I.tex"
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [10
+ [12
 
 
-] [11] [12]
+] [13] [14]
 Capítulo 1.
-[13
+[15
 
 ]
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
- [14
+ [16
 
 ]
 Capítulo 2.
-[15]
-<Figuras/Diagramaflechasf.png, id=438, 316.7835pt x 234.8775pt>
+[17]
+<Figuras/Diagramaflechasf.png, id=700, 316.7835pt x 234.8775pt>
 File: Figuras/Diagramaflechasf.png Graphic file (type png)
 <use Figuras/Diagramaflechasf.png>
 Package luatex.def Info: Figuras/Diagramaflechasf.png  used on input line 57.
 (luatex.def)             Requested size: 181.18454pt x 134.33672pt.
-<Figuras/Representacionfunciones.png, id=441, 564.30824pt x 317.38576pt>
+<Figuras/Representacionfunciones.png, id=703, 564.30824pt x 317.38576pt>
 File: Figuras/Representacionfunciones.png Graphic file (type png)
 <use Figuras/Representacionfunciones.png>
 Package luatex.def Info: Figuras/Representacionfunciones.png  used on input lin
@@ -1633,8 +1644,8 @@ Underfull \vbox (badness 2970) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
- [16<./Figuras/Diagramaflechasf.png>]
-<Figuras/Alturadegrafica.png, id=451, 214.401pt x 166.221pt>
+ [18<./Figuras/Diagramaflechasf.png>]
+<Figuras/Alturadegrafica.png, id=713, 214.401pt x 166.221pt>
 File: Figuras/Alturadegrafica.png Graphic file (type png)
 <use Figuras/Alturadegrafica.png>
 Package luatex.def Info: Figuras/Alturadegrafica.png  used on input line 104.
@@ -1644,22 +1655,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 108.
 LaTeX Info: Redefining \% on input line 108.
- [17<./Figuras/Representacionfunciones.png>]
+ [19<./Figuras/Representacionfunciones.png>]
 Missing character: There is no ó (U+00F3) in font cmmi10!
 Missing character: There is no ó (U+00F3) in font cmmi10!
-<Figuras/Funcionlicon.png, id=460, 509.5035pt x 199.947pt>
+<Figuras/Funcionlicon.png, id=722, 509.5035pt x 199.947pt>
 File: Figuras/Funcionlicon.png Graphic file (type png)
 <use Figuras/Funcionlicon.png>
 Package luatex.def Info: Figuras/Funcionlicon.png  used on input line 113.
 (luatex.def)             Requested size: 271.7837pt x 106.65785pt.
-<Figuras/Pruebavertical.png, id=463, 464.33475pt x 185.493pt>
+<Figuras/Pruebavertical.png, id=725, 464.33475pt x 185.493pt>
 File: Figuras/Pruebavertical.png Graphic file (type png)
 <use Figuras/Pruebavertical.png>
 Package luatex.def Info: Figuras/Pruebavertical.png  used on input line 133.
 (luatex.def)             Requested size: 271.7837pt x 108.57664pt.
 LaTeX Info: Redefining \. on input line 137.
 LaTeX Info: Redefining \% on input line 137.
-[18<./Figuras/Alturadegrafica.png><./Figuras/Funcionlicon.png>]
+[20<./Figuras/Alturadegrafica.png><./Figuras/Funcionlicon.png>]
 (C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -1667,35 +1678,35 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 143.
 LaTeX Info: Redefining \. on input line 178.
 LaTeX Info: Redefining \% on input line 178.
-[19<./Figuras/Pruebavertical.png>]
-<Figuras/FunPython.png, id=517, 709.4505pt x 434.8245pt>
+[21<./Figuras/Pruebavertical.png>]
+<Figuras/FunPython.png, id=780, 709.4505pt x 434.8245pt>
 File: Figuras/FunPython.png Graphic file (type png)
 <use Figuras/FunPython.png>
 Package luatex.def Info: Figuras/FunPython.png  used on input line 182.
 (luatex.def)             Requested size: 407.66867pt x 249.86288pt.
 LaTeX Info: Redefining \. on input line 187.
 LaTeX Info: Redefining \% on input line 187.
- [20<./Figuras/FunPython.png>]
+ [22<./Figuras/FunPython.png>]
 Capítulo 3.
-[21
+[23
 
 ]
-<Figuras/Ejercicio1.png, id=533, 293.898pt x 449.88075pt>
+<Figuras/Ejercicio1.png, id=795, 293.898pt x 449.88075pt>
 File: Figuras/Ejercicio1.png Graphic file (type png)
 <use Figuras/Ejercicio1.png>
 Package luatex.def Info: Figuras/Ejercicio1.png  used on input line 233.
 (luatex.def)             Requested size: 271.7837pt x 416.05766pt.
 LaTeX Info: Redefining \. on input line 244.
 LaTeX Info: Redefining \% on input line 244.
- [22<./Figuras/Ejercicio1.png>]
+ [24<./Figuras/Ejercicio1.png>]
 LaTeX Info: Redefining \. on input line 287.
 LaTeX Info: Redefining \% on input line 287.
- [23]
+ [25]
 LaTeX Info: Redefining \. on input line 329.
 LaTeX Info: Redefining \% on input line 329.
- [24]
+ [26]
 Capítulo 4.
-[25
+[27
 
 ]
 
@@ -1704,67 +1715,67 @@ LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
 
 LaTeX Info: Redefining \. on input line 406.
 LaTeX Info: Redefining \% on input line 406.
-[26]
+[28]
 LaTeX Info: Redefining \. on input line 457.
 LaTeX Info: Redefining \% on input line 457.
- [27]
-<Figuras/Newthon1.png, id=679, 594.42075pt x 428.802pt>
+ [29]
+<Figuras/Newthon1.png, id=941, 594.42075pt x 428.802pt>
 File: Figuras/Newthon1.png Graphic file (type png)
 <use Figuras/Newthon1.png>
 Package luatex.def Info: Figuras/Newthon1.png  used on input line 490.
 (luatex.def)             Requested size: 339.7262pt x 245.07397pt.
-<Figuras/Newthon2.png, id=680, 464.937pt x 123.46124pt>
+<Figuras/Newthon2.png, id=942, 464.937pt x 123.46124pt>
 File: Figuras/Newthon2.png Graphic file (type png)
 <use Figuras/Newthon2.png>
 Package luatex.def Info: Figuras/Newthon2.png  used on input line 491.
 (luatex.def)             Requested size: 339.7262pt x 90.21637pt.
 LaTeX Info: Redefining \. on input line 496.
 LaTeX Info: Redefining \% on input line 496.
- [28
+ [30
 Missing character: There is no ✅ (U+2705) in font [lmmono9-regular]:!
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 ]
 LaTeX Info: Redefining \. on input line 496.
 LaTeX Info: Redefining \% on input line 496.
- [29<./Figuras/Newthon1.png><./Figuras/Newthon2.png>]
+ [31<./Figuras/Newthon1.png><./Figuras/Newthon2.png>]
 LaTeX Info: Redefining \. on input line 496.
 LaTeX Info: Redefining \% on input line 496.
- [30
+ [32
 
 ]
 Capítulo 5.
-[31]
+[33]
 LaTeX Info: Redefining \. on input line 578.
 LaTeX Info: Redefining \% on input line 578.
- [32]
+ [34]
 LaTeX Info: Redefining \. on input line 626.
 LaTeX Info: Redefining \% on input line 626.
- [33]
+ [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 674.
 LaTeX Info: Redefining \% on input line 674.
- [34
+ [36
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 Missing character: There is no ✅ (U+2705) in font [lmmono9-regular]:!
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 ]
-<Figuras/Biseccion1.png, id=818, 621.522pt x 483.0045pt>
+<Figuras/Biseccion1.png, id=1080, 621.522pt x 483.0045pt>
 File: Figuras/Biseccion1.png Graphic file (type png)
 <use Figuras/Biseccion1.png>
 Package luatex.def Info: Figuras/Biseccion1.png  used on input line 681.
 (luatex.def)             Requested size: 339.7262pt x 264.01714pt.
-<Figuras/Biseccion2.png, id=819, 442.65375pt x 428.19975pt>
+<Figuras/Biseccion2.png, id=1081, 442.65375pt x 428.19975pt>
 File: Figuras/Biseccion2.png Graphic file (type png)
 <use Figuras/Biseccion2.png>
 Package luatex.def Info: Figuras/Biseccion2.png  used on input line 682.
 (luatex.def)             Requested size: 339.7262pt x 328.64981pt.
 LaTeX Info: Redefining \. on input line 687.
 LaTeX Info: Redefining \% on input line 687.
- [35]
+ [37]
 LaTeX Info: Redefining \. on input line 687.
 LaTeX Info: Redefining \% on input line 687.
- [36<./Figuras/Biseccion1.png><./Figuras/Biseccion2.png>]
+ [38<./Figuras/Biseccion1.png><./Figuras/Biseccion2.png>]
 Capítulo 6.
 
 Overfull \hbox (27.92853pt too wide) in paragraph at lines 709--710
@@ -1777,72 +1788,72 @@ t/10.95 x[]; f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ))$
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37
+ [39
 
 ]
 LaTeX Info: Redefining \. on input line 747.
 LaTeX Info: Redefining \% on input line 747.
 
-[38]
+[40]
 LaTeX Info: Redefining \. on input line 799.
 LaTeX Info: Redefining \% on input line 799.
- [39]
-<Figuras/Secante1.png, id=888, 609.477pt x 489.027pt>
+ [41]
+<Figuras/Secante1.png, id=1151, 609.477pt x 489.027pt>
 File: Figuras/Secante1.png Graphic file (type png)
 <use Figuras/Secante1.png>
 Package luatex.def Info: Figuras/Secante1.png  used on input line 844.
 (luatex.def)             Requested size: 339.7262pt x 272.58472pt.
-<Figuras/Secante2.png, id=889, 557.6835pt x 275.22826pt>
+<Figuras/Secante2.png, id=1152, 557.6835pt x 275.22826pt>
 File: Figuras/Secante2.png Graphic file (type png)
 <use Figuras/Secante2.png>
 Package luatex.def Info: Figuras/Secante2.png  used on input line 845.
 (luatex.def)             Requested size: 339.7262pt x 167.66641pt.
 LaTeX Info: Redefining \. on input line 850.
 LaTeX Info: Redefining \% on input line 850.
- [40
+ [42
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 Missing character: There is no ✅ (U+2705) in font [lmmono9-regular]:!
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 ]
 LaTeX Info: Redefining \. on input line 850.
 LaTeX Info: Redefining \% on input line 850.
- [41<./Figuras/Secante1.png><./Figuras/Secante2.png>]
+ [43<./Figuras/Secante1.png><./Figuras/Secante2.png>]
 LaTeX Info: Redefining \. on input line 850.
 LaTeX Info: Redefining \% on input line 850.
- [42
+ [44
 
 ]
 Capítulo 7.
-[43]
+[45]
 LaTeX Info: Redefining \. on input line 924.
 LaTeX Info: Redefining \% on input line 924.
- [44]
+ [46]
 
 LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
 (Font)              using `TU/phv/m/sl' instead on input line 951.
 
 LaTeX Info: Redefining \. on input line 958.
 LaTeX Info: Redefining \% on input line 958.
-[45]
+[47]
 LaTeX Info: Redefining \. on input line 1002.
 LaTeX Info: Redefining \% on input line 1002.
- [46]
+ [48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 1049.
 LaTeX Info: Redefining \% on input line 1049.
- [47]
-<Figuras/Puntof1.png, id=1039, 533.5935pt x 475.7775pt>
+ [49]
+<Figuras/Puntof1.png, id=1301, 533.5935pt x 475.7775pt>
 File: Figuras/Puntof1.png Graphic file (type png)
 <use Figuras/Puntof1.png>
 Package luatex.def Info: Figuras/Puntof1.png  used on input line 1067.
 (luatex.def)             Requested size: 271.7837pt x 242.34566pt.
-<Figuras/Puntof2.png, id=1040, 436.63126pt x 437.83575pt>
+<Figuras/Puntof2.png, id=1302, 436.63126pt x 437.83575pt>
 File: Figuras/Puntof2.png Graphic file (type png)
 <use Figuras/Puntof2.png>
 Package luatex.def Info: Figuras/Puntof2.png  used on input line 1068.
 (luatex.def)             Requested size: 271.7837pt x 272.53098pt.
-<Figuras/Puntof3.png, id=1041, 407.72325pt x 232.4685pt>
+<Figuras/Puntof3.png, id=1303, 407.72325pt x 232.4685pt>
 File: Figuras/Puntof3.png Graphic file (type png)
 <use Figuras/Puntof3.png>
 Package luatex.def Info: Figuras/Puntof3.png  used on input line 1069.
@@ -1850,17 +1861,17 @@ Package luatex.def Info: Figuras/Puntof3.png  used on input line 1069.
 LaTeX Info: Redefining \. on input line 1074.
 LaTeX Info: Redefining \% on input line 1074.
 
-[48
+[50
 Missing character: There is no ✅ (U+2705) in font [lmmono9-regular]:!
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 ]
 LaTeX Info: Redefining \. on input line 1074.
 LaTeX Info: Redefining \% on input line 1074.
- [49<./Figuras/Puntof1.png><./Figuras/Puntof2.png><./Figuras/Puntof3.png>]
+ [51<./Figuras/Puntof1.png><./Figuras/Puntof2.png><./Figuras/Puntof3.png>]
 LaTeX Info: Redefining \. on input line 1074.
 LaTeX Info: Redefining \% on input line 1074.
 
-[50
+[52
 
 ]
 Capítulo 8.
@@ -1879,25 +1890,25 @@ LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
 
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
- [51]
+ [53]
 LaTeX Info: Redefining \. on input line 1145.
 LaTeX Info: Redefining \% on input line 1145.
 
-[52]
+[54]
 LaTeX Info: Redefining \. on input line 1185.
 LaTeX Info: Redefining \% on input line 1185.
- [53]
+ [55]
 LaTeX Info: Redefining \. on input line 1236.
 LaTeX Info: Redefining \% on input line 1236.
- [54
+ [56
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 ]
-<Figuras/Regula1.png, id=1156, 687.7695pt x 514.92375pt>
+<Figuras/Regula1.png, id=1418, 687.7695pt x 514.92375pt>
 File: Figuras/Regula1.png Graphic file (type png)
 <use Figuras/Regula1.png>
 Package luatex.def Info: Figuras/Regula1.png  used on input line 1262.
 (luatex.def)             Requested size: 271.7837pt x 203.483pt.
-<Figuras/Regula2.png, id=1157, 458.9145pt x 383.63326pt>
+<Figuras/Regula2.png, id=1419, 458.9145pt x 383.63326pt>
 File: Figuras/Regula2.png Graphic file (type png)
 <use Figuras/Regula2.png>
 Package luatex.def Info: Figuras/Regula2.png  used on input line 1263.
@@ -1905,63 +1916,115 @@ Package luatex.def Info: Figuras/Regula2.png  used on input line 1263.
 )
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
- [55
+ [57
 Missing character: There is no ✅ (U+2705) in font [lmmono9-regular]:!
 Missing character: There is no ⚠ (U+26A0) in font [lmmono9-regular]:!
 ]
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
- [56<./Figuras/Regula1.png><./Figuras/Regula2.png>]
+ [58<./Figuras/Regula1.png><./Figuras/Regula2.png>]
 \openout2 = Unidades/Unidad II.aux
  ("./Unidades/Unidad II.tex"
- [57
+ [59
 
 
 
 
-] [58]
+] [60]
 Capítulo 9.
-
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/l
-oadhyph-la.tex UTF-8 Latin hyphenation patterns
-(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/t
-ex/hyph-la.tex)) [59
+[61
 
 ]
-LaTeX Info: Redefining \. on input line 7.
-LaTeX Info: Redefining \% on input line 7.
- [60
-
-]
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
+ [62]
+LaTeX Info: Redefining \. on input line 143.
+LaTeX Info: Redefining \% on input line 143.
+ [63]
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang2.st
+y
+File: lstlang2.sty 2023/02/27 1.9 listings language file
+)
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2023/02/27 1.9 listings language file
+)
+LaTeX Info: Redefining \. on input line 195.
+LaTeX Info: Redefining \% on input line 195.
+[64]
+<Figuras/Gradiente1.png, id=1547, 233.07076pt x 431.211pt>
+File: Figuras/Gradiente1.png Graphic file (type png)
+<use Figuras/Gradiente1.png>
+Package luatex.def Info: Figuras/Gradiente1.png  used on input line 221.
+(luatex.def)             Requested size: 271.7837pt x 502.85016pt.
+<Figuras/Gradiente2.png, id=1548, 513.117pt x 310.761pt>
+File: Figuras/Gradiente2.png Graphic file (type png)
+<use Figuras/Gradiente2.png>
+Package luatex.def Info: Figuras/Gradiente2.png  used on input line 222.
+(luatex.def)             Requested size: 271.7837pt x 164.6077pt.
+LaTeX Info: Redefining \. on input line 228.
+LaTeX Info: Redefining \% on input line 228.
+ [65]
+LaTeX Info: Redefining \. on input line 228.
+LaTeX Info: Redefining \% on input line 228.
+ [66<./Figuras/Gradiente1.png><./Figuras/Gradiente2.png>]
 Capítulo 10.
-[61]
-LaTeX Info: Redefining \. on input line 9.
-LaTeX Info: Redefining \% on input line 9.
- [62
+[67
 
 ]
+Underfull \vbox (badness 2221) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 308.
+LaTeX Info: Redefining \% on input line 308.
+ [68]
+LaTeX Info: Redefining \. on input line 347.
+LaTeX Info: Redefining \% on input line 347.
+
+[69]
+LaTeX Info: Redefining \. on input line 375.
+LaTeX Info: Redefining \% on input line 375.
+ [70]
 Capítulo 11.
-) [63]
+[71
+
+]
+LaTeX Info: Redefining \. on input line 463.
+LaTeX Info: Redefining \% on input line 463.
+ [72]
+LaTeX Info: Redefining \. on input line 507.
+LaTeX Info: Redefining \% on input line 507.
+ [73]
+LaTeX Info: Redefining \. on input line 548.
+LaTeX Info: Redefining \% on input line 548.
+ [74])
+LaTeX Info: Redefining \. on input line 68.
+LaTeX Info: Redefining \% on input line 68.
+ [75]
 \openout2 = Otros/Conclusiones.aux
  (./Otros/Conclusiones.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [64
+ [76
 
 
 
 
-]) [65]
+])
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/loadhyph/l
+oadhyph-la.tex UTF-8 Latin hyphenation patterns
+(C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/tex/generic/hyph-utf8/patterns/t
+ex/hyph-la.tex)) [77]
 LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
- [66
+ [78
 
 
 
-] [67]
+] [79]
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
- [68
+ [80
 
 ]
 
@@ -2012,7 +2075,7 @@ LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
 LaTeX Font Warning: Font shape `TU/phv/m/it' undefined
 (Font)              using `TU/phv/m/sl' instead on input line 75.
 
-[69] (./Libro.aux (./Otros/Caratula.aux)
+[81] (./Libro.aux (./Otros/Caratula.aux)
 LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -2028,22 +2091,22 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `Libro.out' has not changed.
-(rerunfilecheck)             Checksum: D6FB98CEB0BB25895717125C85C4E292;9365.
+(rerunfilecheck)             Checksum: 72FFB05C1B5B839901CB6135D206EA65;18878.
 Package logreq Info: Writing requests to 'Libro.run.xml'.
 
 \openout1 = Libro.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 43215 strings out of 476497
- 932695,1977958 words of node,token memory allocated
- 1593 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 4 glue, 4 kern, 1 glyph, 147 attribute, 70 glue_s
-pec, 111 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:4,2:20661,3:325,4:23113,5:18212,6:122,7:24726,8:32,9:41277,10:
+ 44183 strings out of 476497
+ 932667,1977958 words of node,token memory allocated
+ 1791 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 4 glue, 4 kern, 1 glyph, 213 attribute, 70 glue_s
+pec, 144 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 1:5,2:20626,3:327,4:23177,5:18222,6:122,7:25505,8:47,9:41277,10:
 72,11:1426
- 63516 multiletter control sequences out of 65536+600000
- 63 fonts using 4528935 bytes
+ 64333 multiletter control sequences out of 65536+600000
+ 68 fonts using 4839399 bytes
  91i,9n,95p,868b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lmro
 man8-regular.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/openty
@@ -2058,19 +2121,21 @@ type/public/lm/lmroman17-regular.otf><//?/c:/users/lenovo/appdata/local/programs
 ata/local/programs/miktex/fonts/opentype/public/fontawesome5/fontawesome5free-so
 lid-900.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/pu
 blic/lm/lmroman12-regular.otf><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/LENOVO/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/LENOVO/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/LENOVO/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/LENOVO
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/User
-s/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy9.pfb>
-Output written on Libro.pdf (69 pages, 1319248 bytes).
+ts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/LENOVO/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/LENOVO/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/LENOVO/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/LENOV
+O/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Use
+rs/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb
+><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on Libro.pdf (81 pages, 1522770 bytes).
 
-PDF statistics: 1355 PDF objects out of 1440 (max. 8388607)
- 606 named destinations out of 1000 (max. 131072)
- 704 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1818 PDF objects out of 2073 (max. 8388607)
+ 736 named destinations out of 1000 (max. 131072)
+ 1104 words of extra memory for PDF output out of 10000 (max. 100000000)
 

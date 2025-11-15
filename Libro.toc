@@ -1,57 +1,107 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Introducción}{3}{chapter*.1}%
-\contentsline {chapter}{Índice de Figuras}{9}{chapter*.3}%
-\contentsline {part}{I\hspace {1em}Unidad I}{11}{part.1}%
-\contentsline {chapter}{\numberline {1}Programación Numérica}{13}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Funciones}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Funciones a nuestro alrededor}{15}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Definición de función}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Cuatro formas de representar una función}{16}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Gráficas de funciones}{17}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Gráficas de funciones por localización de puntos}{17}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}La prueba de la recta vertical}{18}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Aplicación}{19}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Restricciones}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Ejemplo}{21}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Fundamento teórico}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Condiciones de convergencia}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Criterio de parada}{26}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Algoritmo del método de Newton-Raphson}{26}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Aplicación del método en Python}{26}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Método de Bisección}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Idea fundamental del método}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Criterios de parada}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Ventajas del método}{32}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Desventajas}{32}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Aplicación del método en Python}{32}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Método de la Secante}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Fundamento teórico}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Interpretación geométrica}{37}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Convergencia}{38}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Ventajas y limitaciones}{38}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Aplicación del método en Python}{38}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{43}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Definición y formulación básica}{43}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Condición de convergencia}{43}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Orden de convergencia}{44}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Errores y criterios de parada}{44}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Ventajas del método}{44}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Desventajas}{45}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Interpretación gráfica}{45}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Conclusión}{45}{section.7.8}%
-\contentsline {section}{\numberline {7.9}Aplicación del método en Python}{46}{section.7.9}%
-\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{51}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Idea fundamental del método}{51}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Actualización del intervalo}{51}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Convergencia}{52}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Criterios de parada}{52}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Ventajas y desventajas}{52}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Resumen conceptual}{53}{section.8.6}%
-\contentsline {section}{\numberline {8.7}Aplicación del método en Python}{53}{section.8.7}%
-\contentsline {part}{II\hspace {1em}Unidad II}{57}{part.2}%
-\contentsline {chapter}{\numberline {9}Gradiente de una función}{59}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{61}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Interpolación}{63}{chapter.11}%
-\contentsline {chapter}{Conclusiones}{65}{chapter*.4}%
-\contentsline {chapter}{Bibliografía}{67}{chapter*.5}%
+\contentsline {chapter}{Índice de Figuras}{11}{chapter*.3}%
+\contentsline {part}{I\hspace {1em}Unidad I}{13}{part.1}%
+\contentsline {chapter}{\numberline {1}Programación Numérica}{15}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Funciones}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Funciones a nuestro alrededor}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Definición de función}{17}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Cuatro formas de representar una función}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Gráficas de funciones}{19}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Gráficas de funciones por localización de puntos}{19}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}La prueba de la recta vertical}{20}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Aplicación}{21}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Restricciones}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ejemplo}{23}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Fundamento teórico}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Condiciones de convergencia}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Criterio de parada}{28}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Algoritmo del método de Newton-Raphson}{28}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Aplicación del método en Python}{28}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Método de Bisección}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Idea fundamental del método}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Criterios de parada}{33}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Ventajas del método}{34}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Desventajas}{34}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Aplicación del método en Python}{34}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Método de la Secante}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Fundamento teórico}{39}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Interpretación geométrica}{39}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Convergencia}{40}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Ventajas y limitaciones}{40}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Aplicación del método en Python}{40}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Método de Punto Fijo}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Definición y formulación básica}{45}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Condición de convergencia}{45}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Orden de convergencia}{46}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Errores y criterios de parada}{46}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Ventajas del método}{46}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Desventajas}{47}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Interpretación gráfica}{47}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Conclusión}{47}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Aplicación del método en Python}{48}{section.7.9}%
+\contentsline {chapter}{\numberline {8}Método de Regula Falsi}{53}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Idea fundamental del método}{53}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Actualización del intervalo}{53}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Convergencia}{54}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Criterios de parada}{54}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Ventajas y desventajas}{54}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Resumen conceptual}{55}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Aplicación del método en Python}{55}{section.8.7}%
+\contentsline {part}{II\hspace {1em}Unidad II}{59}{part.2}%
+\contentsline {chapter}{\numberline {9}Gradiente de una función}{61}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Definición}{61}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Interpretación geométrica}{61}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Derivada direccional}{62}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Propiedades fundamentales}{62}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Gradiente y optimización}{62}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Aplicaciones}{63}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Física clásica y electromagnetismo.}{63}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Ingeniería y modelado.}{63}{subsection.9.6.2}%
+\contentsline {subsection}{\numberline {9.6.3}Aprendizaje automático y regresión.}{63}{subsection.9.6.3}%
+\contentsline {subsection}{\numberline {9.6.4}Economía y análisis de funciones multivariables.}{63}{subsection.9.6.4}%
+\contentsline {subsection}{\numberline {9.6.5}Métodos numéricos.}{63}{subsection.9.6.5}%
+\contentsline {section}{\numberline {9.7}Aplicación de la gradiente en R}{64}{section.9.7}%
+\contentsline {chapter}{\numberline {10}Diferenciación Numérica}{67}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Introducción}{67}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Fundamento teórico}{67}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Series de Taylor}{67}{subsection.10.2.1}%
+\contentsline {section}{\numberline {10.3}Fórmulas de diferencias finitas}{67}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Diferencia hacia adelante}{67}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Diferencia hacia atrás}{68}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}Diferencia centrada}{68}{subsection.10.3.3}%
+\contentsline {section}{\numberline {10.4}Aproximaciones para derivadas de orden superior}{68}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Segunda derivada}{68}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Derivadas superiores}{69}{subsection.10.4.2}%
+\contentsline {section}{\numberline {10.5}Análisis del error}{69}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}Error de truncamiento}{69}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}Error de redondeo}{69}{subsection.10.5.2}%
+\contentsline {section}{\numberline {10.6}Aplicaciones de la diferenciación numérica}{69}{section.10.6}%
+\contentsline {subsection}{\numberline {10.6.1}Solución de ecuaciones diferenciales}{70}{subsection.10.6.1}%
+\contentsline {subsection}{\numberline {10.6.2}Optimización}{70}{subsection.10.6.2}%
+\contentsline {subsection}{\numberline {10.6.3}Procesamiento de datos y señales}{70}{subsection.10.6.3}%
+\contentsline {section}{\numberline {10.7}Conclusiones}{70}{section.10.7}%
+\contentsline {chapter}{\numberline {11}Interpolación}{71}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Introducción}{71}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Fundamentos teóricos}{71}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Definición del problema}{71}{subsection.11.2.1}%
+\contentsline {section}{\numberline {11.3}Interpolación polinómica}{71}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Polinomio interpolante}{71}{subsection.11.3.1}%
+\contentsline {section}{\numberline {11.4}Método de interpolación de Lagrange}{72}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Polinomio de Lagrange}{72}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Error en el polinomio de Lagrange}{72}{subsection.11.4.2}%
+\contentsline {section}{\numberline {11.5}Interpolación por diferencias divididas de Newton}{72}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Diferencias divididas}{72}{subsection.11.5.1}%
+\contentsline {subsection}{\numberline {11.5.2}Polinomio de Newton}{73}{subsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.5.3}Error del polinomio de Newton}{73}{subsection.11.5.3}%
+\contentsline {section}{\numberline {11.6}Problemas del polinomio global}{73}{section.11.6}%
+\contentsline {subsection}{\numberline {11.6.1}Fenómeno de Runge}{73}{subsection.11.6.1}%
+\contentsline {subsection}{\numberline {11.6.2}Crecimiento del error para grados altos}{73}{subsection.11.6.2}%
+\contentsline {section}{\numberline {11.7}Interpolación por tramos: splines}{74}{section.11.7}%
+\contentsline {subsection}{\numberline {11.7.1}Concepto de spline}{74}{subsection.11.7.1}%
+\contentsline {subsection}{\numberline {11.7.2}Spline cúbico}{74}{subsection.11.7.2}%
+\contentsline {section}{\numberline {11.8}Aplicaciones de la interpolación}{74}{section.11.8}%
+\contentsline {section}{\numberline {11.9}Conclusiones}{75}{section.11.9}%
+\contentsline {chapter}{Conclusiones}{77}{chapter*.4}%
+\contentsline {chapter}{Bibliografía}{79}{chapter*.5}%

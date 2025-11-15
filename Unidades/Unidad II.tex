@@ -2,9 +2,550 @@
 
 \chapter{Gradiente de una función}
 
-\lipsum[1-3]
+La gradiente es uno de los conceptos fundamentales del cálculo multivariable y del análisis numérico. Representa la dirección de mayor crecimiento de una función escalar y constituye una herramienta esencial en optimización, análisis de modelos matemáticos y métodos iterativos numéricos \parencite{anton2012, stewart2016}. Su aplicación se extiende a la física, ingeniería, economía, aprendizaje automático y solución de ecuaciones diferenciales \parencite{riley2006, burden2016}.
+
+\section{Definición}
+
+Sea una función escalar de varias variables
+\[
+f(x_1, x_2, \dots, x_n),
+\]
+que es diferenciable en un punto del dominio. La \textbf{gradiente} de $f$, denotada por $\nabla f$ o $\mathrm{grad}\, f$, se define como el vector cuyas componentes son las derivadas parciales primeras de $f$:
+
+\[
+\nabla f(x_1, \ldots, x_n)
+=
+\left(
+\frac{\partial f}{\partial x_1},
+\frac{\partial f}{\partial x_2},
+\ldots,
+\frac{\partial f}{\partial x_n}
+\right).
+\]
+
+Este vector constituye una generalización natural del concepto de derivada en una dimensión, extendiéndolo a espacios de dimensión superior \parencite{anton2012, sullivan2004}.
+
+\section{Interpretación geométrica}
+
+El vector gradiente posee una interpretación geométrica fundamental:  
+\[
+\nabla f(\mathbf{x}) \; \text{apunta en la dirección de máximo crecimiento de } f.
+\]
+
+Además:
+
+\begin{itemize}
+	\item La magnitud $\|\nabla f\|$ indica la tasa máxima de cambio.
+	\item Es perpendicular (normal) a las curvas (o superficies) de nivel de $f$, es decir,
+	\[
+	f(x_1, x_2, \dots, x_n) = c.
+	\]
+\end{itemize}
+
+Esta propiedad es clave en optimización y geometría diferencial, donde el análisis de superficies y sus normales es crucial \parencite{riley2006, anton2012}.
+
+\section{Derivada direccional}
+
+La gradiente se relaciona directamente con la \textbf{derivada direccional}. Para un vector unitario $\mathbf{u}$, la derivada direccional de $f$ en la dirección de $\mathbf{u}$ se define como:
+
+\[
+D_{\mathbf{u}} f(\mathbf{x})
+=
+\nabla f(\mathbf{x}) \cdot \mathbf{u}.
+\]
+
+Esta expresión demuestra que la gradiente actúa como ``coeficiente de cambio'' de la función en cualquier dirección dada. De esta fórmula se deduce que $D_{\mathbf{u}} f$ es máximo cuando $\mathbf{u}$ es paralelo a $\nabla f$, lo que reafirma la interpretación geométrica \parencite{anton2012, riley2006}.
+
+\section{Propiedades fundamentales}
+
+\begin{itemize}
+	\item \textbf{Linealidad:}
+	\[
+	\nabla (af + bg) = a \nabla f + b \nabla g.
+	\]
+	\item \textbf{Producto:}
+	\[
+	\nabla(fg) = f \nabla g + g \nabla f.
+	\]
+	\item \textbf{Cociente:}
+	\[
+	\nabla\left( \frac{f}{g} \right)
+	=
+	\frac{g \nabla f - f \nabla g}{g^2}.
+	\]
+	\item \textbf{Composición (regla de la cadena):}
+	\[
+	\nabla (f \circ \mathbf{g}) =
+	J_{\mathbf{g}}^{T} \nabla f(\mathbf{g}(x)),
+	\]
+	donde $J_{\mathbf{g}}$ es la matriz Jacobiana.
+\end{itemize}
+
+Estas propiedades son esenciales en el diseño de algoritmos numéricos de optimización y métodos iterativos \parencite{burden2016, chapra2015}.
+
+\section{Gradiente y optimización}
+
+El gradiente es el pilar de numerosos métodos de optimización, tanto teóricos como computacionales:
+
+\begin{itemize}
+	\item \textbf{Condición de óptimo:}  
+	Un punto crítico $\mathbf{x}^*$ cumple
+	\[
+	\nabla f(\mathbf{x}^*) = \mathbf{0}.
+	\]
+	\item \textbf{Método de descenso del gradiente:}  
+	El movimiento en dirección opuesta al gradiente,
+	\[
+	\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha_k \nabla f(\mathbf{x}_k),
+	\]
+	permite aproximar mínimos locales de manera iterativa.
+	\item \textbf{Método de Newton multivariable:}  
+	Utiliza gradiente y Hessiana:
+	\[
+	\mathbf{x}_{k+1} =
+	\mathbf{x}_k
+	- H_f^{-1}(\mathbf{x}_k)
+	\nabla f(\mathbf{x}_k).
+	\]
+\end{itemize}
+
+Estos métodos son fundamentales en ingeniería, estadística, ciencia de datos y aprendizaje automático \parencite{burden2016, chapra2015, riley2006}.
+
+\section{Aplicaciones}
+
+La gradiente aparece de forma natural en numerosas áreas:
+
+\subsection{Física clásica y electromagnetismo.}
+La fuerza conservativa se relaciona mediante:
+\[
+\mathbf{F} = - \nabla U,
+\]
+donde $U$ es la energía potencial \parencite{riley2006}.
+
+\subsection{Ingeniería y modelado.}
+Gradientes se utilizan en:
+\begin{itemize}
+	\item Modelos térmicos (flujo de calor).
+	\item Dinámica de fluidos.
+	\item Elasticidad de materiales.
+	\item Procesos de control.
+\end{itemize}
+
+\subsection{Aprendizaje automático y regresión.}
+Los algoritmos de entrenamiento, como regresión lineal, redes neuronales y SVM, utilizan métodos basados en gradiente para minimizar funciones de costo.
+
+\subsection{Economía y análisis de funciones multivariables.}
+El gradiente describe sensibilidades o tasas de variación respecto a variables económicas, como producción, precios o utilidades \parencite{stewart2016}.
+
+\subsection{Métodos numéricos.}
+En métodos iterativos para resolver ecuaciones no lineales y optimización se requiere calcular gradientes en cada iteración \parencite{burden2016, chapra2015}.
+
+\section{Aplicación de la gradiente en R}
+
+El siguiente código en R simula el proceso del gradiente descendente para la función \( f(x) = x^2 \), cuya derivada es \( f'(x) = 2x \).  
+Se observa cómo los valores de \( x \) van disminuyendo gradualmente hasta aproximarse al punto mínimo en \( x = 0 \).
+
+\begin{rcode}
+# ------------------------------------------------------------
+# Simulación y gráfico de f(x), f'(x) y gradiente en R
+# grad guarda el "nuevo" valor de x: x(i) - n * f'(x(i))
+# ------------------------------------------------------------
+
+# Parámetro n
+n <- 0.01
+
+# Definimos la función f(x) = x^2 y su derivada f'(x) = 2x
+f <- function(x) x^2
+f_deriv <- function(x) 2 * x
+
+# Valor inicial y número de iteraciones
+x0 <- 3
+iter <- 21
+
+# Vectores vacíos
+x <- numeric(iter)
+fx <- numeric(iter)
+fpx <- numeric(iter)
+grad <- numeric(iter)
+
+# Primer valor
+x[1] <- x0
+
+# Bucle de cálculo
+for (i in 1:iter) {
+	fx[i]  <- f(x[i])
+	fpx[i] <- f_deriv(x[i])
+	grad[i] <- x[i] - n * fpx[i]
+	if (i < iter) {
+		x[i + 1] <- grad[i]
+	}
+}
+
+# Crear tabla
+tabla <- data.frame(
+xo  = x,
+fx  = fx,
+fpx = fpx,
+grad = grad
+)
+print(tabla)
+
+# Gráfico con ggplot2
+if(!require(ggplot2)) install.packages("ggplot2", repos = "https://cloud.r-project.org")
+if(!require(tidyr))  install.packages("tidyr",  repos = "https://cloud.r-project.org")
+
+library(ggplot2)
+library(tidyr)
+
+datos_long <- tabla |>
+pivot_longer(cols = c(fx, fpx, grad),
+names_to = "variable",
+values_to = "valor")
+
+ggplot(datos_long, aes(x = xo, y = valor, color = variable)) +
+geom_point(size = 2) +
+geom_line(linewidth = 1) +
+scale_color_manual(values = c("blue", "red", "green"),
+labels = c("f(x)", "f'(x)", "gradiente (x actualizado)")) +
+labs(title = "Comparación de f(x), f'(x) y gradiente (x actualizado)",
+x = "x",
+y = "Valor",
+color = "Variable") +
+theme_minimal(base_size = 13)
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Gradiente1.png}
+	\includegraphics[width=0.60\linewidth]{Figuras/Gradiente2.png}
+	\caption{Gradiente de una función en R}
+	\label{Gradiente}
+	
+\end{figure}
 
 \chapter{Diferenciación Numérica}
 
+\section{Introducción}
+
+La diferenciación numérica es una herramienta fundamental en el análisis numérico y en la computación científica. Su objetivo es aproximar derivadas de funciones cuando no es posible obtenerlas de manera analítica, o cuando la función se conoce únicamente a través de datos discretos \parencite{burden2016, chapra2015}. Este enfoque es ampliamente utilizado en ingeniería, física, análisis de datos, modelos matemáticos aplicados y simulaciones computacionales.
+
+El problema central consiste en aproximar derivadas mediante expresiones que utilizan valores de la función evaluados en puntos cercanos. Dichas expresiones se obtienen mediante la expansión en series de Taylor y constituyen la base de los métodos de diferencias finitas \parencite{anton2012, riley2006}.
+
+\section{Fundamento teórico}
+
+\subsection{Series de Taylor}
+
+Sea $f$ una función suficientemente diferenciable en un intervalo que contiene el punto $x$. La expansión de Taylor alrededor de $x$ permite escribir:
+
+\[
+f(x+h) = f(x) + h f'(x) + \frac{h^2}{2} f''(x)
++ \frac{h^3}{6} f^{(3)}(x) + \cdots,
+\]
+
+\[
+f(x-h) = f(x) - h f'(x) + \frac{h^2}{2} f''(x)
+- \frac{h^3}{6} f^{(3)}(x) + \cdots.
+\]
+
+Estas expresiones permiten deducir fórmulas para aproximar derivadas y analizar el error local de truncamiento asociado a cada aproximación \parencite{burden2016, atkinson2009}.
+
+\section{Fórmulas de diferencias finitas}
+
+Las fórmulas para aproximar derivadas se clasifican según la manera en que utilizan los valores de la función.
+
+\subsection{Diferencia hacia adelante}
+
+Usando la expansión de Taylor se obtiene la fórmula:
+
+\[
+f'(x) \approx \frac{f(x+h) - f(x)}{h},
+\]
+
+con un error dado por:
+
+\[
+E = O(h).
+\]
+
+Esta aproximación es de primer orden y suele utilizarse por su simplicidad computacional, aunque es menos precisa que otras alternativas \parencite{burden2016, chapra2015}.
+
+\subsection{Diferencia hacia atrás}
+
+De manera análoga, se obtiene:
+
+\[
+f'(x) \approx \frac{f(x) - f(x-h)}{h},
+\]
+
+con el mismo error $O(h)$. Esta fórmula se utiliza cuando la evaluación hacia adelante no está disponible, como en métodos que avanzan en el tiempo y solo tienen datos previos \parencite{chapra2015}.
+
+\subsection{Diferencia centrada}
+
+Restando las expansiones de $f(x+h)$ y $f(x-h)$ se obtiene:
+
+\[
+f'(x) \approx \frac{f(x+h) - f(x-h)}{2h},
+\]
+
+con un error:
+
+\[
+E = O(h^2).
+\]
+
+Esta fórmula es más precisa porque utiliza información simétrica alrededor de $x$. Es ampliamente preferida en aplicaciones científicas donde se busca alta precisión \parencite{anton2012, riley2006}.
+
+\section{Aproximaciones para derivadas de orden superior}
+
+\subsection{Segunda derivada}
+
+Sumando las expansiones de Taylor se obtiene:
+
+\[
+f''(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2},
+\]
+
+con error:
+
+\[
+E = O(h^2).
+\]
+
+Esta expresión es fundamental en la solución numérica de ecuaciones diferenciales, problemas de vibraciones, transferencia de calor y modelos físicos discretizados \parencite{riley2006, chapra2015}.
+
+\subsection{Derivadas superiores}
+
+Usando combinaciones de series de Taylor o matrices de diferencias finitas, es posible obtener fórmulas generales para derivadas de orden superior. Estas aproximaciones suelen presentar errores más sensibles al tamaño de paso y requieren mayor precisión numérica \parencite{burden2016, atkinson2009}.
+
+\section{Análisis del error}
+
+\subsection{Error de truncamiento}
+
+El error de truncamiento proviene de ignorar términos de orden superior en la serie de Taylor. Para una fórmula dada, el orden del método indica cómo disminuye el error cuando $h$ se hace más pequeño. Por ejemplo:
+
+\begin{itemize}
+	\item Diferencia hacia adelante: $O(h)$
+	\item Diferencia centrada: $O(h^2)$
+	\item Segunda derivada centrada: $O(h^2)$
+\end{itemize}
+
+El análisis de error es esencial para comprender la estabilidad y precisión de los métodos numéricos \parencite{atkinson2009, burden2016}.
+
+\subsection{Error de redondeo}
+
+Cuando $h$ es demasiado pequeño, el error por cancelación y redondeo puede aumentar significativamente debido a las limitaciones de la aritmética de punto flotante. Esto genera un equilibrio óptimo entre reducir $h$ y mantener un nivel adecuado de estabilidad numérica \parencite{press2007, chapra2015}.
+
+\section{Aplicaciones de la diferenciación numérica}
+
+\subsection{Solución de ecuaciones diferenciales}
+
+Las discretizaciones basadas en derivadas numéricas se utilizan en:
+
+\begin{itemize}
+	\item Ecuaciones diferenciales ordinarias (EDO).
+	\item Ecuaciones diferenciales parciales (EDP).
+	\item Modelos de dinámica de fluidos, calor, ondas y elasticidad.
+\end{itemize}
+
+Estas técnicas permiten transformar problemas continuos en sistemas algebraicos manejables computacionalmente \parencite{riley2006, press2007}.
+
+\subsection{Optimización}
+
+Los métodos de optimización requieren derivadas para estimar direcciones de búsqueda, calcular gradientes y aproximar Hessianas. En muchos casos se emplean derivadas numéricas cuando la función no es diferenciable analíticamente \parencite{burden2016}.
+
+\subsection{Procesamiento de datos y señales}
+
+En análisis de datos discretos se utilizan derivadas numéricas para:
+
+\begin{itemize}
+	\item detectar cambios bruscos,
+	\item hallar picos en señales,
+	\item calcular tasas de crecimiento,
+	\item aproximar tendencias locales.
+\end{itemize}
+
+Estas aplicaciones son comunes en ingeniería, finanzas y ciencia experimental.
+
+\section{Conclusiones}
+
+La diferenciación numérica constituye una herramienta indispensable en las matemáticas aplicadas y la ingeniería. Su fundamento en series de Taylor, su flexibilidad en el uso de datos discretos y su integración con métodos de simulación y optimización la convierten en un componente esencial de la computación científica moderna. Su correcta aplicación requiere comprender tanto el comportamiento del error como la estabilidad de las fórmulas de aproximación \parencite{burden2016, chapra2015, atkinson2009}.
+
 \chapter{Interpolación}
 
+\section{Introducción}
+
+La interpolación es una técnica fundamental del análisis numérico cuyo objetivo es construir una función que pase exactamente por un conjunto de puntos conocidos. A partir de datos discretos, se busca obtener una función aproximante que permita estimar valores intermedios, suavizar información o servir como base para futuros cálculos numéricos \parencite{burden2016, chapra2015}.
+
+La interpolación es ampliamente utilizada en ingeniería, computación científica, procesamiento de datos, ciencias naturales, economía y muchas otras áreas donde los datos experimentales o simulados son comunes. Su fundamento matemático se basa en la existencia de un polinomio único de grado menor o igual a $n$ que pasa por $n+1$ puntos distintos \parencite{anton2012}.
+
+\section{Fundamentos teóricos}
+
+\subsection{Definición del problema}
+
+Dado un conjunto de datos:
+
+\[
+(x_0, y_0), \; (x_1, y_1), \; \dots, \; (x_n, y_n)
+\]
+
+donde todos los $x_i$ son distintos, se desea encontrar una función $P(x)$ tal que:
+
+\[
+P(x_i) = y_i, \qquad i = 0,1,\dots,n.
+\]
+
+El tipo de función más comúnmente utilizado es un **polinomio interpolante**, debido a sus propiedades analíticas y su simplicidad computacional \parencite{atkinson2009}.
+
+\section{Interpolación polinómica}
+
+\subsection{Polinomio interpolante}
+
+Existe un único polinomio de grado a lo sumo $n$ que interpola los $n+1$ puntos dados. Este resultado se conoce como el *Teorema de Interpolación Polinómica* \parencite{burden2016}.
+
+Existen varias formas de construir este polinomio, cada una con ventajas computacionales específicas.
+
+\section{Método de interpolación de Lagrange}
+
+\subsection{Polinomio de Lagrange}
+
+El polinomio de Lagrange se construye como:
+
+\[
+P(x) = \sum_{i=0}^n y_i L_i(x),
+\]
+
+donde:
+
+\[
+L_i(x) = \prod_{\substack{j=0 \\ j\neq i}}^{n} \frac{x - x_j}{x_i - x_j}.
+\]
+
+Cada $L_i(x)$ es un polinomio base que vale 1 en $x=x_i$ y 0 en los demás nodos.
+
+Este método es útil teóricamente y tiene gran valor conceptual, aunque computacionalmente no es el más eficiente cuando se añaden nuevos puntos \parencite{burden2016, riley2006}.
+
+\subsection{Error en el polinomio de Lagrange}
+
+El error de interpolación está dado por la expresión:
+
+\[
+f(x) - P(x) =
+\frac{f^{(n+1)}(\xi)}{(n+1)!}
+\prod_{i=0}^n (x - x_i),
+\]
+
+para algún $\xi$ en el intervalo que contiene los nodos.  
+Este resultado permite analizar cómo la distancia entre nodos y el grado del polinomio afectan la precisión \parencite{burden2016}.
+
+\section{Interpolación por diferencias divididas de Newton}
+
+\subsection{Diferencias divididas}
+
+Las diferencias divididas son definidas recursivamente como:
+
+\[
+f[x_i] = y_i,
+\]
+
+\[
+f[x_i, x_{i+1}] = \frac{f[x_{i+1}] - f[x_i]}{x_{i+1} - x_i},
+\]
+
+\[
+f[x_i, x_{i+1}, x_{i+2}] = 
+\frac{f[x_{i+1}, x_{i+2}] - f[x_i, x_{i+1}]}{x_{i+2} - x_i},
+\]
+
+y así sucesivamente.
+
+\subsection{Polinomio de Newton}
+
+El polinomio interpolante toma la forma:
+
+\[
+P(x) = a_0 + a_1 (x-x_0) + a_2 (x-x_0)(x-x_1)
++ \cdots + a_n \prod_{i=0}^{n-1} (x-x_i),
+\]
+
+donde los coeficientes $a_k$ son diferencias divididas:
+
+\[
+a_k = f[x_0, x_1, \dots, x_k].
+\]
+
+Esta formulación permite actualizar el polinomio fácilmente cuando se agrega un nuevo punto, lo cual la vuelve más eficiente que Lagrange en aplicaciones prácticas \parencite{chapra2015, burden2016}.
+
+\subsection{Error del polinomio de Newton}
+
+El error del polinomio de Newton coincide con el de Lagrange, pues ambos representan el mismo polinomio de interpolación:
+
+\[
+f(x) - P(x) =
+\frac{f^{(n+1)}(\xi)}{(n+1)!}
+\prod_{i=0}^{n} (x - x_i).
+\]
+
+\section{Problemas del polinomio global}
+
+\subsection{Fenómeno de Runge}
+
+Cuando se utilizan muchos puntos igualmente espaciados, el polinomio interpolante puede presentar oscilaciones significativas en los extremos del intervalo. Este comportamiento se conoce como el *fenómeno de Runge* y constituye una limitación importante de la interpolación polinómica global \parencite{atkinson2009, cheney2009}.
+
+\subsection{Crecimiento del error para grados altos}
+
+El error tiende a aumentar rápidamente cuando se incrementa el grado del polinomio debido a:
+
+\begin{itemize}
+	\item oscilaciones del polinomio,
+	\item mala condición numérica,
+	\item aumento de la magnitud de los términos del error.
+\end{itemize}
+
+Por este motivo, en muchas aplicaciones se prefiere dividir el intervalo en partes más pequeñas \parencite{burden2016}.
+
+\section{Interpolación por tramos: splines}
+
+\subsection{Concepto de spline}
+
+Un *spline* es una función definida por tramos, donde cada tramo es típicamente un polinomio de bajo grado (por lo general grado 3). Su objetivo es evitar las oscilaciones del polinomio global manteniendo a la vez alta suavidad y precisión \parencite{press2007}.
+
+\subsection{Spline cúbico}
+
+El spline cúbico satisface:
+
+\[
+S_i(x_i) = y_i, \qquad S_i(x_{i+1}) = y_{i+1},
+\]
+
+y se impone que la función sea:
+
+\begin{itemize}
+	\item continua,
+	\item con derivada primera continua,
+	\item con derivada segunda continua,
+\end{itemize}
+
+en cada nodo.
+
+Los splines son ampliamente utilizados en gráficos por computadora, diseño asistido por computadora, procesamiento de señales y simulaciones científicas \parencite{press2007, chapra2015}.
+
+\section{Aplicaciones de la interpolación}
+
+La interpolación es esencial en numerosas áreas:
+
+\begin{itemize}
+	\item reconstrucción de funciones a partir de datos discretos,
+	\item procesamiento de señales,
+	\item modelado y simulación numérica,
+	\item gráficos y animación por computadora,
+	\item soluciones aproximadas de ecuaciones diferenciales,
+	\item generación de funciones suaves para análisis y optimización.
+\end{itemize}
+
+En ingeniería, por ejemplo, se utiliza para calibrar instrumentos, construir curvas de rendimiento o estimar valores no medidos experimentalmente \parencite{chapra2015, burden2016}.
+
+\section{Conclusiones}
+
+La interpolación constituye una herramienta esencial para el análisis de datos y la aproximación de funciones. Los métodos clásicos como Lagrange y Newton proporcionan una base sólida, mientras que los splines ofrecen mayor estabilidad y suavidad. La elección del método depende del número de puntos, la distribución de los mismos y la precisión requerida \parencite{burden2016, atkinson2009}.
