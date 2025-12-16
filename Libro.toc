@@ -103,5 +103,22 @@
 \contentsline {subsection}{\numberline {11.7.2}Spline cúbico}{74}{subsection.11.7.2}%
 \contentsline {section}{\numberline {11.8}Aplicaciones de la interpolación}{74}{section.11.8}%
 \contentsline {section}{\numberline {11.9}Conclusiones}{75}{section.11.9}%
-\contentsline {chapter}{Conclusiones}{77}{chapter*.4}%
-\contentsline {chapter}{Bibliografía}{79}{chapter*.5}%
+\contentsline {chapter}{\numberline {12}Valores y Vectores Propios}{77}{chapter.12}%
+\contentsline {section}{\numberline {12.1} ¿Qué son y por qué importan?}{77}{section.12.1}%
+\contentsline {section}{\numberline {12.2}La transformación fundamental}{77}{section.12.2}%
+\contentsline {subsubsection}{Interpretación geométrica}{78}{subsubsection*.4}%
+\contentsline {section}{\numberline {12.3}Proceso de cálculo}{78}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Paso 1: La ecuación característica}{79}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}Paso 2: Cálculo de los valores propios ($\lambda $)}{79}{subsection.12.3.2}%
+\contentsline {subsection}{\numberline {12.3.3}Paso 3: Cálculo de los vectores propios ($\mathbf {v}$)}{80}{subsection.12.3.3}%
+\contentsline {section}{\numberline {12.4}Ejemplo guiado}{80}{section.12.4}%
+\contentsline {subsection}{\numberline {12.4.1}2. Polinomio característico}{80}{subsection.12.4.1}%
+\contentsline {section}{\numberline {12.5}Propiedades y diagonalización}{81}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}Independencia lineal}{82}{subsection.12.5.1}%
+\contentsline {subsection}{\numberline {12.5.2}El teorema de diagonalización}{82}{subsection.12.5.2}%
+\contentsline {subsection}{\numberline {12.5.3}Aplicación: Potencia de matrices}{82}{subsection.12.5.3}%
+\contentsline {section}{\numberline {12.6}Implementación en R}{83}{section.12.6}%
+\contentsline {subsection}{\numberline {12.6.1}Explicación del código}{83}{subsection.12.6.1}%
+\contentsline {subsection}{\numberline {12.6.2}Visualización de resultados}{84}{subsection.12.6.2}%
+\contentsline {chapter}{Conclusiones}{85}{chapter*.5}%
+\contentsline {chapter}{Bibliografía}{87}{section*.6}%

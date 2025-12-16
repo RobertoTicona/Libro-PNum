@@ -119,7 +119,6 @@
       \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -132,7 +131,7 @@
       \field{year}{2011}
     \endentry
     \entry{burden2016}{book}{}
-      \name{author}{2}{}{%
+      \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=087f2271a0786e7c8db8fd33785aed18}{%
            family={Burden},
            familyi={B\bibinitperiod},
@@ -145,6 +144,12 @@
            given={J.\bibnamedelimi Douglas},
            giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
            givenun=0}}%
+        {{un=0,uniquepart=base,hash=11997aae677e6481e19bb46513bcc504}{%
+           family={Burden},
+           familyi={B\bibinitperiod},
+           given={Annette\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
       }
       \list{location}{1}{%
         {México D.F.}%
@@ -152,13 +157,12 @@
       \list{publisher}{1}{%
         {Cengage Learning}%
       }
-      \strng{namehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{fullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{bibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{2}
+      \strng{namehash}{cac995d58d3d31a9610e1ae9d413b1b0}
+      \strng{fullhash}{e719a6e443b092afa3205d3e8522b075}
+      \strng{bibnamehash}{e719a6e443b092afa3205d3e8522b075}
+      \strng{authorbibnamehash}{e719a6e443b092afa3205d3e8522b075}
+      \strng{authornamehash}{cac995d58d3d31a9610e1ae9d413b1b0}
+      \strng{authorfullhash}{e719a6e443b092afa3205d3e8522b075}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -425,6 +429,38 @@
       \field{labeltitlesource}{title}
       \field{edition}{7}
       \field{title}{Precálculo: Matemáticas para el Cálculo}
+      \field{year}{2016}
+    \endentry
+    \entry{strang2016}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=93733dfde0c47db226efad798ab3b662}{%
+           family={Strang},
+           familyi={S\bibinitperiod},
+           given={Gilbert},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Wellesley-Cambridge Press}%
+      }
+      \strng{namehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{fullhash}{93733dfde0c47db226efad798ab3b662}
+      \strng{bibnamehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{authorbibnamehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{authornamehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{authorfullhash}{93733dfde0c47db226efad798ab3b662}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5th}
+      \field{title}{Introduction to Linear Algebra}
       \field{year}{2016}
     \endentry
     \entry{suli2003}{book}{}
@@ -594,7 +630,6 @@
       \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
       \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{1}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -607,7 +642,7 @@
       \field{year}{2011}
     \endentry
     \entry{burden2016}{book}{}
-      \name{author}{2}{}{%
+      \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=087f2271a0786e7c8db8fd33785aed18}{%
            family={Burden},
            familyi={B\bibinitperiod},
@@ -620,6 +655,12 @@
            given={J.\bibnamedelimi Douglas},
            giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
            givenun=0}}%
+        {{un=0,uniquepart=base,hash=11997aae677e6481e19bb46513bcc504}{%
+           family={Burden},
+           familyi={B\bibinitperiod},
+           given={Annette\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
       }
       \list{location}{1}{%
         {México D.F.}%
@@ -627,13 +668,12 @@
       \list{publisher}{1}{%
         {Cengage Learning}%
       }
-      \strng{namehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{fullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{bibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorbibnamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authornamehash}{30f50a4be86ef6852f9a742a7e344186}
-      \strng{authorfullhash}{30f50a4be86ef6852f9a742a7e344186}
-      \field{extraname}{2}
+      \strng{namehash}{cac995d58d3d31a9610e1ae9d413b1b0}
+      \strng{fullhash}{e719a6e443b092afa3205d3e8522b075}
+      \strng{bibnamehash}{e719a6e443b092afa3205d3e8522b075}
+      \strng{authorbibnamehash}{e719a6e443b092afa3205d3e8522b075}
+      \strng{authornamehash}{cac995d58d3d31a9610e1ae9d413b1b0}
+      \strng{authorfullhash}{e719a6e443b092afa3205d3e8522b075}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{extradatescope}{labelyear}
@@ -900,6 +940,38 @@
       \field{labeltitlesource}{title}
       \field{edition}{7}
       \field{title}{Precálculo: Matemáticas para el Cálculo}
+      \field{year}{2016}
+    \endentry
+    \entry{strang2016}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=93733dfde0c47db226efad798ab3b662}{%
+           family={Strang},
+           familyi={S\bibinitperiod},
+           given={Gilbert},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Wellesley-Cambridge Press}%
+      }
+      \strng{namehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{fullhash}{93733dfde0c47db226efad798ab3b662}
+      \strng{bibnamehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{authorbibnamehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{authornamehash}{93733dfde0c47db226efad798ab3b662}
+      \strng{authorfullhash}{93733dfde0c47db226efad798ab3b662}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5th}
+      \field{title}{Introduction to Linear Algebra}
       \field{year}{2016}
     \endentry
     \entry{suli2003}{book}{}
