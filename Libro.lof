@@ -23,3 +23,6 @@
 \contentsline {figure}{\numberline {9.1}{\ignorespaces Gradiente de una función en R}}{66}{figure.9.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Comparación de transformaciones. A la izquierda, un vector común cambia de dirección. A la derecha, un vector propio mantiene su dirección, solo cambia su longitud.}}{78}{figure.12.1}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Salida de la consola en R mostrando los valores propios y la matriz resultante $\mathbf {A}^{20}$.}}{84}{figure.12.2}%
