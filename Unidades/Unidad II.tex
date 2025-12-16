@@ -549,3 +549,297 @@ En ingeniería, por ejemplo, se utiliza para calibrar instrumentos, construir cu
 \section{Conclusiones}
 
 La interpolación constituye una herramienta esencial para el análisis de datos y la aproximación de funciones. Los métodos clásicos como Lagrange y Newton proporcionan una base sólida, mientras que los splines ofrecen mayor estabilidad y suavidad. La elección del método depende del número de puntos, la distribución de los mismos y la precisión requerida \parencite{burden2016, atkinson2009}.
+
+\chapter{Valores y Vectores Propios}
+
+
+
+\section{ ¿Qué son y por qué importan?}
+
+Cuando estudiamos álgebra lineal, aprendemos que una matriz cuadrada $\mathbf{A}$ actúa como una función que transforma vectores. Generalmente, cuando una matriz multiplica a un vector, el resultado es un nuevo vector que ha cambiado tanto de dirección como de longitud.
+
+Sin embargo, para casi todas las transformaciones lineales, existen ciertos vectores especiales que poseen una propiedad extraordinaria: no cambian su dirección al ser transformados por la matriz.
+
+Imaginemos, por ejemplo, la rotación de un globo terráqueo. Casi todos los puntos en la superficie del globo se mueven a una nueva posición cuando este gira. Sin embargo, los puntos que están sobre el eje de rotación (el Polo Norte y el Polo Sur) no se desplazan lateralmente; permanecen sobre la misma línea. En el lenguaje del álgebra lineal, el eje de rotación representa un vector propio de esa transformación.
+
+El término eigen proviene del alemán y significa "propio", "característico" o "innato". Por ello, a menudo se les llama valores y vectores característicos. Su importancia radica en que nos revelan los "ejes principales" o la estructura interna oculta de la matriz, simplificando problemas complejos de dinámica, vibraciones y análisis de datos \parencite{strang2016}.
+
+\section{La transformación fundamental}
+
+Matemáticamente, esta relación especial se define mediante una de las ecuaciones más famosas del álgebra lineal.
+
+Sea $\mathbf{A}$ una matriz cuadrada de tamaño $n \times n$. Decimos que un vector $\mathbf{v}$ (distinto de cero) es un \textbf{vector propio} de $\mathbf{A}$ si se cumple la siguiente igualdad:
+
+\[
+\mathbf{A} \mathbf{v} = \lambda \mathbf{v}
+\]
+
+Donde:
+\begin{itemize}
+	\item $\mathbf{A}$ es la \textbf{matriz de transformación}. Representa la operación que estamos aplicando (rotación, estiramiento, corte, etc.).
+	\item $\mathbf{v}$ es el \textbf{vector propio} (o eigenvector). Es el vector que mantiene su dirección original. Es importante notar que $\mathbf{v}$ no puede ser el vector nulo ($\mathbf{0}$).
+	\item $\lambda$ (lambda) es el \textbf{valor propio} (o eigenvalor). Es un escalar (un número real o complejo) que indica cuánto se "estira" o "encoge" el vector $\mathbf{v}$.
+\end{itemize}
+
+\subsubsection{Interpretación geométrica}
+
+La ecuación $\mathbf{A} \mathbf{v} = \lambda \mathbf{v}$ nos dice que la acción de la matriz $\mathbf{A}$ sobre el vector $\mathbf{v}$ es equivalente a simplemente multiplicar el vector por el número $\lambda$.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figuras/eigenvectors.png}
+	\caption{Comparación de transformaciones. A la izquierda, un vector común cambia de dirección. A la derecha, un vector propio mantiene su dirección, solo cambia su longitud.}
+	\label{fig:eigen_concept}
+\end{figure}
+
+Dependiendo del valor de $\lambda$, el efecto sobre el vector propio $\mathbf{v}$ puede ser:
+\begin{itemize}
+	\item Si $\lambda > 1$: El vector se estira.
+	\item Si $0 < \lambda < 1$: El vector se contrae.
+	\item Si $\lambda < 0$: El vector invierte su sentido (apunta al lado opuesto), pero se mantiene sobre la misma línea de acción.
+	\item Si $\lambda = 0$: El vector se colapsa al origen (el sistema pierde una dimensión en esa dirección).
+\end{itemize}
+
+En resumen, los vectores propios son las "líneas de fuerza" naturales de la matriz, y los valores propios nos dicen con qué intensidad actúa la matriz sobre esas líneas \parencite{anton2012, riley2006}.
+
+\section{Proceso de cálculo}
+
+Calcular valores y vectores propios puede parecer un procedimiento mecánico, pero cada paso tiene una justificación lógica basada en la invertibilidad de las matrices. A continuación, desglosamos el algoritmo general para una matriz cuadrada $\mathbf{A}$ de tamaño $n \times n$.
+
+\subsection{Paso 1: La ecuación característica}
+
+Partimos de la definición fundamental:
+
+\[
+\mathbf{A} \mathbf{v} = \lambda \mathbf{v}.
+\]
+
+Para resolver esta ecuación, necesitamos agrupar los términos que contienen a $\mathbf{v}$ en un solo lado de la igualdad. Sin embargo, no podemos restar simplemente un escalar $\lambda$ de una matriz $\mathbf{A}$. Para hacerlos compatibles, multiplicamos $\lambda$ por la matriz identidad $\mathbf{I}$:
+
+\[
+\mathbf{A} \mathbf{v} - \lambda \mathbf{I} \mathbf{v} = \mathbf{0},
+\]
+\[
+(\mathbf{A} - \lambda \mathbf{I}) \mathbf{v} = \mathbf{0}.
+\]
+
+Esta última expresión es un sistema de ecuaciones lineales homogéneo. Aquí surge un punto crucial:
+
+\begin{itemize}
+	\item Si la matriz $(\mathbf{A} - \lambda \mathbf{I})$ tuviera inversa, la única solución posible sería $\mathbf{v} = \mathbf{0}$ (la solución trivial).
+	\item Como buscamos vectores propios \textbf{no nulos} ($\mathbf{v} \neq \mathbf{0}$), la matriz $(\mathbf{A} - \lambda \mathbf{I})$ debe ser \textbf{singular} (no invertible).
+\end{itemize}
+
+En álgebra lineal, una matriz es singular si y solo si su determinante es cero. Esto nos lleva a la \textbf{ecuación característica}:
+
+\[
+\det(\mathbf{A} - \lambda \mathbf{I}) = 0.
+\]
+
+Resolver esta ecuación es la clave para encontrar los valores propios \parencite{anton2012}
+
+\subsection{Paso 2: Cálculo de los valores propios ($\lambda$)}
+
+Al calcular el determinante $\det(\mathbf{A} - \lambda \mathbf{I})$, obtendremos un polinomio en función de $\lambda$ de grado $n$, conocido como el \textbf{polinomio característico}:
+
+\[
+p(\lambda) = (-1)^n \lambda^n + c_{n-1}\lambda^{n-1} + \dots + c_0 = 0.
+\]
+
+\textbf{Procedimiento:}
+\begin{enumerate}
+	\item Calcular el determinante de la matriz $(\mathbf{A} - \lambda \mathbf{I})$.
+	\item Igualar el resultado a cero.
+	\item Encontrar las raíces del polinomio (resolver para $\lambda$).
+\end{enumerate}
+
+Estas raíces son los valores propios de la matriz. Según el Teorema Fundamental del Álgebra, una matriz de $n \times n$ tendrá exactamente $n$ valores propios (contando sus multiplicidades y posibles valores complejos) \parencite{burden2016}.
+
+\subsection{Paso 3: Cálculo de los vectores propios ($\mathbf{v}$)}
+
+Una vez conocidos los valores de $\lambda$, debemos encontrar los vectores asociados a cada uno. Para cada valor propio $\lambda_i$ encontrado:
+
+\begin{enumerate}
+	\item Sustituimos $\lambda_i$ en la matriz $(\mathbf{A} - \lambda_i \mathbf{I})$.
+	\item Resolvemos el sistema homogéneo:
+	\[
+	(\mathbf{A} - \lambda_i \mathbf{I}) \mathbf{v} = \mathbf{0}.
+	\]
+	\item El sistema tendrá infinitas soluciones (debido a que el determinante es cero). Debemos expresar la solución general en términos de vectores base.
+\end{enumerate}
+
+El conjunto de todos los vectores que satisfacen esta ecuación (más el vector cero) forma el \textbf{espacio propio} (o eigen-espacio) asociado a $\lambda_i$ .
+
+\section{Ejemplo guiado}
+
+Apliquemos el proceso a una matriz $2 \times 2$ para ilustrar los pasos. Sea:
+
+\[
+\mathbf{A} = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}.
+\]
+
+\subsection*{1. Construcción de la matriz característica}
+Restamos $\lambda$ de la diagonal principal:
+
+\[
+\mathbf{A} - \lambda \mathbf{I} = \begin{pmatrix} 3-\lambda & 2 \\ 1 & 4-\lambda \end{pmatrix}.
+\]
+
+\subsection{2. Polinomio característico}
+Calculamos el determinante e igualamos a cero:
+
+\[
+(3-\lambda)(4-\lambda) - (2)(1) = 0,
+\]
+\[
+12 - 3\lambda - 4\lambda + \lambda^2 - 2 = 0,
+\]
+\[
+\lambda^2 - 7\lambda + 10 = 0.
+\]
+
+\subsection*{3. Hallar las raíces ($\lambda$)}
+Factorizamos la ecuación cuadrática:
+
+\[
+(\lambda - 5)(\lambda - 2) = 0.
+\]
+
+Los valores propios son \textbf{$\lambda_1 = 5$} y \textbf{$\lambda_2 = 2$}.
+
+\subsection*{4. Hallar los vectores propios ($\mathbf{v}$)}
+
+Caso $\lambda_1 = 5$
+Sustituimos en $(\mathbf{A} - 5\mathbf{I})\mathbf{v} = \mathbf{0}$:
+
+\[
+\begin{pmatrix} -2 & 2 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+\]
+
+Esto nos da la ecuación $-2x + 2y = 0$, o simplificando, $x = y$. Si elegimos $y=1$, entonces $x=1$.
+\[
+\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}.
+\]
+
+Caso $\lambda_2 = 2$:
+Sustituimos en $(\mathbf{A} - 2\mathbf{I})\mathbf{v} = \mathbf{0}$:
+
+\[
+\begin{pmatrix} 1 & 2 \\ 1 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+\]
+
+Esto nos da $x + 2y = 0$, o $x = -2y$. Si elegimos $y=1$, entonces $x=-2$.
+\[
+\mathbf{v}_2 = \begin{pmatrix} -2 \\ 1 \end{pmatrix}.
+\]
+
+\section{Propiedades y diagonalización}
+
+Una de las utilidades más potentes de los valores y vectores propios es la capacidad de simplificar operaciones matriciales complejas. Si una matriz cuadrada puede ser interpretada como una transformación que solo estira vectores en ciertas direcciones, entonces podemos cambiar nuestro sistema de referencia para trabajar únicamente con estos estiramientos simples.
+
+\subsection{Independencia lineal}
+
+Para que una matriz $\mathbf{A}$ de tamaño $n \times n$ pueda ser simplificada completamente, necesita tener un conjunto completo de $n$ vectores propios linealmente independientes. Esto está garantizado siempre que la matriz tenga $n$ valores propios distintos.
+
+En el caso de que existan valores propios repetidos (es decir, una raíz múltiple en el polinomio característico), es posible que no existan suficientes vectores propios independientes. Si esto ocurre, se dice que la matriz es \textit{defectuosa} y no puede diagonalizarse completamente, aunque puede aproximarse mediante la forma canónica de Jordan \parencite{anton2012}.
+
+\subsection{El teorema de diagonalización}
+
+Si la matriz $\mathbf{A}$ tiene $n$ vectores propios linealmente independientes, entonces es \textbf{diagonalizable}. Esto significa que $\mathbf{A}$ puede descomponerse en el producto de tres matrices específicas:
+
+\[
+\mathbf{A} = \mathbf{P} \mathbf{D} \mathbf{P}^{-1}
+\]
+
+Los componentes de esta factorización son:
+
+\begin{itemize}
+	\item $\mathbf{P}$: La \textbf{matriz de vectores propios}. Se construye colocando los vectores propios $\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_n$ como columnas de la matriz.
+	\item $\mathbf{D}$: La \textbf{matriz diagonal}. Es una matriz donde todos los elementos fuera de la diagonal principal son cero. Los elementos de la diagonal son los valores propios $\lambda_1, \lambda_2, \dots, \lambda_n$, colocados en el mismo orden que sus correspondientes vectores en $\mathbf{P}$.
+\end{itemize}
+
+Esta igualdad ($\mathbf{D} = \mathbf{P}^{-1} \mathbf{A} \mathbf{P}$) implica que la matriz $\mathbf{A}$ es semejante a la matriz diagonal $\mathbf{D}$.
+
+\subsection{Aplicación: Potencia de matrices}
+
+Una consecuencia práctica inmediata de la diagonalización es el cálculo eficiente de potencias de matrices. Calcular $\mathbf{A}^k$ multiplicando la matriz por sí misma repetidamente es computacionalmente costoso ($O(n^3)$ por multiplicación) y propenso a acumular errores de redondeo.
+
+Utilizando la descomposición espectral, observamos que:
+
+\[
+\mathbf{A}^2 = (\mathbf{P} \mathbf{D} \mathbf{P}^{-1}) (\mathbf{P} \mathbf{D} \mathbf{P}^{-1}) = \mathbf{P} \mathbf{D} (\mathbf{P}^{-1} \mathbf{P}) \mathbf{D} \mathbf{P}^{-1} = \mathbf{P} \mathbf{D}^2 \mathbf{P}^{-1}.
+\]
+
+Generalizando para cualquier potencia $k$:
+
+\[
+\mathbf{A}^k = \mathbf{P} \mathbf{D}^k \mathbf{P}^{-1}.
+\]
+
+La ventaja radica en que elevar una matriz diagonal a una potencia es trivial: simplemente se eleva cada elemento de la diagonal a la potencia $k$.
+
+\[
+\mathbf{D}^k = \begin{pmatrix}
+	\lambda_1^k & 0 & \cdots & 0 \\
+	0 & \lambda_2^k & \cdots & 0 \\
+	\vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & \cdots & \lambda_n^k
+\end{pmatrix}.
+\]
+
+Este atajo reduce drásticamente el costo de cómputo en algoritmos que requieren iteraciones matriciales, como las cadenas de Markov o las predicciones en sistemas dinámicos discretos \parencite{strang2016}.
+
+\section{Implementación en R}
+
+A continuación, se presenta el script completo para realizar el análisis espectral de la matriz $\mathbf{A}$ y utilizar sus propiedades para calcular potencias grandes de la misma.
+
+\begin{rcode}
+	A <- matrix(c(3, 1, 2, 4), nrow = 2, byrow = TRUE)
+	
+	sistema <- eigen(A)
+	lambdas <- sistema$values
+	V <- sistema$vectors
+	
+	print("Valores Propios:")
+	print(lambdas)
+	print("Vectores Propios:")
+	print(V)
+	
+	k <- 20
+	D_k <- diag(lambdas^k)
+	P_inv <- solve(V)
+	
+	A_final <- V 
+	
+	print("Resultado de A elevado a la 20:")
+	print(A_final)
+\end{rcode}
+
+\subsection{Explicación del código}
+
+El código anterior se divide en tres etapas lógicas:
+
+\begin{enumerate}
+	\item \textbf{Definición y cálculo:} Primero definimos la matriz $\mathbf{A}$. La función nativa \texttt{eigen()} realiza todo el trabajo pesado, devolviendo una lista que separamos en \texttt{lambdas} (valores propios) y \texttt{V} (matriz de vectores propios).
+	
+	\item \textbf{Preparación de la diagonalización:} Para calcular $\mathbf{A}^{20}$, no multiplicamos la matriz por sí misma 20 veces. En su lugar, aplicamos la propiedad $\mathbf{A}^k = \mathbf{V}\mathbf{D}^k\mathbf{V}^{-1}$.
+	\begin{itemize}
+		\item Elevamos el vector \texttt{lambdas} a la potencia $k=20$ y lo convertimos en una matriz diagonal (\texttt{D\_k}).
+		\item Calculamos la inversa de la matriz de vectores propios (\texttt{solve(V)}).
+	\end{itemize}
+	
+	\item \textbf{Reconstrucción:} Finalmente, multiplicamos las tres matrices componentes ($\mathbf{V} \times \mathbf{D}^k \times \mathbf{V}^{-1}$) para obtener el resultado final de forma eficiente.
+\end{enumerate}
+
+\subsection{Visualización de resultados}
+
+Al ejecutar el código, obtenemos los valores propios $\lambda_1 = 5$ y $\lambda_2 = 2$. Como se observa en la Figura \ref{fig:resultados_eigen}, la matriz final contiene valores extremadamente grandes (del orden de $10^{13}$).
+
+Esto ocurre porque el término $5^{20}$ domina completamente la ecuación. Geométricamente, esto significa que cualquier vector transformado repetidamente por $\mathbf{A}$ terminará alineándose con el primer vector propio.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figuras/ResultadosEigen.png}
+	\caption{Salida de la consola en R mostrando los valores propios y la matriz resultante $\mathbf{A}^{20}$.}
+	\label{fig:resultados_eigen}
+\end{figure}
