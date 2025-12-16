@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.6.30)  16 DEC 2025 08:34
+This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.6.30)  16 DEC 2025 08:41
  restricted system commands enabled.
 **Libro.tex
 (./Libro.tex
@@ -2153,8 +2153,14 @@ L3 programming layer <2024-01-04>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `Libro.out' has not changed.
-(rerunfilecheck)             Checksum: F8E4F4143D781FA303B258B6E9D91CC5;22252.
+
+Package rerunfilecheck Warning: File `Libro.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Libro.out':
+(rerunfilecheck)             Before: F8E4F4143D781FA303B258B6E9D91CC5;22252
+(rerunfilecheck)             After:  FA460D45D3A7827E2E552CFB76CBE254;22044.
 Package logreq Info: Writing requests to 'Libro.run.xml'.
 
 \openout1 = Libro.run.xml
@@ -2172,6 +2178,8 @@ k nodes
  64393 multiletter control sequences out of 65536+600000
  68 fonts using 4839399 bytes
  91i,9n,95p,868b,2805s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'subsection.12.4.1'
 <//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/opentype/public/lm/lmro
 man8-regular.otf><//?/c:/users/lenovo/appdata/local/programs/miktex/fonts/openty
 pe/public/lm/lmmono10-italic.otf><//?/c:/users/lenovo/appdata/local/programs/mik
@@ -2197,7 +2205,7 @@ nts/cm/cmr8.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/LENOVO/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on Libro.pdf (87 pages, 1591469 bytes).
+Output written on Libro.pdf (87 pages, 1591430 bytes).
 
 PDF statistics: 1979 PDF objects out of 2073 (max. 8388607)
  791 named destinations out of 1000 (max. 131072)
