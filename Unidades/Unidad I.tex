@@ -21,6 +21,239 @@ Actualmente, lenguajes como \texttt{Python}, \texttt{R}, \texttt{MATLAB} y \text
 
 En síntesis, la programación numérica constituye una base esencial para la solución computacional de problemas científicos y técnicos, integrando el razonamiento matemático con la capacidad de cómputo moderna.
 
+\section{Ejemplo}
+
+Utilizando la programación numérica desarrollar una aplicación que permita analizar operaciones matemáticas (Identificador de funciones). 
+
+\begin{pythoncode}
+import re
+
+def analizar_funcion(funcion):
+funcion = funcion.replace(" ", "")
+variables = sorted(set(re.findall(r'[a-zA-Z]', funcion)))
+terminos = re.findall(r'[+-]?\d*[a-zA-Z]?\^?\d*', funcion)
+terminos = [t for t in terminos if t]
+coeficientes = []
+signos = []
+for t in terminos:
+if t.startswith('-'):
+signos.append('-')
+else:
+signos.append('+')
+c = re.findall(r'[+-]?\d+', t)
+if c:
+coef = int(c[0])
+else:
+coef = -1 if t.startswith('-') else 1
+coeficientes.append(coef)
+print(f"\n   Función ingresada: {funcion}")
+print(f"   Variables encontradas: {variables}")
+print(f"   Términos: {terminos}")
+print(f"   Coeficientes: {coeficientes}")
+print(f"   Signos: {signos}")
+
+print("=== ANALIZADOR DE FUNCIONES ALGEBRAICAS ===")
+funcion = input("   Ingresa una función (ejemplo: 3x^2 - 4x + 7): ")
+analizar_funcion(funcion)
+\end{pythoncode}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Analizador de funciones1.png}
+	\caption{Analizador de funciones}
+	\label{Analizador de funciones}
+\end{figure}
+
+\textbf{Explicación}
+
+El problema se resolvió utilizando el lenguaje de programación \textbf{Python} y el módulo \texttt{re} (expresiones regulares), que permite analizar y extraer patrones dentro de una cadena de texto.
+
+\textbf{1. Limpieza de la función}
+
+\begin{verbatim}
+	funcion = funcion.replace(" ", "")
+\end{verbatim}
+
+Se eliminan los espacios en blanco para facilitar el análisis de la expresión algebraica.
+
+\textbf{2. Identificación de variables}
+
+\begin{verbatim}
+	variables = sorted(set(re.findall(r'[a-zA-Z]', funcion)))
+\end{verbatim}
+
+\begin{itemize}
+	\item Se usa una expresión regular para encontrar todas las letras.
+	\item Se eliminan duplicados con \texttt{set}.
+	\item Se ordenan alfabéticamente.
+\end{itemize}
+
+\textbf{3. Separación de términos algebraicos}
+
+\begin{verbatim}
+	terminos = re.findall(r'[+-]?\d*[a-zA-Z]?\^?\d*', funcion)
+	terminos = [t for t in terminos if t]
+\end{verbatim}
+
+Se extraen los términos considerando:
+
+\begin{itemize}
+	\item Signo opcional (\texttt{+} o \texttt{-})
+	\item Coeficiente numérico
+	\item Variable
+	\item Potencia (si existe)
+\end{itemize}
+
+\textbf{4. Obtención de coeficientes y signos}
+
+\begin{verbatim}
+	for t in terminos:
+	if t.startswith('-'):
+	signos.append('-')
+	else:
+	signos.append('+')
+\end{verbatim}
+
+Se determina el signo de cada término.
+
+\begin{verbatim}
+	c = re.findall(r'[+-]?\d+', t)
+	if c:
+	coef = int(c[0])
+	else:
+	coef = -1 if t.startswith('-') else 1
+\end{verbatim}
+
+\begin{itemize}
+	\item Si hay número explícito, se toma como coeficiente.
+	\item Si no hay número, se asume \texttt{1} o \texttt{-1}.
+\end{itemize}
+
+\textbf{5. Presentación de resultados}
+
+\begin{verbatim}
+	print(f"   Función ingresada: {funcion}")
+	print(f"   Variables encontradas: {variables}")
+	print(f"   Términos: {terminos}")
+	print(f"   Coeficientes: {coeficientes}")
+	print(f"   Signos: {signos}")
+\end{verbatim}
+
+\textbf{Objetivo del código}
+
+El objetivo principal de este programa es analizar una función algebraica ingresada por el usuario y extraer sus componentes fundamentales, específicamente:
+
+\begin{itemize}
+	\item Identificar las variables presentes en la función.
+	\item Separar la función en términos algebraicos.
+	\item Determinar los coeficientes numéricos de cada término.
+	\item Reconocer el signo (positivo o negativo) de cada término.
+\end{itemize}
+
+Este análisis es útil como paso previo en aplicaciones como:
+
+\begin{itemize}
+	\item Simplificación de expresiones algebraicas.
+	\item Derivación e integración simbólica.
+	\item Clasificación de polinomios.
+	\item Desarrollo de software educativo matemático.
+\end{itemize}
+
+\textbf{Código en Python usando Tkinter}
+
+\begin{pythoncode}
+import re
+import tkinter as tk
+from tkinter import messagebox
+
+def analizar_funcion():
+funcion = entrada_funcion.get().replace(" ", "")
+
+if not funcion:
+messagebox.showwarning("Advertencia", "Ingrese una función algebraica")
+return
+
+variables = sorted(set(re.findall(r'[a-zA-Z]', funcion)))
+terminos = re.findall(r'[+-]?\d*[a-zA-Z]?\^?\d*', funcion)
+terminos = [t for t in terminos if t]
+
+coeficientes = []
+signos = []
+
+for t in terminos:
+if t.startswith('-'):
+signos.append('-')
+else:
+signos.append('+')
+
+c = re.findall(r'[+-]?\d+', t)
+if c:
+coef = int(c[0])
+else:
+coef = -1 if t.startswith('-') else 1
+
+coeficientes.append(coef)
+
+salida.config(state="normal")
+salida.delete("1.0", tk.END)
+salida.insert(tk.END, f"   Función ingresada: {funcion}\n")
+salida.insert(tk.END, f"   Variables encontradas: {variables}\n")
+salida.insert(tk.END, f"   Términos: {terminos}\n")
+salida.insert(tk.END, f"   Coeficientes: {coeficientes}\n")
+salida.insert(tk.END, f"   Signos: {signos}\n")
+salida.config(state="disabled")
+
+ventana = tk.Tk()
+ventana.title("Analizador de Funciones Algebraicas")
+ventana.geometry("500x400")
+ventana.resizable(False, False)
+
+titulo = tk.Label(
+ventana,
+text="ANALIZADOR DE FUNCIONES ALGEBRAICAS",
+font=("Arial", 14, "bold")
+)
+titulo.pack(pady=10)
+
+label_funcion = tk.Label(
+ventana,
+text="Ingrese la función (ejemplo: 3x^2 - 4x + 7):"
+)
+label_funcion.pack()
+
+entrada_funcion = tk.Entry(
+ventana,
+width=40,
+font=("Arial", 12)
+)
+entrada_funcion.pack(pady=5)
+
+boton = tk.Button(
+ventana,
+text="Analizar función",
+font=("Arial", 11),
+command=analizar_funcion
+)
+boton.pack(pady=10)
+
+salida = tk.Text(
+ventana,
+height=10,
+width=55,
+state="disabled",
+font=("Consolas", 10)
+)
+salida.pack(pady=10)
+
+ventana.mainloop()
+\end{pythoncode}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Analizador.png}
+	\caption{Analizador de funciones con Tkinter}
+	\label{Analizador de funciones2}
+\end{figure}
 
 \chapter{Funciones}
 
@@ -135,7 +368,7 @@ porque una función no puede asignar dos valores diferentes a \(a\).
 	\label{Pruebavertical}
 \end{figure}
 
-\section{Aplicación}
+\section{Aplicación 1}
 
 Se presentará un código en \textbf{Python} que sea capaz de graficar funciones, según los datos de entrada que se pidan.
 
@@ -180,8 +413,165 @@ plt.show()
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{Figuras/FunPython.png}
-	\caption{Graficando funciones con Python}
-	\label{FunPy}
+	\caption{Graficar funciones}
+	\label{FunPython}
+\end{figure}
+
+\section{Aplicación 2}
+
+Se presentará un código en \textbf{Python} que sea capaz de graficar 2 funciones lineales.
+
+\begin{pythoncode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-10, 10, 100)
+
+y1 = 2 * x + 3
+y2 = -1 * x + 5
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y1, label='f₁(x) = 2x + 3', color='blue', linewidth=2)
+plt.plot(x, y2, label='f₂(x) = -x + 5', color='red', linewidth=2)
+
+plt.title('Gráfico de dos funciones lineales')
+plt.xlabel('Eje X')
+plt.ylabel('Eje Y')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend()
+plt.axhline(0, color='black', linewidth=1)
+plt.axvline(0, color='black', linewidth=1)
+
+plt.show()
+\end{pythoncode}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Funcioneslineales1.png}
+	\caption{Graficar 2 funciones lineales}
+	\label{Lineales}
+\end{figure}
+
+\textbf{Explicación}
+
+\textbf{1. Importación de librerías}
+
+\begin{verbatim}
+	import numpy as np
+	import matplotlib.pyplot as plt
+\end{verbatim}
+
+NumPy se utiliza para crear arreglos numéricos y manejar datos de forma eficiente.  
+Matplotlib permite generar gráficos científicos en dos dimensiones.
+
+\textbf{2. Definición del rango de valores}
+
+\begin{verbatim}
+	x = np.linspace(-10, 10, 100)
+\end{verbatim}
+
+Se genera un arreglo de 100 valores equidistantes en el intervalo $[-10,10]$.  
+Estos valores representan el dominio sobre el cual se evaluarán las funciones.
+
+\textbf{3. Definición de las funciones lineales}
+
+Se definen dos funciones lineales:
+
+\begin{itemize}
+	\item $f_1(x) = 2x + 3$: pendiente positiva, función creciente.
+	\item $f_2(x) = -x + 5$: pendiente negativa, función decreciente.
+\end{itemize}
+
+Cada función se evalúa para todos los valores del arreglo $x$.
+
+\textbf{4. Creación del gráfico}
+
+\begin{verbatim}
+	plt.figure(figsize=(8, 6))
+	plt.plot(x, y1, label='f₁(x) = 2x + 3', color='blue', linewidth=2)
+	plt.plot(x, y2, label='f₂(x) = -x + 5', color='red', linewidth=2)
+\end{verbatim}
+
+Se crea una figura y se grafican ambas funciones con diferentes colores y etiquetas para distinguirlas visualmente.
+
+\textbf{5. Personalización del gráfico}
+
+\begin{verbatim}
+	plt.title('Gráfico de dos funciones lineales')
+	plt.xlabel('Eje X')
+	plt.ylabel('Eje Y')
+	plt.grid(True, linestyle='--', alpha=0.6)
+	plt.legend()
+	plt.axhline(0)
+	plt.axvline(0)
+\end{verbatim}
+
+\textbf{6. Visualización final}
+
+\begin{verbatim}
+	plt.show()
+\end{verbatim}
+
+\textbf{Objetivo del código}
+
+El objetivo del programa es representar gráficamente funciones lineales para analizar su comportamiento, permitiendo observar la pendiente, el crecimiento o decrecimiento y la intersección con los ejes coordenados.
+
+\textbf{Código en Python usando Tkinter}
+
+\begin{pythoncode}
+import tkinter as tk
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+def graficar():
+x = np.linspace(-10, 10, 100)
+y1 = 2 * x + 3
+y2 = -1 * x + 5
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(x, y1, label='f₁(x) = 2x + 3', linewidth=2)
+ax.plot(x, y2, label='f₂(x) = -x + 5', linewidth=2)
+
+ax.set_title("Gráfico de dos funciones lineales")
+ax.set_xlabel("Eje X")
+ax.set_ylabel("Eje Y")
+ax.axhline(0)
+ax.axvline(0)
+ax.grid(True)
+ax.legend()
+
+canvas = FigureCanvasTkAgg(fig, master=ventana)
+canvas.draw()
+canvas.get_tk_widget().pack(pady=10)
+
+ventana = tk.Tk()
+ventana.title("Gráfico de funciones lineales")
+ventana.geometry("700x500")
+
+titulo = tk.Label(
+ventana,
+text="GRÁFICO DE FUNCIONES LINEALES",
+font=("Arial", 14, "bold")
+)
+titulo.pack(pady=10)
+
+boton = tk.Button(
+ventana,
+text="Mostrar gráfica",
+font=("Arial", 11),
+command=graficar
+)
+boton.pack(pady=5)
+
+ventana.mainloop()
+\end{pythoncode}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Graficadorlineal.png}
+	\caption{Graficador de 2 funciones lineales con Tkinter}
+	\label{Graficador2}
 \end{figure}
 
 \chapter{Restricciones}
@@ -195,7 +585,7 @@ Un sistema de ecuaciones consiste en un conjunto de ecuaciones que comparten las
 En el contexto de la programación numérica, las restricciones se representan y manipulan mediante código, permitiendo no solo resolver el sistema de ecuaciones sino también visualizar gráficamente la región factible y el punto óptimo. Esta representación es especialmente útil para comprender la interacción entre las ecuaciones y las limitaciones impuestas, facilitando el análisis y la toma de decisiones en problemas aplicados de ingeniería, economía y ciencias computacionales.
 \parencite{chapra2015}
 
-\section{Ejemplo}
+\section{Ejemplo 1}
 
 Un desarrollador tiene 15 horas semanales para dedicar al desarrollo de software de front-end (x) y back-end (y). Además:
 
@@ -231,7 +621,7 @@ Formule las restricciones, represéntelas gráficamente e identifique las combin
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.60\linewidth]{Figuras/Ejercicio1.png}
-	\caption{Aplicación de restricciones en Python}
+	\caption{Aplicación de restricciones 1 en Python}
 	\label{EjemploRestriccion}
 \end{figure}
 
@@ -258,7 +648,7 @@ En conclusión, la región sombreada representa todas las combinaciones posibles
 \textbf{Código en Python}
 
 \begin{pythoncode}
-	# Función para preparar expresiones lineales
+# Función para preparar expresiones lineales
 def preparar_expresion(expr: str) -> str:
 expr = expr.replace(" ", "")          # quitar espacios
 expr = expr.replace("^", "**")        # potencia
@@ -321,6 +711,400 @@ print("  * = x = 5")
 print("  o = x + y = 15")
 print("  # = Intersección")
 print("  . = Región factible")
+print("  | = Eje Y")
+print("  - = Eje X")
+print("  + = Origen (0,0)")
+\end{pythoncode}
+
+\section{Ejemplo 2}
+
+Un ingeniero de datos administra dos tipos de servidores en la nube: Servidores A y Servidores B. El costo por hora de Servidor A es S/3 y de Servidor B es S/5. El presupuesto máximo semanal asignado para mantener los servidores es de S/20. Determine cúantas horas puede mantener activos cada tipo de servidor, formule el sistema de ecuaciones y represéntelo gráficamente.
+
+\textbf{Variables}
+
+\begin{itemize}
+	\item x = horas de uso de Servidor A
+	\item y = horas de uso de Servidor B
+\end{itemize}
+
+\textbf{Restricción}
+
+\begin{enumerate}
+	\item Se sabe que la hora de Servidor A cuesta S/3, cada hora de Servidor B cuesta S/5 y el presupuesto máximo es S/20.
+	\begin{itemize}
+		\item $3x + 5y \leq 20$
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Sistema de ecuaciones lineales}
+
+\[
+\begin{cases}
+	3x + 5y \leq 20 \\
+	x \geq 0 \\
+	y \geq 0
+\end{cases}
+\]
+
+\textbf{Gráfico generado en Python}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Ejercicio2.png}
+	\caption{Aplicación de restricciones 2 en Python}
+	\label{EjemploRestriccion2}
+\end{figure}
+
+\textbf{Interpretación del gráfico}
+
+La recta límite está dada por $3x + 5y = 20$. 
+Al interceptar con los ejes coordenados se obtiene que, si $x=0$, entonces $y=4$, 
+y si $y=0$, entonces $x=\tfrac{20}{3} \approx 6.67$. 
+
+La región factible corresponde al triángulo delimitado por los puntos $(0,0)$, $(6.67,0)$ y $(0,4)$. 
+Cualquier combinación de horas $(x,y)$ dentro de esta región satisface las condiciones de costo máximo. 
+
+En conclusión, el ingeniero de datos puede asignar:
+
+\begin{itemize}
+	\item hasta 6 horas con 40 minutos únicamente a servidores A,
+	\item hasta 4 horas únicamente a servidores B,
+	\item o bien cualquier combinación intermedia que cumpla con el presupuesto, 
+	como por ejemplo $(x=2, y=2)$ o $(x=3, y=1)$.
+\end{itemize}
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+# Restricción principal: 3x + 5y <= 20  →  y <= (20 - 3x)/5
+func = "(20 - 3*x)/5"
+
+# Definimos el rango del gráfico (valores de X y Y)
+xmin, xmax = -1, 10     # un poco más para ver bien
+ymin, ymax = -1, 6
+
+# Recorremos los valores de Y de arriba hacia abajo
+for y in range(ymax, ymin - 1, -1):
+linea = ""
+
+for x in range(xmin, xmax + 1):
+try:
+y_line = eval(func)
+except:
+y_line = None
+
+# Condición para la recta
+cond_line = (y_line is not None and abs(y - y_line) < 0.5)
+
+# Condición para la región factible: debajo de la recta y en el primer cuadrante
+cond_region = (y_line is not None and y <= y_line and x >= 0 and y >= 0)
+
+if cond_line:
+linea += "*"
+elif cond_region:
+linea += "o"
+elif x == 0 and y == 0:
+linea += "+"
+elif x == 0:
+linea += "|"
+elif y == 0:
+linea += "-"
+else:
+linea += " "
+print(linea)
+
+# Leyenda
+print("\nLeyenda del gráfico:")
+print("  * = Recta 3x + 5y = 20 (frontera)")
+print("  o = Región factible (3x + 5y <= 20, x>=0, y>=0)")
+print("  | = Eje Y")
+print("  - = Eje X")
+print("  + = Origen (0,0)")
+\end{pythoncode}
+
+\section{Ejemplo 3}
+
+Un administrador de proyectos tecnológicos organiza su tiempo entre reuniones con stakeholders (x) y trabajo en la documentación técnica (y). Las reuniones requieren al menos 4 horas semanales y la documentación al menos 6 horas. Si dispone de 12 horas para ambas actividades, determine la región factible y analice las combinaciones posibles de tiempo.
+
+\textbf{Variables}
+
+\begin{itemize}
+	\item x = horas dedicadas a reuniones con stakeholders
+	\item y = horas dedicadas a la documentación técnica
+\end{itemize}
+
+\textbf{Condiciones}
+
+\begin{enumerate}
+	\item Reuniones de al menos 4 horas
+	\begin{itemize}
+		\item $x \geq 4$
+	\end{itemize}
+	\item Documentación de al menos 6 horas
+	\begin{itemize}
+		\item $y \geq 6$
+	\end{itemize}
+	\item Tiempo total disponible máximo de 12 horas
+	\begin{itemize}
+		\item $x + y \leq 12$
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Sistema de ecuaciones lineales}
+
+\[
+\begin{cases}
+	x \geq 4 \\
+	y \geq 6 \\
+	x + y \leq 12
+\end{cases}
+\]
+
+\textbf{Gráfico generado en Python}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Ejercicio3.png}
+	\caption{Aplicación de restricciones 3 en Python}
+	\label{EjemploRestriccion3}
+\end{figure}
+
+\textbf{Interpretación del gráfico}
+
+La recta límite es $x + y = 12$, que corta los ejes en los puntos $(12,0)$ y $(0,12)$. 
+Aplicando las condiciones $x \geq 4$ y $y \geq 6$, la región factible se reduce al triángulo formado por los puntos:
+\[
+(4,6), \quad (4,8), \quad (6,6).
+\]
+
+Esto significa que el administrador debe dedicar al menos 4 horas a reuniones y 6 horas a documentación, 
+pero no más de 12 horas en total. 
+
+En consecuencia, puede combinar su tiempo de distintas formas dentro de ese triángulo, por ejemplo:
+
+\begin{itemize}
+	\item $(x=4, y=7)$: 4 horas de reuniones y 7 de documentación.
+	\item $(x=5, y=6)$: 5 horas de reuniones y 6 de documentación.
+	\item $(x=6, y=6)$: combinación en el límite máximo permitido.
+\end{itemize}
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+# Graficar restricciones del problema 3 en ASCII con sombreado de la región factible
+
+xmin, xmax = 0, 14
+ymin, ymax = 0, 14
+
+for y in range(ymax, ymin - 1, -1):
+linea = ""
+for x in range(xmin, xmax + 1):
+
+# Restricciones
+cond_recta = (abs(x + y - 12) < 0.5)   # frontera x+y=12
+cond_x = (x == 4)                      # frontera x=4
+cond_y = (y == 6)                      # frontera y=6
+
+# Región factible: x>=4, y>=6, x+y<=12
+cond_region = (x >= 4 and y >= 6 and (x + y <= 12))
+
+# Puntos de intersección (vértices)
+vertices = [(4,6), (4,8), (6,6)]
+cond_vertice = (x,y) in vertices
+
+# Dibujar con prioridad
+if cond_vertice:
+linea += "#"
+elif cond_region:
+linea += "o"
+elif cond_recta:
+linea += "*"
+elif cond_x:
+linea += "|"
+elif cond_y:
+linea += "="
+elif x == 0 and y == 0:
+linea += "+"
+elif x == 0:
+linea += "|"
+elif y == 0:
+linea += "-"
+else:
+linea += " "
+print(linea)
+
+print("\nLeyenda:")
+print("  * = Frontera x+y=12")
+print("  | = Frontera x=4")
+print("  = = Frontera y=6")
+print("  # = Vértices de la región factible")
+print("  o = Región factible (sombreada)")
+print("  + = Origen")
+print("  - , | = Ejes coordenados")
+\end{pythoncode}
+
+\section{Ejemplo 4}
+
+Una empresa de desarrollo de videojuegos produce dos tipos de assets: Modelos 3D (P1) y Texturas (P2). Cada modelo 3D requiere 2 horas de trabajo y cada textura requiere 3 horas. El equipo de arte tiene un total de 18 horas disponibles semanalmente. Formule las restricciones, represéntelas gráficamente y determine cuántos assets de cada tipo pueden producirse en función del tiempo disponible.
+
+\textbf{Variables}
+
+\begin{itemize}
+	\item x = número de modelos 3D (P1)
+	\item y = número de texturas (P2)
+\end{itemize}
+
+\textbf{Restricciones}
+
+\begin{itemize}
+	\item Restricción principal: $2x + 3y \leq 18$
+	\item Restricciones adicionales: $x \geq 0, \; y \geq 0$
+\end{itemize}
+
+\textbf{Gráfico generado con Python}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Ejercicio4.png}
+	\caption{Aplicación de restricciones 4 en Python}
+	\label{EjemploRestriccion4}
+\end{figure}
+
+\textbf{Interpretación del gráfico}
+
+La frontera de la región factible está dada por la recta $2x + 3y = 18$, que corta al eje $x$ en el punto $(9,0)$ y al eje $y$ en $(0,6)$. 
+La región factible corresponde al triángulo con vértices $(0,0)$, $(9,0)$ y $(0,6)$.
+
+El equipo puede producir hasta 9 modelos 3D si dedica todo el tiempo a ellos, o hasta 6 texturas si dedica todo a ese tipo de asset. 
+También puede realizar combinaciones intermedias, siempre que se cumpla $2x + 3y \leq 18$. 
+Por ejemplo, 3 modelos y 4 texturas consumen exactamente las 18 horas disponibles, mientras que 5 modelos y 2 texturas consumen 16 horas, quedando dentro de la región factible.
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+# Problema 4 - Modelos 3D y Texturas
+
+# Definimos el rango del gráfico
+xmin, xmax = -1, 12
+ymin, ymax = -1, 8
+
+# Recorremos los valores de Y de arriba hacia abajo
+for y in range(ymax, ymin - 1, -1):
+linea = ""
+
+for x in range(xmin, xmax + 1):
+
+# Ecuación de la frontera: 2x + 3y = 18
+y_line = (18 - 2*x) / 3 if (18 - 2*x) >= 0 else None
+
+# Condición para estar en la recta
+cond_line = (y_line is not None and abs(y - y_line) < 0.5)
+
+# Condición para estar en la región factible
+cond_region = (x >= 0 and y >= 0 and (2*x + 3*y <= 18))
+
+if cond_line:
+linea += "*"
+elif cond_region:
+linea += "o"
+elif x == 0 and y == 0:
+linea += "+"
+elif x == 0:
+linea += "|"
+elif y == 0:
+linea += "-"
+else:
+linea += " "
+print(linea)
+
+# Leyenda
+print("\nLeyenda del gráfico:")
+print("  * = Frontera 2x + 3y = 18")
+print("  o = Región factible (2x + 3y <= 18, x>=0, y>=0)")
+print("  | = Eje Y")
+print("  - = Eje X")
+print("  + = Origen (0,0)")
+\end{pythoncode}
+
+\section{Ejemplo 5}
+
+Una startup de hardware dispobe de un máximo de 50 unidades de componentes electrónicos. Para ensamblar un dispositivo tipo A se necesitan 5 unidades y para un dispotivo tipo B se necesitan 10 unidades. Determine cuántos dispositivos de cada tipo puede ensamblar sin exceder las 50 unidades de componentes. Formule el problema, resuélalo gráficamnete y explique las posibles combinaciones de producción.
+
+\textbf{Variables}
+
+\begin{itemize}
+	\item x = número de dispositivos tipo A
+	\item y = número de dispositivos tipo B
+\end{itemize}
+
+\textbf{Restricciones}
+
+\begin{itemize}
+	\item Restricción principal: $5x + 10y \leq 50$
+	\item Restricciones adicionales: $x \geq 0, \; y \geq 0$
+\end{itemize}
+
+\textbf{Gráfico generado con Python}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.60\linewidth]{Figuras/Ejercicio5.png}
+	\caption{Aplicación de restricciones 5 en Python}
+	\label{EjemploRestriccion5}
+\end{figure}
+
+\textbf{Interpretación}
+
+La frontera de la región factible está dada por la recta $5x + 10y = 50$, equivalente a $x + 2y = 10$. 
+Esta recta corta al eje $x$ en el punto $(10,0)$ y al eje $y$ en $(0,5)$. 
+La región factible corresponde al triángulo con vértices $(0,0)$, $(10,0)$ y $(0,5)$.
+
+La empresa puede ensamblar hasta 10 dispositivos tipo A si dedica todos los componentes a ellos, o hasta 5 dispositivos tipo B si dedica todos los componentes a ese tipo. 
+También puede realizar combinaciones intermedias, siempre que se cumpla $5x + 10y \leq 50$. 
+Por ejemplo, 6 dispositivos tipo A y 2 tipo B utilizan exactamente las 50 unidades, al igual que 4 dispositivos tipo A y 3 tipo B.
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+# Problema 5 - Dispositivos A y B
+
+# Definimos el rango del gráfico
+xmin, xmax = -1, 12
+ymin, ymax = -1, 7
+
+# Recorremos los valores de Y de arriba hacia abajo
+for y in range(ymax, ymin - 1, -1):
+linea = ""
+
+for x in range(xmin, xmax + 1):
+
+# Recta de frontera: x + 2y = 10 -> y = (10 - x)/2
+y_line = (10 - x) / 2 if (10 - x) >= 0 else None
+
+# Condición para estar en la recta
+cond_line = (y_line is not None and abs(y - y_line) < 0.5)
+
+# Condición para estar en la región factible
+cond_region = (x >= 0 and y >= 0 and (x + 2*y <= 10))
+
+if cond_line:
+linea += "*"
+elif cond_region:
+linea += "o"
+elif x == 0 and y == 0:
+linea += "+"
+elif x == 0:
+linea += "|"
+elif y == 0:
+linea += "-"
+else:
+linea += " "
+print(linea)
+
+# Leyenda
+print("\nLeyenda del gráfico:")
+print("  * = Frontera (x + 2y = 10)")
+print("  o = Región factible (x + 2y <= 10, x>=0, y>=0)")
 print("  | = Eje Y")
 print("  - = Eje X")
 print("  + = Origen (0,0)")

@@ -1,28 +1,44 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Analizador de funciones}}{16}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Analizador de funciones con Tkinter}}{20}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de flechas de $f$}}{18}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Cuatro formas de representar una función}}{19}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces La altura de la gráfica arriba del punto x es el valor de $f(x)$}}{20}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Funciones lineal y constante}}{20}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Prueba de la recta vertical}}{21}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Graficando funciones con Python}}{22}{figure.2.6}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama de flechas de $f$}}{22}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Cuatro formas de representar una función}}{23}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces La altura de la gráfica arriba del punto x es el valor de $f(x)$}}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Funciones lineal y constante}}{24}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Prueba de la recta vertical}}{25}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Graficar funciones}}{26}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Graficar 2 funciones lineales}}{27}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Graficador de 2 funciones lineales con Tkinter}}{30}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Aplicación de restricciones en Python}}{24}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Aplicación de restricciones 1 en Python}}{32}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Aplicación de restricciones 2 en Python}}{35}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Aplicación de restricciones 3 en Python}}{38}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Aplicación de restricciones 4 en Python}}{40}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Aplicación de restricciones 5 en Python}}{42}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Método de Newthon-Rapshon en Python}}{31}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Método de Newthon-Rapshon en Python}}{49}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Método de Bisección en Python}}{38}{figure.5.1}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Método de Bisección en Python}}{56}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Método de la Secante en Python}}{43}{figure.6.1}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Método de la Secante en Python}}{61}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Método de Punto Fijo en Python}}{51}{figure.7.1}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Método de Punto Fijo en Python}}{69}{figure.caption.23}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Método de Regula Falsi en Python}}{58}{figure.8.1}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Método de Regula Falsi en Python}}{76}{figure.caption.24}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Gradiente de una función en R}}{66}{figure.9.1}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Gradiente de una función en R}}{84}{figure.caption.25}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Comparación de transformaciones. A la izquierda, un vector común cambia de dirección. A la derecha, un vector propio mantiene su dirección, solo cambia su longitud.}}{78}{figure.12.1}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Salida de la consola en R mostrando los valores propios y la matriz resultante $\mathbf {A}^{20}$.}}{84}{figure.12.2}%
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Comparación de transformaciones. A la izquierda, un vector común cambia de dirección. A la derecha, un vector propio mantiene su dirección, solo cambia su longitud.}}{136}{figure.caption.34}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Salida de la consola en R mostrando los valores propios y la matriz resultante $\mathbf {A}^{20}$.}}{142}{figure.caption.35}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Matriz de transición inicial - Flujo de pacientes y dietas hospitalarias}}{147}{figure.caption.36}%
+\contentsline {figure}{\numberline {12.4}{\ignorespaces Matriz de transición con intervención - Fortalecimiento de Medicina Interna}}{147}{figure.caption.37}%
+\contentsline {figure}{\numberline {12.5}{\ignorespaces Eigenvalores de la matriz de transición modificada}}{150}{figure.caption.38}%
+\contentsline {figure}{\numberline {12.6}{\ignorespaces Distribución estacionaria de pacientes (Equilibrio a largo plazo)}}{153}{figure.caption.39}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces El problema de los caramelos}}{165}{figure.caption.43}%
+\addvspace {10\p@ }

@@ -1,0 +1,325 @@
+\part{Apéndice}
+
+\chapter{Índice H}
+
+El índice H (o índice de Hirsch) es un indicador usado para medir la productividad científica y el impacto de un investigador, grupo o institución.
+
+Se basa en la cantidad de publicaciones y el número de citas que estas reciben. Un autor tiene un índice H igual a h si ha publicado h artículos que han sido citados al menos h veces cada uno.
+
+\textbf{Ejemplo}
+
+Si un investigador tiene 10 artículos y al menos 5 de ellos han sido citados 5 veces o más, su índice H = 5. En resumen, el índice H combina cantidad y calidad de la producción científica en una sola medida. 
+
+\section{Autores con índice H con investigaciones en métodos numéricos}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{4cm}|p{4cm}|p{3cm}|p{3cm}|}
+		\hline
+		Autor     &  Investigación & Número de publicaciones & Índice H \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=6507654699&origin=recordpage}{Hernández-Paricio, Luis Javier}
+		& \href{https://www.scopus.com/pages/publications/84955690875?origin=resultslist}{Bivariate Newton-Raphson method and toroidal attraction basins} & 31 & 8 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57226793996&origin=recordpage}{Hali, Aissa} & \href{https://www.scopus.com/pages/publications/85112688118?origin=resultslist}{Photovoltaic panel parameters determination using two numerical methods} & 6 & 3 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\section{Índice H de docentes de la Facultad de Ingeniería Estadística e Informática}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{5cm}|p{4cm}|p{5cm}|}
+		\hline
+		Docente     & Índice H & Número de publicaciones \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57214066496}{Torres-Cruz, Fred}  & 4 & 40 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58930847700}{Coyla-Idme, Leonel} & 1 & 5 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57003617100&origin=recordpage}{Tumi-Figueroa, Ernesto Nayer} & 3 & 6 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58088282100&origin=recordpage}{Tito Lipa, José Pánfilo} & 0 & 3 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57214094525&origin=resultslist}{Canqui-Flores, Bernabé} & 3 & 8 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58898481200}{Gonzales, Leonid Alemán} & 0 & 4 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57562709900}{Mendoza-Mollocondo, Charles Ignacio} & 3 & 8 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57571711100}{Huata-Panca, Percy} & 2 & 3 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57224362115}{Apaza-Tarqui, Alejandro} & 1 & 5 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57221112735}{Carpio Vargas, Edgar Eloy} & 3 & 9 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=55865380000&origin=resultslist}{Javier Quispe Carita, Angel} & 1 & 1 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58671914800}{López-Cueva, Milton Antonio} & 1 & 6  \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=57201897173}{Ibañez-Quispe, Vladimiro} & 5 & 21 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58778725100}{Melgarejo-Bolivar, Romel P.} & 3 & 6 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58308326900}{Herrera-Urtiaga, Alain Paul} & 0 & 3  \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58284593600}{Laura Murillo, Ramiro} & 1 & 2 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=58491331500}{Choquejahua-Acero, Remo} & 1 & 2 \\
+		\hline
+		\href{https://www.scopus.com/authid/detail.uri?authorId=59325707300}{Gonzalo Copari Romero, Fredy} & 0 & 2 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\chapter{El problema de los caramelos}
+
+El siguiente capítulo presenta la simulación de un juego cooperativo en el que varios jugadores comparten una bolsa de caramelos de tres tipos: A, B y C.  
+El objetivo es que, mediante combinaciones e intercambios, el grupo logre formar al menos un \textbf{chupetín (D)} por cada jugador.
+
+Cada jugador inicia con dos caramelos aleatorios. En cada turno, se aplican las siguientes reglas:
+
+\begin{itemize}
+	\item Si en la bolsa hay al menos un caramelo A, uno B y uno C, se forma un chupetín (D) y se retiran esos tres caramelos.
+	\item Si hay dos de cada tipo (AA, BB, CC), se forman dos chupetines (2D) y se añade un caramelo adicional aleatorio a la bolsa.
+	\item Si no es posible formar nuevos chupetines, se puede devolver un chupetín (D) a cambio de tres caramelos aleatorios (uno por cada tipo al azar).
+	\item El juego finaliza cuando se consigue al menos un chupetín por jugador o cuando se alcanza el número máximo de iteraciones.
+\end{itemize}
+
+Este problema ilustra el uso de simulaciones estocásticas y bucles en R para modelar sistemas con componentes aleatorios y condiciones de parada.
+
+\textbf{Código en R}
+
+\begin{rcode}
+# ------------------------------------------------------------
+# Simulación del juego de caramelos y chupetines en R
+# Autor: Ticona Miramira Roberto Angel
+# ------------------------------------------------------------
+
+# Genera un caramelo aleatorio (A, B o C)
+random_candy <- function() {
+	sample(c("A", "B", "C"), 1)
+}
+
+# Verifica si hay al menos un grupo A,B,C
+can_form_set <- function(bolsa) {
+	all(c("A", "B", "C") %in% bolsa)
+}
+
+# Elimina un grupo A,B,C
+remove_set <- function(bolsa) {
+	for (candy in c("A", "B", "C")) {
+		idx <- match(candy, bolsa)
+		if (is.na(idx)) return(bolsa)
+		bolsa <- bolsa[-idx]
+	}
+	return(bolsa)
+}
+
+# Elimina n ocurrencias de un caramelo
+remove_n <- function(bolsa, candy, n) {
+	idx <- which(bolsa == candy)
+	if (length(idx) >= n) {
+		bolsa <- bolsa[-idx[1:n]]
+	} else if (length(idx) > 0) {
+		bolsa <- bolsa[-idx]
+	}
+	return(bolsa)
+}
+
+# Muestra la bolsa como texto
+mostrar_bolsa <- function(bolsa) {
+	paste(bolsa, collapse = " ")
+}
+
+# --- Programa principal ---
+juego_caramelos <- function(n_jugadores = 3, max_iter = 1000000) {
+	if (n_jugadores < 3) {
+		cat("Debe haber al menos 3 jugadores\n")
+		return()
+	}
+	
+	set.seed(as.integer(Sys.time()))
+	bolsa <- replicate(n_jugadores * 2, random_candy())
+	D <- 0
+	iter <- 0
+	
+	cat("\n--- Estado inicial ---\n")
+	cat("Bolsa:", mostrar_bolsa(bolsa), "\n")
+	
+	while (iter < max_iter && D < n_jugadores) {
+		iter <- iter + 1
+		cambio <- FALSE
+		
+		a <- sum(bolsa == "A")
+		b <- sum(bolsa == "B")
+		c <- sum(bolsa == "C")
+		
+		# Regla de 6 caramelos -> 2D + 1 extra
+		dobles <- min(floor(a/2), floor(b/2), floor(c/2))
+		while (dobles > 0) {
+			bolsa <- remove_n(bolsa, "A", 2)
+			bolsa <- remove_n(bolsa, "B", 2)
+			bolsa <- remove_n(bolsa, "C", 2)
+			D <- D + 2
+			extra <- random_candy()
+			bolsa <- c(bolsa, extra)
+			cambio <- TRUE
+			cat("Regla 6 caramelos -> +2D + extra (", extra, ")\n", sep = "")
+			cat("Total D =", D, ", Bolsa:", mostrar_bolsa(bolsa), "\n")
+			
+			a <- sum(bolsa == "A")
+			b <- sum(bolsa == "B")
+			c <- sum(bolsa == "C")
+			dobles <- min(floor(a/2), floor(b/2), floor(c/2))
+		}
+		
+		# Regla simple A,B,C -> 1D
+		simples <- min(a, b, c)
+		while (simples > 0) {
+			bolsa <- remove_set(bolsa)
+			D <- D + 1
+			cambio <- TRUE
+			cat("Se formo un chupetin (D). Total D =", D, "\n")
+			cat("Bolsa:", mostrar_bolsa(bolsa), "\n")
+			
+			a <- sum(bolsa == "A")
+			b <- sum(bolsa == "B")
+			c <- sum(bolsa == "C")
+			simples <- min(a, b, c)
+		}
+		
+		# Si no hubo cambios, devolver un D -> +3 caramelos
+		if (!cambio && D > 0) {
+			D <- D - 1
+			nuevos <- replicate(3, random_candy())
+			bolsa <- c(bolsa, nuevos)
+			cat("Se devolvio un D. Nuevos caramelos:", mostrar_bolsa(nuevos), "\n")
+			cat("Total D =", D, ", Bolsa:", mostrar_bolsa(bolsa), "\n")
+			cambio <- TRUE
+		}
+		
+		# Sin movimientos posibles
+		if (!cambio && D == 0 && !can_form_set(bolsa)) {
+			cat("No hay mas movimientos posibles.\n")
+			break
+		}
+		
+		# Objetivo alcanzado
+		if (D >= n_jugadores) {
+			cat("Objetivo alcanzado en", iter, "iteraciones.\n")
+			break
+		}
+	}
+	
+	cat("\n--- RESULTADOS FINALES ---\n")
+	cat("Jugadores:", n_jugadores, "\n")
+	cat("Chupetines obtenidos:", D, "\n")
+	cat("Caramelos finales:", mostrar_bolsa(bolsa), "\n")
+	cat("Iteraciones:", iter, "\n")
+	
+	if (D >= n_jugadores)
+	cat("Todos los jugadores consiguieron su chupetin.\n")
+	else
+	cat("No se logro el objetivo dentro del limite.\n")
+}
+
+# Ejemplo de ejecución
+juego_caramelos(4)
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.7\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figuras/Caramelos 2.png}
+		\caption{Distribución inicial de los caramelos}
+	\end{subfigure}
+	
+	\vspace{0.4cm}
+	
+	\begin{subfigure}{0.7\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Figuras/Caramelos.png}
+		\caption{Resultado del reparto}
+	\end{subfigure}
+	
+	\caption{El problema de los caramelos}
+	\label{Caramelos}
+\end{figure}
+
+\textbf{Conclusión}
+
+Este ejercicio demuestra cómo un sistema aleatorio con reglas definidas puede modelarse mediante un proceso iterativo en R.  
+El número de iteraciones y el éxito del juego dependen del azar, mostrando cómo la simulación permite explorar escenarios variables sin necesidad de resolver el modelo de manera determinista.
+
+\chapter{Aplicación del algoritmo Demons}
+
+En el artículo \textit{Non-rigid medical image regsitration using image field in Demons altorithm} \parencite{lan2019_demons_image_field} se aborda uno de los principales retos en el procesamiento de imágenes médicas: el registro preciso de imágenes deformadas. Este proceso permite alinear múltiples imágenes de un mismo paciente, obtenidas en distintas modalidades o momentos, para mejorar el diagnóstico, el seguimiento de enfermedades y la planificación de tratamientos. Aunque las transformaciones rígidas (traslación y rotación) son útiles en casos simples, la mayoría de escenarios clínicos requieren métodos \textbf{no rígidos} capaces de modelar deformaciones anatómicas complejas.
+
+Entre estos, el \textbf{algoritmo Demons} destaca por su precisión y capacidad para manejar grandes deformaciones. Este modelo interpreta el registro como una fuerza que desplaza cada píxel de la imagen móvil hasta alinearlo con la imagen de referencia. Sin embargo, las versiones clásicas dependen solo del gradiente de intensidad, sin aprovechar la información direccional de las estructuras anatómicas, lo que limita su desempeño en imágenes con texturas complejas o baja variación de intensidad.
+
+\textbf{Campo de imagen (Image Field):} El campo de imagen es una representación integral que combina información de intensidad, gradiente, orientación y frecuencia. Entre estos, el \textbf{campo de gradiente} y el \textbf{campo de orientación} son los más utilizados en imágenes médicas, ya que describen la variación espacial y la dirección predominante de las estructuras anatómicas. Para una imagen digital \(I\), el gradiente se define como:
+
+\[
+\vec{I} = (dI_x, dI_y), \quad 
+dI_x(i,j) = I(i+1,j) - I(i,j), \quad 
+dI_y(i,j) = I(i,j+1) - I(i,j)
+\]
+
+donde \((i,j)\) son las coordenadas del píxel. La magnitud del gradiente indica la intensidad de cambio local, mientras que su dirección corresponde a la normal del borde. Este concepto permite modelar la variación direccional de los tejidos, lo que es esencial para un registro más realista.
+
+\textbf{Métodos Demons basados en registro no rígido:} El algoritmo Demons, propuesto por Thirion, se fundamenta en el principio del flujo óptico. La imagen de referencia aplica una fuerza de desplazamiento sobre la imagen deformada para lograr la coincidencia entre ambas. En su formulación clásica, la función objetivo busca minimizar la diferencia de intensidad entre las imágenes y, simultáneamente, imponer suavidad al campo de deformación:
+
+\[
+E(\vec{u}) = ||R - F \circ \vec{u}||^2 + \sigma^2 ||\vec{u}||^2
+\]
+
+donde \(R\) es la imagen de referencia, \(F\) la imagen móvil, \(\vec{u}\) el incremento del campo de deformación y \(\sigma\) un parámetro de regularización. El desplazamiento en cada iteración se calcula como:
+
+\[
+\vec{u} = \frac{||R - F|| \, \vec{R}}{||\vec{R}||^2 + ||R - F||^2}
+\]
+
+En esta expresión, \(\vec{R}\) representa el gradiente de la imagen de referencia. Sin embargo, este modelo solo considera la información direccional de \(R\), por lo que resulta adecuado únicamente para deformaciones pequeñas.
+
+Para mejorar esta limitación, \textbf{Wang et al.} incorporaron el gradiente de la imagen móvil \(F\) y un parámetro \(\alpha\) que ajusta la fuerza de registro:
+
+\[
+\vec{u} = \frac{||R - F|| \, \vec{R}}{||\vec{R}||^2 + \alpha^2 ||R - F||^2} +
+\frac{\vec{F}}{||\vec{F}||^2 + \alpha^2 ||R - F||^2}
+\]
+
+Posteriormente, \textbf{Tang et al.} añadieron un coeficiente de balance \(k\), que permitió adaptar la fuerza de los demonios de forma más estable:
+
+\[
+\vec{u} = \frac{||R - F|| \, \vec{R}}{k^2||\vec{R}||^2 + \alpha^2||R - F||^2} +
+\frac{\vec{F}}{k^2||\vec{F}||^2 + \alpha^2||R - F||^2}
+\]
+
+\textbf{Modelo propuesto basado en campo de imagen:} Con el fin de mejorar la precisión del registro, los autores propusieron incorporar el \textbf{campo de orientación} dentro del modelo de Demons. En lugar de usar las direcciones del campo de gradiente \((\vec{e}_R, \vec{e}_F)\), se utilizan las direcciones del campo de orientación \((\vec{e}_O^R, \vec{e}_O^F)\), combinadas con las magnitudes de los gradientes correspondientes. Así, el modelo se redefine como:
+
+\[
+\vec{u} = (R - F)
+\left(
+\frac{\vec{F}}{k^2 \vec{F}^2 + \alpha (R - F)^2} \vec{e}_O^F +
+\frac{\vec{R}}{k^2 \vec{R}^2 + \alpha (R - F)^2} \vec{e}_O^R
+\right)
+\]
+
+y puede simplificarse como:
+
+\[
+\vec{u} = \frac{\sin^2 F \cdot \vec{e}_O^F + \sin^2 R \cdot \vec{e}_O^R}{2k\alpha}
+\]
+
+Esta formulación permite utilizar la información direccional inherente a las estructuras anatómicas, logrando una estimación más precisa de las deformaciones. El proceso iterativo consta de cinco pasos: cálculo de los campos de gradiente y orientación de \(R\) y \(F\); construcción del mapa de diferencia \(\alpha(R - F)\); cálculo del campo de deformación \(\vec{u}\); aplicación del campo de deformación sobre la imagen móvil; y evaluación de la convergencia mediante una medida de similitud.
+
+Para validar el método, se utilizaron dos conjuntos de datos: 181 pares de imágenes cerebrales por resonancia magnética y 134 pares de imágenes de retina con resolución de 2912×2912 píxeles. Las comparaciones se realizaron frente a los métodos Demons clásico, Demons mejorado por Wang, Demons con transformación total (TD) y registro basado en B-spline. Los resultados se evaluaron mediante el \textbf{Error Cuadrático Medio (MSE)}, la \textbf{Correlación (Corre)}, la \textbf{Información Mutua Normalizada (NMI)} y el \textbf{Error de Junta Media (MJE)}.
+
+Los resultados mostraron que el método propuesto logró el menor MSE y los valores más altos de Corre y NMI, evidenciando una mejor alineación y preservación de estructuras anatómicas. Además, el análisis de los parámetros \(\alpha\) y \(k\) mostró que valores intermedios (\(\alpha=1.2, k=0.9\) para MRI y \(\alpha=k=0.6\) para retina) equilibran precisión y velocidad de convergencia. Valores muy pequeños generan errores elevados, mientras que valores excesivos provocan sobreajuste.
+
+En conclusión, la integración del \textbf{campo de imagen} dentro del algoritmo Demons proporciona una mejora significativa en el registro no rígido de imágenes médicas. Este modelo aprovecha la información direccional de los tejidos para estimar deformaciones más realistas, manteniendo la coherencia estructural sin requerir segmentaciones previas. Por su estabilidad, precisión y eficiencia, el método constituye una contribución relevante al diagnóstico y análisis médico asistido por computadora.

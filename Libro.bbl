@@ -19,6 +19,40 @@
 
 \refsection{0}
   \datalist[entry]{nyt/apasortcite//global/global}
+    \entry{adams2025_pseudoinverse_gradient}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f138058c7c0aceadbd0619644f20ec18}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{fullhash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{bibnamehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{authorbibnamehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{authornamehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{authorfullhash}{f138058c7c0aceadbd0619644f20ec18}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{note}{Preprint, University of Pittsburgh, May 29, 2025}
+      \field{title}{Comparing the Moore--Penrose Pseudoinverse and Gradient Descent for Solving Linear Regression Problems: A Performance Analysis}
+      \field{volume}{arXiv:2505.23552}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2505.23552
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2505.23552
+      \endverb
+    \endentry
     \entry{anton2012}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=a9468ec1d67f7ac3ff08cd5f7fa6d940}{%
@@ -246,6 +280,54 @@
       \field{edition}{6th}
       \field{title}{Numerical Mathematics and Computing}
       \field{year}{2009}
+    \endentry
+    \entry{lan2019_demons_image_field}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=89cf6d54ad90f5214d6e7bb3c4ebf494}{%
+           family={Lan},
+           familyi={L\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf70556bea1cd75ebac8bd081ddd3f9c}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zhenhua},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b31b2796fc9430a515843e75f561f62}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5047f91715875d56eca2064ec092dc65}
+      \strng{fullhash}{f0424b80a37dabbbb554832130cec0fa}
+      \strng{bibnamehash}{f0424b80a37dabbbb554832130cec0fa}
+      \strng{authorbibnamehash}{f0424b80a37dabbbb554832130cec0fa}
+      \strng{authornamehash}{5047f91715875d56eca2064ec092dc65}
+      \strng{authorfullhash}{f0424b80a37dabbbb554832130cec0fa}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition Letters}
+      \field{month}{7}
+      \field{title}{Non-rigid medical image registration using image field in Demons algorithm}
+      \field{volume}{125}
+      \field{year}{2019}
+      \field{pages}{98\bibrangedash 104}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.patrec.2019.04.006
+      \endverb
     \endentry
     \entry{press2007}{book}{}
       \name{author}{4}{}{%
@@ -530,6 +612,40 @@
     \endentry
   \enddatalist
   \datalist[entry]{nyt/global//global/global}
+    \entry{adams2025_pseudoinverse_gradient}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f138058c7c0aceadbd0619644f20ec18}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{fullhash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{bibnamehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{authorbibnamehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{authornamehash}{f138058c7c0aceadbd0619644f20ec18}
+      \strng{authorfullhash}{f138058c7c0aceadbd0619644f20ec18}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{note}{Preprint, University of Pittsburgh, May 29, 2025}
+      \field{title}{Comparing the Moore--Penrose Pseudoinverse and Gradient Descent for Solving Linear Regression Problems: A Performance Analysis}
+      \field{volume}{arXiv:2505.23552}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2505.23552
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2505.23552
+      \endverb
+    \endentry
     \entry{anton2012}{book}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=a9468ec1d67f7ac3ff08cd5f7fa6d940}{%
@@ -757,6 +873,54 @@
       \field{edition}{6th}
       \field{title}{Numerical Mathematics and Computing}
       \field{year}{2009}
+    \endentry
+    \entry{lan2019_demons_image_field}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=89cf6d54ad90f5214d6e7bb3c4ebf494}{%
+           family={Lan},
+           familyi={L\bibinitperiod},
+           given={Sheng},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf70556bea1cd75ebac8bd081ddd3f9c}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zhenhua},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b31b2796fc9430a515843e75f561f62}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5047f91715875d56eca2064ec092dc65}
+      \strng{fullhash}{f0424b80a37dabbbb554832130cec0fa}
+      \strng{bibnamehash}{f0424b80a37dabbbb554832130cec0fa}
+      \strng{authorbibnamehash}{f0424b80a37dabbbb554832130cec0fa}
+      \strng{authornamehash}{5047f91715875d56eca2064ec092dc65}
+      \strng{authorfullhash}{f0424b80a37dabbbb554832130cec0fa}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition Letters}
+      \field{month}{7}
+      \field{title}{Non-rigid medical image registration using image field in Demons algorithm}
+      \field{volume}{125}
+      \field{year}{2019}
+      \field{pages}{98\bibrangedash 104}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.patrec.2019.04.006
+      \endverb
     \endentry
     \entry{press2007}{book}{}
       \name{author}{4}{}{%

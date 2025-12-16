@@ -1,17 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'Libro.blg'
-[310] biber-MSWIN64:340> INFO - === 
-[377] Biber.pm:419> INFO - Reading 'Libro.bcf'
-[507] Biber.pm:979> INFO - Found 13 citekeys in bib section 0
-[525] Biber.pm:4419> INFO - Processing section 0
-[551] Biber.pm:4610> INFO - Looking for bibtex file 'referencias.bib' for section 0
-[636] bibtex.pm:1713> INFO - LaTeX decoding ...
-[655] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
-[762] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[762] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[762] Biber.pm:4239> INFO - Sorting list 'nyt/apasortcite//global/global' of type 'entry' with template 'nyt' and locale 'es-ES'
-[783] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[783] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[783] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'es-ES'
-[792] bbl.pm:660> INFO - Writing 'Libro.bbl' with encoding 'UTF-8'
-[806] bbl.pm:763> INFO - Output to Libro.bbl
+[152] biber-MSWIN64:340> INFO - === 
+[211] Biber.pm:419> INFO - Reading 'Libro.bcf'
+[446] Biber.pm:979> INFO - Found 15 citekeys in bib section 0
+[487] Biber.pm:4419> INFO - Processing section 0
+[510] Biber.pm:4610> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[579] bibtex.pm:1713> INFO - LaTeX decoding ...
+[604] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[760] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[760] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[760] Biber.pm:4239> INFO - Sorting list 'nyt/apasortcite//global/global' of type 'entry' with template 'nyt' and locale 'es-ES'
+[786] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[786] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[786] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'es-ES'
+[802] bbl.pm:660> INFO - Writing 'Libro.bbl' with encoding 'UTF-8'
+[819] bbl.pm:763> INFO - Output to Libro.bbl
+[820] Biber.pm:131> WARN - legacy month field 'July' in entry 'lan2019_demons_image_field' is not an integer - this will probably not sort properly.
+[820] Biber.pm:133> INFO - WARNINGS: 1

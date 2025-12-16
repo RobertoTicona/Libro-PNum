@@ -216,7 +216,7 @@ theme_minimal(base_size = 13)
 
 \textbf{Ejecución}
 
-\begin{figure} [htbp]
+\begin{figure} [H]
 	\centering
 	\includegraphics[width=0.60\linewidth]{Figuras/Gradiente1.png}
 	\includegraphics[width=0.60\linewidth]{Figuras/Gradiente2.png}
@@ -224,6 +224,20 @@ theme_minimal(base_size = 13)
 	\label{Gradiente}
 	
 \end{figure}
+
+\section{Aplicación de la gradiente en un artículo de investigación}
+
+En el artículo \textit{Comparing the Moore-Penrose Pesudoinverse and Gradient Descent for Solving Linear Regression Problems: A Performance Analysis} \parencite{adams2025_pseudoinverse_gradient} se comparan dos métodos fundamentales para resolver problemas de regresión lineal: el \textbf{pseudoinverso de Moore–Penrose} y el \textbf{descenso de gradiente}. La regresión lineal busca encontrar los parámetros que mejor predicen una variable dependiente a partir de variables independientes, minimizando los errores cuadrados (OLS). 
+
+El pseudoinverso de Moore–Penrose ofrece una \textbf{solución analítica exacta} mediante operaciones matriciales, proporcionando el mínimo error posible. Sin embargo, puede ser computacionalmente costoso e inestable cuando la matriz de características es muy grande o está mal condicionada. En cambio, el \textbf{descenso de gradiente} es un método \textbf{iterativo} que ajusta los parámetros gradualmente en función de la dirección del gradiente negativo del error, controlado por una tasa de aprendizaje. Aunque no garantiza una solución exacta, es escalable y adaptable a grandes volúmenes de datos.
+
+En el \textbf{marco teórico}, se explica que la estabilidad numérica y la eficiencia de cada método dependen del tamaño del conjunto de datos (\(n\)), el número de variables (\(d\)) y la condición de la matriz \(X\). El pseudoinverso utiliza descomposición SVD, mientras que el descenso de gradiente requiere pasos controlados y puede verse afectado por la escala de las variables.
+
+En la \textbf{metodología}, el autor realizó experimentos con datos sintéticos y reales. Los datos sintéticos permitieron manipular parámetros como el número de muestras, la dimensionalidad y el factor de condición. Para los datos reales se usaron los conjuntos \textit{California Housing} (20,640 muestras y 8 variables) y \textit{Diabetes} (442 muestras y 10 variables). En ambos casos se evaluaron tres métricas: \textbf{tiempo de ejecución}, \textbf{error cuadrático medio (MSE)} y, para el descenso de gradiente, el \textbf{número de iteraciones hasta la convergencia}. Los experimentos se implementaron en Python, usando la función \texttt{pinv()} para el pseudoinverso y un algoritmo de gradiente con tasa de aprendizaje \(\alpha = 0.01\) y tolerancia \(10^{-6}\).
+
+Los \textbf{resultados} mostraron que el pseudoinverso fue más rápido y preciso en conjuntos pequeños o moderados, manteniendo una alta estabilidad numérica. En cambio, el descenso de gradiente necesitó más iteraciones y su rendimiento dependió fuertemente del escalado de las variables y del valor de la tasa de aprendizaje. Sin embargo, en escenarios de alta dimensionalidad o grandes volúmenes de datos, el descenso de gradiente (y sus variantes como el estocástico) resultó más escalable y eficiente.
+
+En \textbf{conclusión}, el pseudoinverso de Moore–Penrose es ideal para conjuntos de datos bien condicionados y de tamaño moderado, ofreciendo soluciones exactas con bajo error. El descenso de gradiente es preferible para problemas de gran escala, aunque requiere ajuste de hiperparámetros y un buen preprocesamiento. Ambos métodos son esenciales en el análisis de regresión, y su elección depende del equilibrio entre exactitud, estabilidad y costo computacional.
 
 \chapter{Diferenciación Numérica}
 
@@ -367,6 +381,1901 @@ En análisis de datos discretos se utilizan derivadas numéricas para:
 \end{itemize}
 
 Estas aplicaciones son comunes en ingeniería, finanzas y ciencia experimental.
+
+\section{Ejemplos}
+
+\subsection{Ejemplo 1}
+
+Un startup de tecnología registra el número acumulado de usuarios activos mensuales:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		Mes &  1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+		\hline
+		Usuarios (miles) & 10 & 15 & 23 & 34 & 48 & 65& 85  \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item Calcula la tasa de crecimiento de usuarios (usuarios nuevos por mes) en el mes 4 usando diferencia centrada.
+	\item Calcula la tasa de crecimiento en el mes 1 (usa diferencia adelante)
+	\item Calcula la tasa de crecimiento en el mes 7 (usa diferencia atrás)
+	\item ¿En qué mes fue mayor la aceleración del crecimiento? (calcula la sgeunda derivada en cada punto)
+	\item Interpreta: ¿la startup está creciendo de forma acelerada o desacelerada?
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|ccccccc}
+	\text{Mes} & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+	\hline
+	\text{Usuarios (miles)} & 10 & 15 & 23 & 34 & 48 & 65 & 85
+\end{array}
+\]
+
+Sea $h=1$ mes (intervalo entre observaciones).
+
+---
+
+\textbf{1) Tasa de crecimiento en el mes 4 (diferencia centrada)}
+
+\[
+f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}
+\]
+
+Para $x=4$:
+
+\[
+f'(4) = \frac{f(5) - f(3)}{2} = \frac{48 - 23}{2} = 12.5
+\]
+
+\[
+\boxed{f'(4) = 12.5 \text{ miles de usuarios/mes}}
+\]
+
+---
+
+\textbf{2) Tasa de crecimiento en el mes 1 (diferencia hacia adelante)}
+
+\[
+f'(x) \approx \frac{f(x+h) - f(x)}{h}
+\]
+
+Para $x=1$:
+
+\[
+f'(1) = f(2) - f(1) = 15 - 10 = 5
+\]
+
+\[
+\boxed{f'(1) = 5 \text{ miles de usuarios/mes}}
+\]
+
+---
+
+\textbf{3) Tasa de crecimiento en el mes 7 (diferencia hacia atrás)}
+
+\[
+f'(x) \approx \frac{f(x) - f(x-h)}{h}
+\]
+
+Para $x=7$:
+
+\[
+f'(7) = f(7) - f(6) = 85 - 65 = 20
+\]
+
+\[
+\boxed{f'(7) = 20 \text{ miles de usuarios/mes}}
+\]
+
+---
+
+\textbf{4) Aceleración del crecimiento (segunda derivada)}
+
+\[
+f''(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2}
+\]
+
+Para los puntos interiores ($x = 2,3,4,5,6$):
+
+\[
+\begin{aligned}
+	f''(2) &= 23 - 2(15) + 10 = 3 \\
+	f''(3) &= 34 - 2(23) + 15 = 3 \\
+	f''(4) &= 48 - 2(34) + 23 = 3 \\
+	f''(5) &= 65 - 2(48) + 34 = 3 \\
+	f''(6) &= 85 - 2(65) + 48 = 3
+\end{aligned}
+\]
+
+\[
+\boxed{f''(x) = 3 \text{ miles de usuarios/mes}^2 \text{ (constante en los meses 2 a 6)}}
+\]
+
+---
+
+\textbf{5) Interpretación}
+
+Como la segunda derivada es positiva y constante, la tasa de crecimiento aumenta de forma continua.
+
+\[
+\boxed{\text{La startup crece de forma acelerada.}}
+\]
+
+En términos prácticos, cada mes la tasa de nuevos usuarios aumenta en aproximadamente $3$ mil usuarios/mes², lo que refleja un crecimiento sostenido y cada vez más rápido.
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Datos
+mes <- 1:7
+usuarios <- c(10, 15, 23, 34, 48, 65, 85)
+h <- 1
+
+# 1. Derivadas (tasa de crecimiento)
+# Diferencia adelante, atrás y centrada
+dif_adelante <- (usuarios[2] - usuarios[1]) / h
+dif_atras <- (usuarios[7] - usuarios[6]) / h
+dif_centrada <- (usuarios[5] - usuarios[3]) / (2*h)
+
+cat("Tasa mes 1 (adelante):", dif_adelante, "miles/mes\n")
+cat("Tasa mes 4 (centrada):", dif_centrada, "miles/mes\n")
+cat("Tasa mes 7 (atrás):", dif_atras, "miles/mes\n")
+
+# 2. Segunda derivada (aceleración) en puntos interiores
+f2 <- numeric(length(usuarios))
+for (i in 2:(length(usuarios)-1)) {
+	f2[i] <- (usuarios[i+1] - 2*usuarios[i] + usuarios[i-1]) / (h^2)
+}
+f2
+
+cat("\nSegunda derivada (aceleración) por mes:\n")
+print(data.frame(mes=mes, aceleracion=f2))
+
+# 3. Interpretación
+if (all(f2[2:6] > 0)) {
+	cat("\nLa aceleración es positiva → crecimiento acelerado.\n")
+} else if (all(f2[2:6] < 0)) {
+	cat("\nLa aceleración es negativa → crecimiento desacelerado.\n")
+} else {
+	cat("\nLa aceleración varía → crecimiento irregular.\n")
+}
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Datos
+> mes <- 1:7
+> usuarios <- c(10, 15, 23, 34, 48, 65, 85)
+> h <- 1
+> 
+> # 1. Derivadas (tasa de crecimiento)
+> # Diferencia adelante, atrás y centrada
+> dif_adelante <- (usuarios[2] - usuarios[1]) / h
+> dif_atras <- (usuarios[7] - usuarios[6]) / h
+> dif_centrada <- (usuarios[5] - usuarios[3]) / (2*h)
+> 
+> cat("Tasa mes 1 (adelante):", dif_adelante, "miles/mes\n")
+Tasa mes 1 (adelante): 5 miles/mes
+> cat("Tasa mes 4 (centrada):", dif_centrada, "miles/mes\n")
+Tasa mes 4 (centrada): 12.5 miles/mes
+> cat("Tasa mes 7 (atrás):", dif_atras, "miles/mes\n")
+Tasa mes 7 (atrás): 20 miles/mes
+> 
+> # 2. Segunda derivada (aceleración) en puntos interiores
+> f2 <- numeric(length(usuarios))
+> for (i in 2:(length(usuarios)-1)) {
+	+   f2[i] <- (usuarios[i+1] - 2*usuarios[i] + usuarios[i-1]) / (h^2)
+	+ }
+> f2
+[1] 0 3 3 3 3 3 0
+> 
+> cat("\nSegunda derivada (aceleración) por mes:\n")
+
+Segunda derivada (aceleración) por mes:
+> print(data.frame(mes=mes, aceleracion=f2))
+mes aceleracion
+1   1           0
+2   2           3
+3   3           3
+4   4           3
+5   5           3
+6   6           3
+7   7           0
+> 
+> # 3. Interpretación
+> if (all(f2[2:6] > 0)) {
+	+   cat("\nLa aceleración es positiva → crecimiento acelerado.\n")
+	+ } else if (all(f2[2:6] < 0)) {
+	+   cat("\nLa aceleración es negativa → crecimiento desacelerado.\n")
+	+ } else {
+	+   cat("\nLa aceleración varía → crecimiento irregular.\n")
+	+ }
+
+La aceleración es positiva → crecimiento acelerado.
+\end{rcode}
+
+\subsection{Ejemplo 2}
+
+Durante el entrenamiento de un modelo de Machine Learning, se registra la función de pérdida (loss) en cada época:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		Época & 0 & 10 & 20 & 30 & 40 & 50  \\
+		\hline
+		Loss & 2.45 & 1.82 & 1.35 & 1.08 & 0.95 & 0.89 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item Calcula la tasa de cambio del loss en la época 20 usando diferencia centrada con h = 10.
+	\item Calcula la segunda derivada en la época 30. ¿Qué indica sobre la convergencia?
+	\item Si la tasa de cambio del loss es menor que 0.01 por época, el entrenamiento puede detenerse. ¿En qué época se alcanza este criterio?
+	\item Estima el loss en la época 25 usando interpolación lineal basada en las derivadas.
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|cccccc}
+	\text{Época} & 0 & 10 & 20 & 30 & 40 & 50 \\
+	\hline
+	\text{Loss} & 2.45 & 1.82 & 1.35 & 1.08 & 0.95 & 0.89
+\end{array}
+\]
+
+Sea $h=10$ (épocas entre mediciones).
+
+\bigskip
+
+\textbf{1) Tasa de cambio del loss en la época 20 (diferencia centrada, $h=10$)}
+
+La diferencia centrada con paso $h$:
+\[
+f'(x)\approx \frac{f(x+h)-f(x-h)}{2h}.
+\]
+
+Para $x=20$:
+\[
+f'(20)\approx \frac{f(30)-f(10)}{2\cdot 10}=\frac{1.08-1.82}{20}=\frac{-0.74}{20}=-0.037.
+\]
+
+\[
+\boxed{f'(20)\approx -0.037\ \text{(loss por época)}}
+\]
+(es decir, la loss decrece aproximadamente $0.037$ por época).
+
+\bigskip
+
+\textbf{2) Segunda derivada en la época 30 (centrada, $h=10$)}
+
+Fórmula de segunda derivada centrada:
+\[
+f''(x)\approx \frac{f(x+h)-2f(x)+f(x-h)}{h^2}.
+\]
+
+Para $x=30$:
+\[
+f''(30)\approx \frac{f(40)-2f(30)+f(20)}{10^2}
+=\frac{0.95 - 2(1.08) + 1.35}{100}
+=\frac{0.14}{100}=0.0014.
+\]
+
+\[
+\boxed{f''(30)\approx 0.0014\ \text{(loss por época}^2\text{)}}
+\]
+
+\emph{Interpretación:} la segunda derivada es \emph{positiva} y pequeña, lo que indica que la pendiente (tasa de decremento del loss) se está volviendo menos negativa: la disminución del loss se está frenando — es decir, el entrenamiento está tendiendo a \emph{converger} (la curva se aplana).
+
+\bigskip
+
+\textbf{3) ¿En qué época la tasa de cambio del loss es menor que 0.01 por época?}
+
+Calculamos las derivadas aproximadas en cada época usando diferencias hacia adelante/centradas/atrás con $h=10$:
+
+\[
+\begin{aligned}
+	f'(0) &\approx \frac{f(10)-f(0)}{10}=\frac{1.82-2.45}{10}=-0.063 \\
+	f'(10) &\approx \frac{f(20)-f(0)}{20}=\frac{1.35-2.45}{20}=-0.055 \\
+	f'(20) &\approx -0.037 \quad(\text{ya calculado})\\
+	f'(30) &\approx \frac{f(40)-f(20)}{20}=\frac{0.95-1.35}{20}=-0.020 \\
+	f'(40) &\approx \frac{f(50)-f(30)}{20}=\frac{0.89-1.08}{20}=-0.0095 \\
+	f'(50) &\approx \frac{f(50)-f(40)}{10}=\frac{0.89-0.95}{10}=-0.006
+\end{aligned}
+\]
+
+El criterio es \(|f'|<0.01\). El primer punto donde se cumple es la \(\boxed{\text{época }40}\) (a partir de la época 40 la magnitud de la tasa cae por debajo de 0.01).
+
+\bigskip
+
+\textbf{4) Estima el loss en la época 25 usando interpolación lineal basada en las derivadas}
+
+Usamos una aproximación lineal (expansión de primer orden) tomando el punto conocido en época 20 y la derivada en 20:
+\[
+f(25)\approx f(20) + f'(20)\cdot(25-20).
+\]
+Sustituyendo:
+\[
+f(25)\approx 1.35 + (-0.037)\cdot 5 = 1.35 - 0.185 = 1.165.
+\]
+
+\[
+\boxed{f(25)\approx 1.165}
+\]
+
+\emph{Nota:} la interpolación lineal clásica entre los puntos (20, 1.35) y (30, 1.08) daría el punto medio
+\(\, (1.35+1.08)/2 = 1.215\). La estimación basada en la derivada (linealización en 20) da \(1.165\); ambas son aproximaciones distintas (la elección depende del método que prefieras).
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Datos
+epoca <- c(0,10,20,30,40,50)
+loss  <- c(2.45, 1.82, 1.35, 1.08, 0.95, 0.89)
+h <- 10
+
+# Funciones para derivadas (usando h fijo = 10)
+# Diferencia hacia adelante (para primer punto)
+d_forward <- function(i) {
+	(loss[i+1] - loss[i]) / h
+}
+# Diferencia hacia atrás (para último punto)
+d_backward <- function(i) {
+	(loss[i] - loss[i-1]) / h
+}
+# Diferencia centrada (para puntos interiores)
+d_center <- function(i) {
+	(loss[i+1] - loss[i-1]) / (2*h)
+}
+# Segunda derivada centrada
+d2_center <- function(i) {
+	(loss[i+1] - 2*loss[i] + loss[i-1]) / (h^2)
+}
+
+# Calcular derivadas en cada época
+deriv <- numeric(length(loss))
+for (i in seq_along(loss)) {
+	if (i == 1) deriv[i] <- d_forward(i)
+	else if (i == length(loss)) deriv[i] <- d_backward(i)
+	else deriv[i] <- d_center(i)
+}
+
+# Calcular segunda derivada en puntos interiores
+d2 <- rep(NA, length(loss))
+for (i in 2:(length(loss)-1)) {
+	d2[i] <- d2_center(i)
+}
+
+# Resultados pedidos:
+cat("Derivadas (loss por época):\n")
+print(data.frame(epoca=epoca, loss=loss, derivada=round(deriv, 5)))
+
+cat("\nSegunda derivada (solo puntos interiores):\n")
+print(data.frame(epoca=epoca, segunda_derivada=round(d2, 6)))
+
+# 1) Tasa en época 20 (índice de época 3)
+idx20 <- which(epoca == 20)
+cat("\n1) f'(20) (centrada, h=10):", round(deriv[idx20], 5), " (loss/época)\n")
+
+# 2) Segunda derivada en época 30
+idx30 <- which(epoca == 30)
+cat("2) f''(30):", round(d2[idx30], 6), " (loss/época^2)\n")
+
+# Interpretación (impresa)
+if (!is.na(d2[idx30])) {
+	if (d2[idx30] > 0) {
+		cat("   Interpretación: f''(30) > 0 → la magnitud de la pendiente se está reduciendo; la disminución del loss se está frenando (convergencia en curso).\n")
+	} else if (d2[idx30] < 0) {
+		cat("   Interpretación: f''(30) < 0 → la disminución se está acelerando.\n")
+	} else {
+		cat("   Interpretación: f''(30) ≈ 0 → curva cercana a lineal localmente.\n")
+	}
+}
+
+# 3) ¿En qué época |f'| < 0.01 ?
+idx_crit <- which(abs(deriv) < 0.01)
+if (length(idx_crit) > 0) {
+	cat("\n3) Épocas donde |f'| < 0.01:", epoca[idx_crit], "\n")
+	cat("   Primera época que cumple el criterio:", epoca[min(idx_crit)], "\n")
+} else {
+	cat("\n3) No se alcanza |f'| < 0.01 en las épocas dadas.\n")
+}
+
+# 4) Estimación de loss en época 25 usando linearización en época 20:
+t_target <- 25
+t0 <- 20
+f_t0 <- loss[which(epoca == t0)]
+fprime_t0 <- deriv[which(epoca == t0)]
+f25_est <- f_t0 + fprime_t0 * (t_target - t0)
+cat("\n4) Estimación lineal (usando derivada en 20): f(25) ≈", round(f25_est, 4), "\n")
+
+# Para comparación: interpolación lineal directa entre 20 y 30
+f20 <- f_t0
+f30 <- loss[which(epoca == 30)]
+f25_lin_between <- f20 + (f30 - f20) * ( (t_target - 20) / (30 - 20) )
+cat("   Interpolación lineal entre 20 y 30: f(25) ≈", round(f25_lin_between,4), "\n")
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Datos
+> epoca <- c(0,10,20,30,40,50)
+> loss  <- c(2.45, 1.82, 1.35, 1.08, 0.95, 0.89)
+> h <- 10
+> 
+> # Funciones para derivadas (usando h fijo = 10)
+> # Diferencia hacia adelante (para primer punto)
+> d_forward <- function(i) {
+	+   (loss[i+1] - loss[i]) / h
+	+ }
+> # Diferencia hacia atrás (para último punto)
+> d_backward <- function(i) {
+	+   (loss[i] - loss[i-1]) / h
+	+ }
+> # Diferencia centrada (para puntos interiores)
+> d_center <- function(i) {
+	+   (loss[i+1] - loss[i-1]) / (2*h)
+	+ }
+> # Segunda derivada centrada
+> d2_center <- function(i) {
+	+   (loss[i+1] - 2*loss[i] + loss[i-1]) / (h^2)
+	+ }
+> 
+> # Calcular derivadas en cada época
+> deriv <- numeric(length(loss))
+> for (i in seq_along(loss)) {
+	+   if (i == 1) deriv[i] <- d_forward(i)
+	+   else if (i == length(loss)) deriv[i] <- d_backward(i)
+	+   else deriv[i] <- d_center(i)
+	+ }
+> 
+> # Calcular segunda derivada en puntos interiores
+> d2 <- rep(NA, length(loss))
+> for (i in 2:(length(loss)-1)) {
+	+   d2[i] <- d2_center(i)
+	+ }
+> 
+> # Resultados pedidos:
+> cat("Derivadas (loss por época):\n")
+Derivadas (loss por época):
+> print(data.frame(epoca=epoca, loss=loss, derivada=round(deriv, 5)))
+epoca loss derivada
+1     0 2.45  -0.0630
+2    10 1.82  -0.0550
+3    20 1.35  -0.0370
+4    30 1.08  -0.0200
+5    40 0.95  -0.0095
+6    50 0.89  -0.0060
+> 
+> cat("\nSegunda derivada (solo puntos interiores):\n")
+
+Segunda derivada (solo puntos interiores):
+> print(data.frame(epoca=epoca, segunda_derivada=round(d2, 6)))
+epoca segunda_derivada
+1     0               NA
+2    10           0.0016
+3    20           0.0020
+4    30           0.0014
+5    40           0.0007
+6    50               NA
+> 
+> # 1) Tasa en época 20 (índice de época 3)
+> idx20 <- which(epoca == 20)
+> cat("\n1) f'(20) (centrada, h=10):", round(deriv[idx20], 5), " (loss/época)\n")
+
+1) f'(20) (centrada, h=10): -0.037  (loss/época)
+> 
+> # 2) Segunda derivada en época 30
+> idx30 <- which(epoca == 30)
+> cat("2) f''(30):", round(d2[idx30], 6), " (loss/época^2)\n")
+2) f''(30): 0.0014  (loss/época^2)
+> 
+> # Interpretación (impresa)
+> if (!is.na(d2[idx30])) {
+	+   if (d2[idx30] > 0) {
+		+     cat("   Interpretación: f''(30) > 0 → la magnitud de la pendiente se está reduciendo; la disminución del loss se está frenando (convergencia en curso).\n")
+		+   } else if (d2[idx30] < 0) {
+		+     cat("   Interpretación: f''(30) < 0 → la disminución se está acelerando.\n")
+		+   } else {
+		+     cat("   Interpretación: f''(30) ≈ 0 → curva cercana a lineal localmente.\n")
+		+   }
+	+ }
+Interpretación: f''(30) > 0 → la magnitud de la pendiente se está reduciendo; la disminución del loss se está frenando (convergencia en curso).
+> 
+> # 3) ¿En qué época |f'| < 0.01 ?
+> idx_crit <- which(abs(deriv) < 0.01)
+> if (length(idx_crit) > 0) {
+	+   cat("\n3) Épocas donde |f'| < 0.01:", epoca[idx_crit], "\n")
+	+   cat("   Primera época que cumple el criterio:", epoca[min(idx_crit)], "\n")
+	+ } else {
+	+   cat("\n3) No se alcanza |f'| < 0.01 en las épocas dadas.\n")
+	+ }
+
+3) Épocas donde |f'| < 0.01: 40 50 
+Primera época que cumple el criterio: 40 
+> 
+> # 4) Estimación de loss en época 25 usando linearización en época 20:
+> t_target <- 25
+> t0 <- 20
+> f_t0 <- loss[which(epoca == t0)]
+> fprime_t0 <- deriv[which(epoca == t0)]
+> f25_est <- f_t0 + fprime_t0 * (t_target - t0)
+> cat("\n4) Estimación lineal (usando derivada en 20): f(25) ≈", round(f25_est, 4), "\n")
+
+4) Estimación lineal (usando derivada en 20): f(25) ≈ 1.165 
+> 
+> # Para comparación: interpolación lineal directa entre 20 y 30
+> f20 <- f_t0
+> f30 <- loss[which(epoca == 30)]
+> f25_lin_between <- f20 + (f30 - f20) * ( (t_target - 20) / (30 - 20) )
+> cat("   Interpolación lineal entre 20 y 30: f(25) ≈", round(f25_lin_between,4), "\n")
+Interpolación lineal entre 20 y 30: f(25) ≈ 1.215
+\end{rcode}
+
+\subsection{Ejemplo 3}
+
+Una empresa de e-commerce registra sus ventas diarias (en miles de dólares) durante una semana de campaña:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		Día & Lun & Mar & Mié & Jue & Vie & sáb & Dom  \\
+		\hline
+		Ventas (\$k) & 45 & 52 & 61 & 58 & 73 & 89 & 95 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item calcula la velocidad de crecimiento de ventas (derivada) para cada día usando diferencias finitas apropiadas.
+	\item Identifica el día con mayor aceleración de ventas (segunda derivada positiva máxima)
+	\item El jueves hubo una caída en la tendencia. Calcula la magnitud de esta desaceleración.
+	\item Si la tendencia del domingo se mantiene, ¿Cuántas ventas esperarías el lunes siguiente? (usa extrapolación lineal con la derivada)
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|ccccccc}
+	\text{Día} & \text{Lun} & \text{Mar} & \text{Mié} & \text{Jue} & \text{Vie} & \text{Sáb} & \text{Dom} \\
+	\hline
+	\text{Ventas }(\$k) & 45 & 52 & 61 & 58 & 73 & 89 & 95
+\end{array}
+\]
+
+Sea $h=1$ día.
+
+---
+
+\textbf{1) Velocidad de crecimiento (primera derivada) — diferencias finitas}
+
+Usamos diferencia hacia adelante en el primer día, hacia atrás en el último, y centrada en los puntos interiores:
+
+\[
+\begin{aligned}
+	f'(1)\ (\text{Lun, adelante}) &= \frac{f(2)-f(1)}{1}=52-45=7 \\
+	f'(2)\ (\text{Mar, centrada}) &= \frac{f(3)-f(1)}{2}=\frac{61-45}{2}=8 \\
+	f'(3)\ (\text{Mié, centrada}) &= \frac{f(4)-f(2)}{2}=\frac{58-52}{2}=3 \\
+	f'(4)\ (\text{Jue, centrada}) &= \frac{f(5)-f(3)}{2}=\frac{73-61}{2}=6 \\
+	f'(5)\ (\text{Vie, centrada}) &= \frac{f(6)-f(4)}{2}=\frac{89-58}{2}=15.5 \\
+	f'(6)\ (\text{Sáb, centrada}) &= \frac{f(7)-f(5)}{2}=\frac{95-73}{2}=11 \\
+	f'(7)\ (\text{Dom, atrás}) &= \frac{f(7)-f(6)}{1}=95-89=6
+\end{aligned}
+\]
+
+\[
+\boxed{f' = [7,\ 8,\ 3,\ 6,\ 15.5,\ 11,\ 6]\ \ (\$k\ \text{por día})}
+\]
+
+---
+
+\textbf{2) Aceleración (segunda derivada) y día con mayor aceleración positiva}
+
+Segunda derivada centrada para puntos interiores:
+\[
+f''(x)\approx f(x+1)-2f(x)+f(x-1)
+\]
+
+Cálculos:
+\[
+\begin{aligned}
+	f''(\text{Mar}) &= 61 - 2(52) + 45 = 2 \\
+	f''(\text{Mié}) &= 58 - 2(61) + 52 = -12 \\
+	f''(\text{Jue}) &= 73 - 2(58) + 61 = 18 \\
+	f''(\text{Vie}) &= 89 - 2(73) + 58 = 1 \\
+	f''(\text{Sáb}) &= 95 - 2(89) + 73 = -10
+\end{aligned}
+\]
+
+\[
+\boxed{f'' = [\text{NA},\ 2,\ -12,\ 18,\ 1,\ -10,\ \text{NA}]\ \ (\$k/\text{día}^2)}
+\]
+
+La segunda derivada máxima positiva es \(f''(\text{Jue})=18\), por lo que \(\boxed{\text{Jueves}}\) es el día con mayor aceleración positiva de ventas (magnitud \(18\ \$k/\text{día}^2\)).
+
+---
+
+\textbf{3) Caída en la tendencia el jueves — magnitud de la desaceleración}
+
+Hay dos formas de cuantificar lo pedido:
+
+\begin{itemize}
+	\item \emph{Caída directa en ventas (valor absoluto):} las ventas bajaron de miércoles a jueves: \(58 - 61 = -3\). Es decir, hubo una \textbf{caída de \$3k} en ventas ese día.
+	\item \emph{Desaceleración medida por la segunda derivada:} el valor \(f''(\text{Mié}) = -12\) indica una fuerte \textbf{desaceleración} alrededor del miércoles (la pendiente se hace más negativa allí). En cambio \(f''(\text{Jue})=+18\) porque inmediatamente después (viernes) las ventas suben mucho (73), lo que provoca una aceleración positiva en el punto jueves cuando se evalúa con el vecino viernes. 
+\end{itemize}
+
+Conclusión: la \textbf{caída instantánea} de ventas el jueves fue \(\boxed{3\ \$k}\). La \textbf{desaceleración local} más fuerte corresponde a \(f''(\text{Mié})=-12\ (\$k/\text{día}^2)\), indicando que justo en torno al miércoles la tendencia se frenó fuertemente.
+
+---
+
+\textbf{4) Extrapolación lineal: ventas el lunes siguiente}
+
+Usamos la derivada en el domingo (diferencia atrás) como tasa diaria y extrapolamos 1 día:
+
+\[
+f(\text{Lun siguiente}) \approx f(\text{Dom}) + f'(\text{Dom})\cdot 1 = 95 + 6 = 101
+\]
+
+\[
+\boxed{\text{Ventas esperadas el lunes siguiente } \approx 101\ \$k}
+\]
+
+---
+
+Resumen numérico rápido:
+
+\[
+\begin{aligned}
+	f' &: [7,\ 8,\ 3,\ 6,\ 15.5,\ 11,\ 6]\ (\$k/\text{día})\\
+	f'' &: [\text{NA},\ 2,\ -12,\ 18,\ 1,\ -10,\ \text{NA}]\ (\$k/\text{día}^2)\\
+	\text{Mayor aceleración positiva} &: \text{Jue }(18\ \$k/\text{día}^2)\\
+	\text{Caída en Jue (ventas)} &: -3\ \$k\\
+	\text{Proyección Lun siguiente} &: 101\ \$k
+\end{aligned}
+\]
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Datos
+dias <- c("Lun","Mar","Mié","Jue","Vie","Sáb","Dom")
+ventas <- c(45, 52, 61, 58, 73, 89, 95)  # en $k
+h <- 1
+
+# 1) Primera derivada: adelante en primer punto, atrás en último, centrada en interiores
+deriv <- numeric(length(ventas))
+for (i in seq_along(ventas)) {
+	if (i == 1) {
+		deriv[i] <- (ventas[i+1] - ventas[i]) / h
+	} else if (i == length(ventas)) {
+		deriv[i] <- (ventas[i] - ventas[i-1]) / h
+	} else {
+		deriv[i] <- (ventas[i+1] - ventas[i-1]) / (2*h)
+	}
+}
+
+# 2) Segunda derivada (centrada) en puntos interiores
+d2 <- rep(NA, length(ventas))
+for (i in 2:(length(ventas)-1)) {
+	d2[i] <- (ventas[i+1] - 2*ventas[i] + ventas[i-1]) / (h^2)
+}
+
+# Identificar día con mayor aceleración positiva
+idx_max_acc <- which.max(d2)  # returns first max (NA treated as -Inf)
+# but ensure it's interior (non-NA)
+if (is.na(d2[idx_max_acc]) || length(idx_max_acc) == 0) {
+	dia_max_acc <- NA
+	max_acc <- NA
+} else {
+	dia_max_acc <- dias[idx_max_acc]
+	max_acc <- d2[idx_max_acc]
+}
+
+# 3) Magnitud de la caída el jueves (drop Mié -> Jue)
+drop_jue <- ventas[4] - ventas[3]  # index 4 = Jue, 3 = Mié
+
+# 4) Extrapolación lineal para Lunes siguiente usando derivada en Domingo
+f_dom <- ventas[length(ventas)]
+fprime_dom <- deriv[length(ventas)]
+f_lun_sig <- f_dom + fprime_dom * 1
+
+# Mostrar resultados
+cat("Primera derivada (ventas $k/día) por día:\n")
+print(data.frame(dia=dias, ventas=ventas, derivada=deriv))
+
+cat("\nSegunda derivada (ventas $k/día^2) en puntos interiores:\n")
+print(data.frame(dia=dias, segunda_derivada=d2))
+
+cat("\nDía con mayor aceleración positiva:\n")
+cat("  ", dia_max_acc, "con f'' =", max_acc, "\n")
+
+cat("\nCaída en ventas Mié -> Jue: ", drop_jue, " $k (si es negativo, es caída)\n")
+
+cat("\nProyección lunes siguiente (usando derivada en domingo):\n")
+cat("  Ventas domingo =", f_dom, " $k\n")
+cat("  Tasa domingo =", fprime_dom, " $k/día\n")
+cat("  Estimación lunes siguiente =", f_lun_sig, " $k\n")
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Datos
+> dias <- c("Lun","Mar","Mié","Jue","Vie","Sáb","Dom")
+> ventas <- c(45, 52, 61, 58, 73, 89, 95)  # en $k
+> h <- 1
+> 
+> # 1) Primera derivada: adelante en primer punto, atrás en último, centrada en interiores
+> deriv <- numeric(length(ventas))
+> for (i in seq_along(ventas)) {
+	+   if (i == 1) {
+		+     deriv[i] <- (ventas[i+1] - ventas[i]) / h
+		+   } else if (i == length(ventas)) {
+		+     deriv[i] <- (ventas[i] - ventas[i-1]) / h
+		+   } else {
+		+     deriv[i] <- (ventas[i+1] - ventas[i-1]) / (2*h)
+		+   }
+	+ }
+> 
+> # 2) Segunda derivada (centrada) en puntos interiores
+> d2 <- rep(NA, length(ventas))
+> for (i in 2:(length(ventas)-1)) {
+	+   d2[i] <- (ventas[i+1] - 2*ventas[i] + ventas[i-1]) / (h^2)
+	+ }
+> 
+> # Identificar día con mayor aceleración positiva
+> idx_max_acc <- which.max(d2)  # returns first max (NA treated as -Inf)
+> # but ensure it's interior (non-NA)
+> if (is.na(d2[idx_max_acc]) || length(idx_max_acc) == 0) {
+	+   dia_max_acc <- NA
+	+   max_acc <- NA
+	+ } else {
+	+   dia_max_acc <- dias[idx_max_acc]
+	+   max_acc <- d2[idx_max_acc]
+	+ }
+> 
+> # 3) Magnitud de la caída el jueves (drop Mié -> Jue)
+> drop_jue <- ventas[4] - ventas[3]  # index 4 = Jue, 3 = Mié
+> 
+> # 4) Extrapolación lineal para Lunes siguiente usando derivada en Domingo
+> f_dom <- ventas[length(ventas)]
+> fprime_dom <- deriv[length(ventas)]
+> f_lun_sig <- f_dom + fprime_dom * 1
+> 
+> # Mostrar resultados
+> cat("Primera derivada (ventas $k/día) por día:\n")
+Primera derivada (ventas $k/día) por día:
+> print(data.frame(dia=dias, ventas=ventas, derivada=deriv))
+dia ventas derivada
+1 Lun     45      7.0
+2 Mar     52      8.0
+3 Mié     61      3.0
+4 Jue     58      6.0
+5 Vie     73     15.5
+6 Sáb     89     11.0
+7 Dom     95      6.0
+> 
+> cat("\nSegunda derivada (ventas $k/día^2) en puntos interiores:\n")
+
+Segunda derivada (ventas $k/día^2) en puntos interiores:
+> print(data.frame(dia=dias, segunda_derivada=d2))
+dia segunda_derivada
+1 Lun               NA
+2 Mar                2
+3 Mié              -12
+4 Jue               18
+5 Vie                1
+6 Sáb              -10
+7 Dom               NA
+> 
+> cat("\nDía con mayor aceleración positiva:\n")
+
+Día con mayor aceleración positiva:
+> cat("  ", dia_max_acc, "con f'' =", max_acc, "\n")
+Jue con f'' = 18 
+> 
+> cat("\nCaída en ventas Mié -> Jue: ", drop_jue, " $k (si es negativo, es caída)\n")
+
+Caída en ventas Mié -> Jue:  -3  $k (si es negativo, es caída)
+> 
+> cat("\nProyección lunes siguiente (usando derivada en domingo):\n")
+
+Proyección lunes siguiente (usando derivada en domingo):
+> cat("  Ventas domingo =", f_dom, " $k\n")
+Ventas domingo = 95  $k
+> cat("  Tasa domingo =", fprime_dom, " $k/día\n")
+Tasa domingo = 6  $k/día
+> cat("  Estimación lunes siguiente =", f_lun_sig, " $k\n")
+Estimación lunes siguiente = 101  $k
+\end{rcode}
+
+\subsection{Ejemplo 4}
+
+En redes neuronales, necesitas calcular el gradiente de la función sigmoide $\sigma(x) = \dfrac{1}{1 + e^{-x}}$ en varios puntos para el backpropagation. No tienes la derivada analítica programada.
+
+Datos evaluados de la función:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		x & -3.0 & -2.0 & -1.0 & 0.0 & 1.0 & 2.0 & 3.0 \\
+		\hline
+		$\sigma(x)$ & 0.0474 & 0.1192 & 0.2689 & 0.5000 & 0.7311 & 0.8808 & 0.9526 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item Calcula $\sigma'(0)$ usando diferencia centrada con h = 1.
+	\item Calcula $\sigma'(-2)$ y $\sigma'(2)$ usando diferencias centradas.
+	\item Compara tus resultados numéricos con la derivada analítica: $\sigma'(x) = \sigma(x)(1 - \sigma(x))$
+	\item ¿Qué tamaño de h recomendarías para este cálculo? Justifica.
+	\item ¿Por qué la derivada es simétrica alrededor de x = 0?
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|ccccccc}
+	x & -3.0 & -2.0 & -1.0 & 0.0 & 1.0 & 2.0 & 3.0 \\
+	\hline
+	\sigma(x) & 0.0474 & 0.1192 & 0.2689 & 0.5000 & 0.7311 & 0.8808 & 0.9526
+\end{array}
+\]
+
+Sea \(h=1\).
+
+---
+
+\textbf{1) Cálculo numérico de \(\sigma'(0)\) (diferencia centrada, \(h=1\))}
+
+\[
+\sigma'(x)\approx \frac{\sigma(x+h)-\sigma(x-h)}{2h}.
+\]
+
+Para \(x=0\):
+
+\[
+\sigma'(0)\approx \frac{\sigma(1)-\sigma(-1)}{2}
+= \frac{0.7311 - 0.2689}{2} = \frac{0.4622}{2} = 0.2311.
+\]
+
+\[
+\boxed{\sigma'(0)_{\text{num}}\approx 0.2311}
+\]
+
+---
+
+\textbf{2) Cálculo numérico de \(\sigma'(-2)\) y \(\sigma'(2)\) (centradas, \(h=1\))}
+
+Para \(x=-2\):
+
+\[
+\sigma'(-2)\approx \frac{\sigma(-1)-\sigma(-3)}{2}
+= \frac{0.2689 - 0.0474}{2} = \frac{0.2215}{2} = 0.11075.
+\]
+
+Para \(x=2\):
+
+\[
+\sigma'(2)\approx \frac{\sigma(3)-\sigma(1)}{2}
+= \frac{0.9526 - 0.7311}{2} = \frac{0.2215}{2} = 0.11075.
+\]
+
+\[
+\boxed{\sigma'(-2)_{\text{num}} = \sigma'(2)_{\text{num}} \approx 0.11075}
+\]
+
+---
+
+\textbf{3) Comparación con la derivada analítica}
+
+La derivada analítica es
+\[
+\sigma'(x) = \sigma(x)\bigl(1-\sigma(x)\bigr).
+\]
+
+Calculando:
+
+\[
+\begin{aligned}
+	\sigma'(0)_{\text{ana}} &= 0.5(1-0.5) = 0.25,\\[4pt]
+	\sigma'(-2)_{\text{ana}} &= 0.1192(1-0.1192)=0.1192\cdot 0.8808 \approx 0.10499136,\\[4pt]
+	\sigma'(2)_{\text{ana}} &= 0.8808(1-0.8808)=0.8808\cdot 0.1192 \approx 0.10499136.
+\end{aligned}
+\]
+
+\textbf{Errores absolutos y relativos:}
+\[
+\begin{aligned}
+	\text{En }x=0:&\quad \text{num}=0.2311,\ \text{ana}=0.25,\ \Delta=-0.0189\ (\approx -7.56\%)\\
+	\text{En }x=\pm 2:&\quad \text{num}=0.11075,\ \text{ana}\approx 0.10499136,\ \Delta\approx 0.00575864\ (\approx +5.48\%)
+\end{aligned}
+\]
+
+\emph{Comentario:} las aproximaciones centradas con \(h=1\) están cerca pero muestran errores de varios por ciento; la diferencia es mayor en \(x=0\) porque la curvatura local y la escala hacen que un paso grande (1) afecte más la precisión.
+
+---
+
+\textbf{4) Recomendación sobre el tamaño de \(h\)}
+
+\begin{itemize}
+	\item Si \emph{puedes evaluar la función analíticamente} (como la sigmoide), usa un \(h\) muy pequeño para las diferencias finitas — por ejemplo \(h\approx 10^{-5}\) a \(10^{-6}\) suele ser razonable en doble precisión, o usar la fórmula analítica directamente (lo ideal).
+	\item Si solo dispones de \emph{valores tabulados} con separación discreta (aquí los datos están a paso 1), entonces el único \(h\) disponible para diferencias finitas sin interpolar es \(h=1\). Para mejorar la precisión necesitarías interpolar o ajustar una función (p. ej. ajustar la sigmoide) y luego derivar esa función.
+	\item Regla práctica (análisis numérico): el error truncamiento ~ \(O(h^2)\) para la diferencia centrada, pero el error de redondeo aumenta al tomar \(h\) muy pequeño. Si usas la función analítica, elegir \(h\) en torno a \(\sqrt{\varepsilon}\cdot \text{escala}\) (donde \(\varepsilon\) es la máquina, ≈2.2e-16) da un buen compromiso; en práctica \(h\approx 10^{-5}\) suele funcionar bien.
+\end{itemize}
+
+---
+
+\textbf{5) ¿Por qué la derivada es simétrica alrededor de \(x=0\)?}
+
+La sigmoide cumple la relación
+\[
+\sigma(-x)=1-\sigma(x).
+\]
+Entonces
+\[
+\sigma'(-x)=\sigma(-x)\bigl(1-\sigma(-x)\bigr)=(1-\sigma(x))\bigl(1-(1-\sigma(x))\bigr)=\sigma(x)(1-\sigma(x))=\sigma'(x).
+\]
+Por tanto \(\sigma'(x)\) es una función par (even): \(\sigma'(-x)=\sigma'(x)\). Esa es la razón de la simetría alrededor de \(x=0\).
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Datos
+x <- c(-3, -2, -1, 0, 1, 2, 3)
+sigma <- c(0.0474, 0.1192, 0.2689, 0.5000, 0.7311, 0.8808, 0.9526)
+h <- 1
+
+# Indices helper
+idx <- function(val) which(x == val)
+
+# 1) Derivada centrada para x = 0, -2, 2
+deriv_centered <- function(xval) {
+	i <- idx(xval)
+	# asumiendo que xval tiene vecinos (x-h) y (x+h) disponibles
+	(sigma[i + 1] - sigma[i - 1]) / (2 * h)
+}
+
+d0_num <- deriv_centered(0)
+dminus2_num <- deriv_centered(-2)
+d2_num <- deriv_centered(2)
+
+# 2) Derivada analítica sigma*(1-sigma)
+d_analytic <- sigma * (1 - sigma)
+d0_ana <- d_analytic[idx(0)]
+dminus2_ana <- d_analytic[idx(-2)]
+d2_ana <- d_analytic[idx(2)]
+
+# 3) Errores
+abs_err_0 <- d0_num - d0_ana
+rel_err_0 <- abs_err_0 / d0_ana * 100
+
+abs_err_m2 <- dminus2_num - dminus2_ana
+rel_err_m2 <- abs_err_m2 / dminus2_ana * 100
+
+abs_err_2 <- d2_num - d2_ana
+rel_err_2 <- abs_err_2 / d2_ana * 100
+
+# Mostrar resultados
+cat("Resultados (h = 1):\n\n")
+
+cat("x = 0:\n")
+cat("  derivada num (centrada) =", d0_num, "\n")
+cat("  derivada analítica      =", d0_ana, "\n")
+cat("  error absoluto =", abs_err_0, ", error relativo (%) =", rel_err_0, "\n\n")
+
+cat("x = -2:\n")
+cat("  derivada num (centrada) =", dminus2_num, "\n")
+cat("  derivada analítica      =", dminus2_ana, "\n")
+cat("  error absoluto =", abs_err_m2, ", error relativo (%) =", rel_err_m2, "\n\n")
+
+cat("x = 2:\n")
+cat("  derivada num (centrada) =", d2_num, "\n")
+cat("  derivada analítica      =", d2_ana, "\n")
+cat("  error absoluto =", abs_err_2, ", error relativo (%) =", rel_err_2, "\n\n")
+
+# Tabla resumen
+res <- data.frame(
+x = x,
+sigma = sigma,
+deriv_analitica = round(d_analytic, 8),
+deriv_centrada = c(NA, dminus2_num, NA, d0_num, NA, d2_num, NA)
+)
+cat("Tabla resumen:\n")
+print(res)
+
+# Recomendación sobre h (comentario)
+cat("\nNota: si puedes evaluar sigma(x) analíticamente, usa h pequeño (p.ej. 1e-5) o mejor aún usa la derivada analítica.\n")
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Datos
+> x <- c(-3, -2, -1, 0, 1, 2, 3)
+> sigma <- c(0.0474, 0.1192, 0.2689, 0.5000, 0.7311, 0.8808, 0.9526)
+> h <- 1
+> 
+> # Indices helper
+> idx <- function(val) which(x == val)
+> 
+> # 1) Derivada centrada para x = 0, -2, 2
+> deriv_centered <- function(xval) {
+	+   i <- idx(xval)
+	+   # asumiendo que xval tiene vecinos (x-h) y (x+h) disponibles
+	+   (sigma[i + 1] - sigma[i - 1]) / (2 * h)
+	+ }
+> 
+> d0_num <- deriv_centered(0)
+> dminus2_num <- deriv_centered(-2)
+> d2_num <- deriv_centered(2)
+> 
+> # 2) Derivada analítica sigma*(1-sigma)
+> d_analytic <- sigma * (1 - sigma)
+> d0_ana <- d_analytic[idx(0)]
+> dminus2_ana <- d_analytic[idx(-2)]
+> d2_ana <- d_analytic[idx(2)]
+> 
+> # 3) Errores
+> abs_err_0 <- d0_num - d0_ana
+> rel_err_0 <- abs_err_0 / d0_ana * 100
+> 
+> abs_err_m2 <- dminus2_num - dminus2_ana
+> rel_err_m2 <- abs_err_m2 / dminus2_ana * 100
+> 
+> abs_err_2 <- d2_num - d2_ana
+> rel_err_2 <- abs_err_2 / d2_ana * 100
+> 
+> # Mostrar resultados
+> cat("Resultados (h = 1):\n\n")
+Resultados (h = 1):
+
+> 
+> cat("x = 0:\n")
+x = 0:
+> cat("  derivada num (centrada) =", d0_num, "\n")
+derivada num (centrada) = 0.2311 
+> cat("  derivada analítica      =", d0_ana, "\n")
+derivada analítica      = 0.25 
+> cat("  error absoluto =", abs_err_0, ", error relativo (%) =", rel_err_0, "\n\n")
+error absoluto = -0.0189 , error relativo (%) = -7.56 
+
+> 
+> cat("x = -2:\n")
+x = -2:
+> cat("  derivada num (centrada) =", dminus2_num, "\n")
+derivada num (centrada) = 0.11075 
+> cat("  derivada analítica      =", dminus2_ana, "\n")
+derivada analítica      = 0.1049914 
+> cat("  error absoluto =", abs_err_m2, ", error relativo (%) =", rel_err_m2, "\n\n")
+error absoluto = 0.00575864 , error relativo (%) = 5.48487 
+
+> 
+> cat("x = 2:\n")
+x = 2:
+> cat("  derivada num (centrada) =", d2_num, "\n")
+derivada num (centrada) = 0.11075 
+> cat("  derivada analítica      =", d2_ana, "\n")
+derivada analítica      = 0.1049914 
+> cat("  error absoluto =", abs_err_2, ", error relativo (%) =", rel_err_2, "\n\n")
+error absoluto = 0.00575864 , error relativo (%) = 5.48487 
+
+> 
+> # Tabla resumen
+> res <- data.frame(
++   x = x,
++   sigma = sigma,
++   deriv_analitica = round(d_analytic, 8),
++   deriv_centrada = c(NA, dminus2_num, NA, d0_num, NA, d2_num, NA)
++ )
+> cat("Tabla resumen:\n")
+Tabla resumen:
+> print(res)
+x  sigma deriv_analitica deriv_centrada
+1 -3 0.0474      0.04515324             NA
+2 -2 0.1192      0.10499136        0.11075
+3 -1 0.2689      0.19659279             NA
+4  0 0.5000      0.25000000        0.23110
+5  1 0.7311      0.19659279             NA
+6  2 0.8808      0.10499136        0.11075
+7  3 0.9526      0.04515324             NA
+> 
+> # Recomendación sobre h (comentario)
+> cat("\nNota: si puedes evaluar sigma(x) analíticamente, usa h pequeño (p.ej. 1e-5) o mejor aún usa la derivada analítica.\n")
+
+Nota: si puedes evaluar sigma(x) analíticamente, usa h pequeño (p.ej. 1e-5) o mejor aún usa la derivada analítica.
+\end{rcode}
+
+\subsection{Ejemplo 5}
+
+Un sistema de monitoreo registra el tiempo de respuesta (en ms) de una API cada hora durante un incidente:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		Hora & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7  \\
+		\hline
+		Latencia (ms) & 120 & 125 & 128 & 135 & 280 & 290 & 275 & 155 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item Calcula la primera derivada (tasa de cambio) para cada hora usando diferencias finitas apropiadas.
+	\item Identifica el momento del "pico de anomalía calculando dónde la segunda derivada cambia de signo (de positiva a negativa)
+	\item Entre las horas 3 y 4 hay un salto brusco. Calcula la magnitud de este cambio.
+	\item A partir de la hora 6, el sistema comienza a recuperarse. Calcula la tasa de recuperación (derivada negativa)
+	\item Si defines una anomalía como un cambio mayor a 50 ms/hora, ¿en qué momentos se detectarían anomalías?
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|cccccccc}
+	\text{Hora} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+	\hline
+	\text{Latencia (ms)} & 120 & 125 & 128 & 135 & 280 & 290 & 275 & 155
+\end{array}
+\]
+
+Sea $h=1$ hora.
+
+---
+
+\textbf{1) Primera derivada (tasa de cambio) — diferencias finitas}
+
+Usamos diferencia hacia adelante en la hora 0, hacia atrás en la hora 7 y centrada en los puntos interiores:
+
+\[
+\begin{aligned}
+	f'(0) &= \frac{f(1)-f(0)}{1}=125-120=5 \\
+	f'(1) &= \frac{f(2)-f(0)}{2}=\frac{128-120}{2}=4 \\
+	f'(2) &= \frac{f(3)-f(1)}{2}=\frac{135-125}{2}=5 \\
+	f'(3) &= \frac{f(4)-f(2)}{2}=\frac{280-128}{2}=76 \\
+	f'(4) &= \frac{f(5)-f(3)}{2}=\frac{290-135}{2}=77.5 \\
+	f'(5) &= \frac{f(6)-f(4)}{2}=\frac{275-280}{2}=-2.5 \\
+	f'(6) &= \frac{f(7)-f(5)}{2}=\frac{155-290}{2}=-67.5 \\
+	f'(7) &= \frac{f(7)-f(6)}{1}=155-275=-120
+\end{aligned}
+\]
+
+\[
+\boxed{f' = [5,\ 4,\ 5,\ 76,\ 77.5,\ -2.5,\ -67.5,\ -120]\ \ (\text{ms/h})}
+\]
+
+---
+
+\textbf{2) Pico de anomalía (cambio de signo en la segunda derivada)}
+
+Segunda derivada centrada (para puntos interiores):
+\[
+f''(x)\approx f(x+1)-2f(x)+f(x-1)
+\]
+
+Cálculos:
+\[
+\begin{aligned}
+	f''(1) &= 128 - 2(125) + 120 = -2 \\
+	f''(2) &= 135 - 2(128) + 125 = 4 \\
+	f''(3) &= 280 - 2(135) + 128 = 138 \\
+	f''(4) &= 290 - 2(280) + 135 = -135 \\
+	f''(5) &= 275 - 2(290) + 280 = -25 \\
+	f''(6) &= 155 - 2(275) + 290 = -105
+\end{aligned}
+\]
+
+La segunda derivada pasa de positiva (en $x=3$, $f''(3)=138$) a negativa (en $x=4$, $f''(4)=-135$). Por tanto el \emph{pico de anomalía} ocurre entre la \(\boxed{\text{hora }3\ \text{y}\ \text{hora }4}\), interpretándose el momento máximo del choque en la \(\boxed{\text{hora }4}\) (cuando la latencia alcanza 280 ms).
+
+---
+
+\textbf{3) Magnitud del salto brusco entre hora 3 y 4}
+
+\[
+\Delta = f(4) - f(3) = 280 - 135 = 145\ \text{ms}.
+\]
+
+\[
+\boxed{\text{Salto brusco} = 145\ \text{ms}}
+\]
+
+---
+
+\textbf{4) Tasa de recuperación a partir de la hora 6}
+
+Usando la derivada calculada:
+
+- Derivada centrada en hora 6: \(f'(6) = -67.5\ \text{ms/h}\) — tasa de recuperación promedio alrededor de la hora 6.  
+- Entre hora 6 y 7 (derivada hacia atrás en 7): \(f'(7) = -120\ \text{ms/h}\) — recuperación más rápida en ese intervalo.
+
+\[
+\boxed{\text{Tasa de recuperación (aprox.) } \approx -67.5\ \text{ms/h (cent.) ; entre 6→7: }-120\ \text{ms/h}}
+\]
+
+---
+
+\textbf{5) Detección de anomalías (|cambio| > 50 ms/h)}
+
+Tomando los valores absolutos de \(f'\):
+\[
+|f'| = [5,\ 4,\ 5,\ 76,\ 77.5,\ 2.5,\ 67.5,\ 120]
+\]
+(he puesto 2.5 positivo para la magnitud en la hora 5).
+
+Los instantes donde $|f'|>50$ son las horas: \(\boxed{3,\ 4,\ 6,\ 7}\) — es decir, se detectarían anomalías a partir de la hora 3 (inicio del ascenso brusco), en la hora 4 (máximo del salto), y durante la recuperación rápida en las horas 6 y 7.
+
+---
+
+\textbf{Resumen:}
+\[
+\begin{aligned}
+	&f'=[5,4,5,76,77.5,-2.5,-67.5,-120]\ \text{(ms/h)} \\
+	&f''(\text{interiores})=[-2,4,138,-135,-25,-105]\ \text{(ms/h}^2\text{)}\\
+	&\text{Pico de anomalía: entre h=3 y h=4 (latencia máxima en h=4)}\\
+	&\text{Salto 3→4: }145\ \text{ms}\\
+	&\text{Tasa recuperación (h≈6): }-67.5\ \text{ms/h (cent.) ; 6→7: }-120\ \text{ms/h}\\
+	&\text{Anomalías (|f'|>50): horas }3,4,6,7
+\end{aligned}
+\]
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Código R para calcular automáticamente lo anterior
+
+# Datos
+hora <- 0:7
+latencia <- c(120, 125, 128, 135, 280, 290, 275, 155)
+h <- 1
+
+# 1) Primera derivada: adelante, centrada, atrás
+fprime <- numeric(length(latencia))
+for (i in seq_along(latencia)) {
+	if (i == 1) {
+		fprime[i] <- (latencia[i+1] - latencia[i]) / h          # forward
+	} else if (i == length(latencia)) {
+		fprime[i] <- (latencia[i] - latencia[i-1]) / h          # backward
+	} else {
+		fprime[i] <- (latencia[i+1] - latencia[i-1]) / (2*h)    # centered
+	}
+}
+
+# 2) Segunda derivada centrada (puntos interiores)
+f2 <- rep(NA, length(latencia))
+for (i in 2:(length(latencia)-1)) {
+	f2[i] <- (latencia[i+1] - 2*latencia[i] + latencia[i-1]) / (h^2)
+}
+
+# 3) Magnitud salto 3->4
+salto_3_4 <- latencia[5] - latencia[4]  # indices: hora 4 is index 5, hora 3 is index 4
+
+# 4) Tasas de recuperación (a partir de la hora 6)
+idx6 <- which(hora == 6)
+tasa_recuperacion_cent <- fprime[idx6]
+# derivada entre 6->7 (forward from 6 or backward at 7)
+tasa_6_7 <- (latencia[8] - latencia[7]) / h  # index 8=hora7, 7=hora6
+
+# 5) Detección de anomalías: |f'| > 50 ms/h
+umbral <- 50
+anomalias_idx <- which(abs(fprime) > umbral)
+anomalias_horas <- hora[anomalias_idx]
+
+# Imprimir resultados
+cat("Primera derivada f' (ms/h) por hora:\n")
+print(data.frame(hora=hora, latencia=latencia, fprime=round(fprime,4)))
+
+cat("\nSegunda derivada f'' (ms/h^2) en puntos interiores:\n")
+print(data.frame(hora=hora, f2=f2))
+
+cat("\nSalto brusco 3->4 (ms):", salto_3_4, "\n")
+
+cat("\nTasa de recuperación (hora 6, centrada):", tasa_recuperacion_cent, "ms/h\n")
+cat("Tasa entre 6->7:", tasa_6_7, "ms/h\n")
+
+if (length(anomalias_idx) > 0) {
+	cat("\nAnomalías detectadas (|f'| >", umbral, "ms/h) en horas:", anomalias_horas, "\n")
+} else {
+	cat("\nNo se detectaron anomalías con el umbral dado.\n")
+}
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Código R para calcular automáticamente lo anterior
+> 
+> # Datos
+> hora <- 0:7
+> latencia <- c(120, 125, 128, 135, 280, 290, 275, 155)
+> h <- 1
+> 
+> # 1) Primera derivada: adelante, centrada, atrás
+> fprime <- numeric(length(latencia))
+> for (i in seq_along(latencia)) {
+	+   if (i == 1) {
+		+     fprime[i] <- (latencia[i+1] - latencia[i]) / h          # forward
+		+   } else if (i == length(latencia)) {
+		+     fprime[i] <- (latencia[i] - latencia[i-1]) / h          # backward
+		+   } else {
+		+     fprime[i] <- (latencia[i+1] - latencia[i-1]) / (2*h)    # centered
+		+   }
+	+ }
+> 
+> # 2) Segunda derivada centrada (puntos interiores)
+> f2 <- rep(NA, length(latencia))
+> for (i in 2:(length(latencia)-1)) {
+	+   f2[i] <- (latencia[i+1] - 2*latencia[i] + latencia[i-1]) / (h^2)
+	+ }
+> 
+> # 3) Magnitud salto 3->4
+> salto_3_4 <- latencia[5] - latencia[4]  # indices: hora 4 is index 5, hora 3 is index 4
+> 
+> # 4) Tasas de recuperación (a partir de la hora 6)
+> idx6 <- which(hora == 6)
+> tasa_recuperacion_cent <- fprime[idx6]
+> # derivada entre 6->7 (forward from 6 or backward at 7)
+> tasa_6_7 <- (latencia[8] - latencia[7]) / h  # index 8=hora7, 7=hora6
+> 
+> # 5) Detección de anomalías: |f'| > 50 ms/h
+> umbral <- 50
+> anomalias_idx <- which(abs(fprime) > umbral)
+> anomalias_horas <- hora[anomalias_idx]
+> 
+> # Imprimir resultados
+> cat("Primera derivada f' (ms/h) por hora:\n")
+Primera derivada f' (ms/h) por hora:
+> print(data.frame(hora=hora, latencia=latencia, fprime=round(fprime,4)))
+hora latencia fprime
+1    0      120    5.0
+2    1      125    4.0
+3    2      128    5.0
+4    3      135   76.0
+5    4      280   77.5
+6    5      290   -2.5
+7    6      275  -67.5
+8    7      155 -120.0
+> 
+> cat("\nSegunda derivada f'' (ms/h^2) en puntos interiores:\n")
+
+Segunda derivada f'' (ms/h^2) en puntos interiores:
+> print(data.frame(hora=hora, f2=f2))
+hora   f2
+1    0   NA
+2    1   -2
+3    2    4
+4    3  138
+5    4 -135
+6    5  -25
+7    6 -105
+8    7   NA
+> 
+> cat("\nSalto brusco 3->4 (ms):", salto_3_4, "\n")
+
+Salto brusco 3->4 (ms): 145 
+> 
+> cat("\nTasa de recuperación (hora 6, centrada):", tasa_recuperacion_cent, "ms/h\n")
+
+Tasa de recuperación (hora 6, centrada): -67.5 ms/h
+> cat("Tasa entre 6->7:", tasa_6_7, "ms/h\n")
+Tasa entre 6->7: -120 ms/h
+> 
+> if (length(anomalias_idx) > 0) {
+	+   cat("\nAnomalías detectadas (|f'| >", umbral, "ms/h) en horas:", anomalias_horas, "\n")
+	+ } else {
+	+   cat("\nNo se detectaron anomalías con el umbral dado.\n")
+	+ }
+
+Anomalías detectadas (|f'| > 50 ms/h) en horas: 3 4 6 7
+\end{rcode}
+
+\subsection{Ejemplo 6}
+
+Una campaña de marketing muestra la siguiente tasa de conversión (porcentaje) en función del gasto en publicidad (en miles de dólares):
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		Gasto (\$k) & 0 & 5 & 10 & 15 & 20 & 25 \\
+		\hline
+		Conversión (\%) & 2.1 & 3.8 & 5.2 & 6.1 & 6.7 & 7.0 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item Calcula el ROI marginal (derivada de conversión respecto al gasto) en cada punto usando diferencias centradas.
+	\item ¿En qué momento de gasto el ROI marginal es mayor que 0.2\% por cada \$1000 invertido?
+	\item La segunda derivada indica rendimientos decrecientes. Calcula la segunda derivada en \$15k.
+	\item con base en las derivadas ¿recomendarías aumentar el gasto más allá de \$25k? Justifique matemáticamente.
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|cccccc}
+	\text{Gasto }(\$k) & 0 & 5 & 10 & 15 & 20 & 25 \\
+	\hline
+	\text{Conversión }(\%) & 2.1 & 3.8 & 5.2 & 6.1 & 6.7 & 7.0
+\end{array}
+\]
+
+Sea \(h=5\) (miles de dólares entre puntos).
+
+---
+
+\textbf{1) ROI marginal (derivada de conversión respecto al gasto)}
+
+Usamos diferencia centrada para los puntos interiores y diferencias adelante/atrás en los extremos (paso \(h=5\)):
+
+\[
+f'(x)\approx\frac{f(x+h)-f(x-h)}{2h}
+\]
+
+Cálculos (en \% por \$1k):
+
+\[
+\begin{aligned}
+	f'(0)\ (\text{adelante}) &= \frac{3.8-2.1}{5}=0.34 \\
+	f'(5)\ (\text{centrada}) &= \frac{5.2-2.1}{10}=0.31 \\
+	f'(10)\ (\text{centrada}) &= \frac{6.1-3.8}{10}=0.23 \\
+	f'(15)\ (\text{centrada}) &= \frac{6.7-5.2}{10}=0.15 \\
+	f'(20)\ (\text{centrada}) &= \frac{7.0-6.1}{10}=0.09 \\
+	f'(25)\ (\text{atrás}) &= \frac{7.0-6.7}{5}=0.06
+\end{aligned}
+\]
+
+\[
+\boxed{f' = [0.34,\ 0.31,\ 0.23,\ 0.15,\ 0.09,\ 0.06]\ \ (\%\ \text{por}\ \$1\text{k})}
+\]
+
+---
+
+\textbf{2) ¿Cuándo el ROI marginal \(>0.2\%\) por \$1k?}
+
+Comparando los valores anteriores, las posiciones donde \(f'(x)>0.2\) son:
+
+\[
+x = 0,\ 5,\ 10\ (\$0k,\ \$5k,\ \$10k).
+\]
+
+Es decir, hasta \$10k el ROI marginal supera 0.2\%/\$1k.  
+Si se desea el punto exacto donde \(f'(x)=0.2\) entre 10 y 15k, interpolando linealmente entre \(f'(10)=0.23\) y \(f'(15)=0.15\) obtenemos:
+
+\[
+x^* \approx 10 + \frac{0.23-0.20}{0.23-0.15}\cdot 5 \approx 11.875\ (\$k).
+\]
+
+Por tanto, para gasto mayor a \(\approx\$11.88\)k el ROI marginal cae por debajo de \(0.2\%\) por \$1k.
+
+---
+
+\textbf{3) Segunda derivada en \$15k (indicador de rendimientos decrecientes)}
+
+La fórmula centrada de segunda derivada:
+\[
+f''(x)\approx \frac{f(x+h)-2f(x)+f(x-h)}{h^2}.
+\]
+
+Para \(x=15\) (con \(h=5\)):
+\[
+f''(15)\approx \frac{6.7 - 2(6.1) + 5.2}{5^2}
+= \frac{6.7 -12.2 +5.2}{25} = \frac{-0.3}{25} = -0.012.
+\]
+
+\[
+\boxed{f''(15) \approx -0.012\ \left(\%\ /\ (\$1\text{k})^2\right)}
+\]
+
+El valor negativo confirma \emph{rendimientos decrecientes} (la ganancia marginal de conversión disminuye con gasto).
+
+---
+
+\textbf{4) Recomendación sobre aumentar gasto más allá de \$25k (interpretación matemática)}
+
+- La primera derivada en \$25k es \(f'(25)=0.06\%\) por \$1k — positiva pero muy pequeña.  
+- La segunda derivada en los puntos interiores es negativa (ej. \(f''(15)\approx -0.012\)), lo que indica que el ROI marginal está decreciendo al aumentar el gasto: \(\;f'(\cdot)\) es decreciente.  
+- Además, el umbral práctico que propusimos (0.2\%/\$1k) ya se supera sólo hasta \(\approx\$11.88\)k; más allá de eso la ganancia marginal cae por debajo de un valor atractivo.
+
+Por estas razones matemáticas (ROI marginal pequeño y decreciente), \(\boxed{\text{no es recomendable aumentar el gasto mucho más allá de \$25k si el objetivo es maximizar la conversión por dólar adicional.}}\)  
+Sin embargo, la decisión final puede depender de razones externas (p. ej. límites de escala, objetivos de branding, o expectativa de nonlinealidades fuera del rango observado).
+
+---
+
+\textbf{Resumen numérico}
+
+\[
+\begin{aligned}
+	f' &: [0.34,\ 0.31,\ 0.23,\ 0.15,\ 0.09,\ 0.06]\ \%/\$1\text{k}\\
+	f''(15) &\approx -0.012\ \%/(\$1\text{k})^2\\
+	\text{Umbral }0.2\%/\$1\text{k} &\text{ alcanzado hasta } \$10\text{k} \ (\text{corte } \approx \$11.875\text{k})\\
+	\text{Recomendación} &: \text{No aumentar significativamente más allá de \$25k (rendimientos decrecientes).}
+\end{aligned}
+\]
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Código R: cálculo automático de derivadas y decisiones
+gasto <- c(0, 5, 10, 15, 20, 25)   # en $k
+conv  <- c(2.1, 3.8, 5.2, 6.1, 6.7, 7.0)  # en %
+h <- 5  # en $k
+
+# 1) Derivadas (ROI marginal) - forward/back/centered
+deriv <- numeric(length(conv))
+for (i in seq_along(conv)) {
+	if (i == 1) {
+		deriv[i] <- (conv[i+1] - conv[i]) / h    # forward
+	} else if (i == length(conv)) {
+		deriv[i] <- (conv[i] - conv[i-1]) / h    # backward
+	} else {
+		deriv[i] <- (conv[i+1] - conv[i-1]) / (2*h)  # centered
+	}
+}
+
+# 2) Segunda derivada centrada (interiores)
+d2 <- rep(NA, length(conv))
+for (i in 2:(length(conv)-1)) {
+	d2[i] <- (conv[i+1] - 2*conv[i] + conv[i-1]) / (h^2)
+}
+
+# 3) ¿Dónde f'(x) > 0.2 % por $1k?
+idx_gt_02 <- which(deriv > 0.2)
+gasto_gt_02 <- gasto[idx_gt_02]
+
+# punto aproximado donde f'(x)=0.2 (lineal entre 10 y 15 si desea precisión)
+d10 <- deriv[which(gasto==10)]
+d15 <- deriv[which(gasto==15)]
+if (d10 != d15) {
+	frac <- (d10 - 0.2) / (d10 - d15)
+	x_threshold <- 10 + frac * (15 - 10)  # en $k
+} else {
+	x_threshold <- NA
+}
+
+# Impresión de resultados
+cat("Gasto ($k)  :", gasto, "\n")
+cat("Conversion % :", conv, "\n\n")
+cat("ROI marginal f' (% per $1k):\n")
+print(round(deriv, 4))
+
+cat("\nSegunda derivada (interiores) f'' (% per ($1k)^2):\n")
+print(round(d2, 5))
+
+cat("\nPuntos donde f' > 0.2 (% per $1k):", gasto_gt_02, "\n")
+cat("Umbral f'(x)=0.2 ocurre aproximadamente en gasto = ", round(x_threshold, 3), " $k\n\n")
+
+# Recomendación basada en derivadas
+cat("Interpretación:\n")
+cat("- f'(25) =", round(deriv[length(deriv)],4), "%/ $1k  (marginal positivo pero bajo)\n")
+cat("- f'' en interiores (ej. f''(15) =", round(d2[which(gasto==15)],5), ") indica rendimientos decrecientes\n")
+cat("--> Matemáticamente no conviene aumentar demasiado el gasto más allá de 25k si la meta es obtener conversion % por dolar adicional.\n")
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Código R: cálculo automático de derivadas y decisiones
+> gasto <- c(0, 5, 10, 15, 20, 25)   # en $k
+> conv  <- c(2.1, 3.8, 5.2, 6.1, 6.7, 7.0)  # en %
+> h <- 5  # en $k
+> 
+> # 1) Derivadas (ROI marginal) - forward/back/centered
+> deriv <- numeric(length(conv))
+> for (i in seq_along(conv)) {
+	+   if (i == 1) {
+		+     deriv[i] <- (conv[i+1] - conv[i]) / h    # forward
+		+   } else if (i == length(conv)) {
+		+     deriv[i] <- (conv[i] - conv[i-1]) / h    # backward
+		+   } else {
+		+     deriv[i] <- (conv[i+1] - conv[i-1]) / (2*h)  # centered
+		+   }
+	+ }
+> 
+> # 2) Segunda derivada centrada (interiores)
+> d2 <- rep(NA, length(conv))
+> for (i in 2:(length(conv)-1)) {
+	+   d2[i] <- (conv[i+1] - 2*conv[i] + conv[i-1]) / (h^2)
+	+ }
+> 
+> # 3) ¿Dónde f'(x) > 0.2 % por $1k?
+> idx_gt_02 <- which(deriv > 0.2)
+> gasto_gt_02 <- gasto[idx_gt_02]
+> 
+> # punto aproximado donde f'(x)=0.2 (lineal entre 10 y 15 si desea precisión)
+> d10 <- deriv[which(gasto==10)]
+> d15 <- deriv[which(gasto==15)]
+> if (d10 != d15) {
+	+   frac <- (d10 - 0.2) / (d10 - d15)
+	+   x_threshold <- 10 + frac * (15 - 10)  # en $k
+	+ } else {
+	+   x_threshold <- NA
+	+ }
+> 
+> # Impresión de resultados
+> cat("Gasto ($k)  :", gasto, "\n")
+Gasto ($k)  : 0 5 10 15 20 25 
+> cat("Conversion % :", conv, "\n\n")
+Conversion % : 2.1 3.8 5.2 6.1 6.7 7 
+
+> cat("ROI marginal f' (% per $1k):\n")
+ROI marginal f' (% per $1k):
+> print(round(deriv, 4))
+[1] 0.34 0.31 0.23 0.15 0.09 0.06
+> 
+> cat("\nSegunda derivada (interiores) f'' (% per ($1k)^2):\n")
+
+Segunda derivada (interiores) f'' (% per ($1k)^2):
+> print(round(d2, 5))
+[1]     NA -0.012 -0.020 -0.012 -0.012     NA
+> 
+> cat("\nPuntos donde f' > 0.2 (% per $1k):", gasto_gt_02, "\n")
+
+Puntos donde f' > 0.2 (% per $1k): 0 5 10 
+> cat("Umbral f'(x)=0.2 ocurre aproximadamente en gasto = ", round(x_threshold, 3), " $k\n\n")
+Umbral f'(x)=0.2 ocurre aproximadamente en gasto =  11.875  $k
+
+> 
+> # Recomendación basada en derivadas
+> cat("Interpretación:\n")
+Interpretación:
+> cat("- f'(25) =", round(deriv[length(deriv)],4), "%/ $1k  (marginal positivo pero bajo)\n")
+- f'(25) = 0.06 %/ $1k  (marginal positivo pero bajo)
+> cat("- f'' en interiores (ej. f''(15) =", round(d2[which(gasto==15)],5), ") indica rendimientos decrecientes\n")
+- f'' en interiores (ej. f''(15) = -0.012 ) indica rendimientos decrecientes
+> cat("--> Matemáticamente no conviene aumentar demasiado el gasto más allá de 25k si la meta es obtener conversion % por dolar adicional.\n")
+--> Matemáticamente no conviene aumentar demasiado el gasto más allá de 25k si la meta es obtener conversion % por dolar adicional.
+\end{rcode}
+
+\subsection{Ejemplo 7}
+
+Tienes un dataset con la señal de un sensor de temperatura en un proceso industrial medida cada segundo:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		Tiempo (s) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+		Temp (°C) & 20.1 & 20.3 & 20.8 & 21.5 & 22.6 & 24.2 & 26.1 & 28.5 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Tareas}
+
+\begin{enumerate}
+	\item Crea una nueva feature: la velocidad de cambio de temperatura (primera derivada en cada punto. 
+	\item Crea otra feature: la aceleración del cambio (segunda derivada)
+	\item Un aumento de temperatura mayor a 0.8°C/s indica un problema. ¿En qué momentos se detectaría esta alerta?
+	\item Normaliza las features derivadas usando min-max scaling.
+	\item Explica por qué estas features derivadas pueden ser útiles para un modelo de clasificación que detecta anomalías.
+\end{enumerate}
+
+\textbf{Datos:}
+
+\[
+\begin{array}{c|cccccccc}
+	\text{Tiempo (s)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+	\hline
+	T(°C) & 20.1 & 20.3 & 20.8 & 21.5 & 22.6 & 24.2 & 26.1 & 28.5
+\end{array}
+\]
+
+Sea \(h = 1\,\text{s}\).
+
+---
+
+\textbf{1) Velocidad de cambio de temperatura (primera derivada)}
+
+\[
+T'(t) \approx \frac{T(t+h)-T(t-h)}{2h}
+\]
+
+(con diferencias centradas; adelante y atrás en los extremos)
+
+\[
+\begin{aligned}
+	T'(0)&=\frac{20.3-20.1}{1}=0.2\\
+	T'(1)&=\frac{20.8-20.1}{2}=0.35\\
+	T'(2)&=\frac{21.5-20.3}{2}=0.6\\
+	T'(3)&=\frac{22.6-20.8}{2}=0.9\\
+	T'(4)&=\frac{24.2-21.5}{2}=1.35\\
+	T'(5)&=\frac{26.1-22.6}{2}=1.75\\
+	T'(6)&=\frac{28.5-24.2}{2}=2.15\\
+	T'(7)&=\frac{28.5-26.1}{1}=2.4
+\end{aligned}
+\]
+
+\[
+\boxed{T' = [0.2,\ 0.35,\ 0.6,\ 0.9,\ 1.35,\ 1.75,\ 2.15,\ 2.4]\ \text{°C/s}}
+\]
+
+---
+
+\textbf{2) Aceleración del cambio (segunda derivada)}
+
+\[
+T''(t) \approx \frac{T(t+h)-2T(t)+T(t-h)}{h^2}
+\]
+
+\[
+\begin{aligned}
+	T''(1) &= 20.8 - 2(20.3) + 20.1 = 0.3\\
+	T''(2) &= 21.5 - 2(20.8) + 20.3 = 0.2\\
+	T''(3) &= 22.6 - 2(21.5) + 20.8 = 0.4\\
+	T''(4) &= 24.2 - 2(22.6) + 21.5 = 0.5\\
+	T''(5) &= 26.1 - 2(24.2) + 22.6 = 0.3\\
+	T''(6) &= 28.5 - 2(26.1) + 24.2 = 0.5
+\end{aligned}
+\]
+
+\[
+\boxed{T'' = [\text{NA},\ 0.3,\ 0.2,\ 0.4,\ 0.5,\ 0.3,\ 0.5,\ \text{NA}]}
+\]
+
+---
+
+\textbf{3) Alertas de temperatura (cuando \(T'(t) > 0.8\ °C/s\))}
+
+\[
+T'(t) > 0.8 \Rightarrow t = 3,4,5,6,7
+\]
+
+\[
+\boxed{\text{Alerta desde } t=3\text{ s hasta } t=7\text{ s}}
+\]
+
+---
+
+\textbf{4) Normalización (Min-Max Scaling)}
+
+Para cada feature derivada \(x_i\):
+
+\[
+x' = \frac{x_i - \min(x)}{\max(x) - \min(x)}
+\]
+
+\[
+\begin{aligned}
+	\min(T') &= 0.2,\ \max(T') = 2.4\\
+	T'_{norm} &= \frac{T'-0.2}{2.4-0.2} = \frac{T'-0.2}{2.2}\\
+	\Rightarrow T'_{norm} = [0.0,\ 0.068,\ 0.182,\ 0.318,\ 0.523,\ 0.682,\ 0.875,\ 1.0]
+\end{aligned}
+\]
+
+Para la segunda derivada (ignorando extremos):
+
+\[
+\min(T'') = 0.2,\ \max(T'') = 0.5
+\]
+\[
+T''_{norm} = \frac{T''-0.2}{0.3}
+\Rightarrow [\text{NA},\ 0.33,\ 0.0,\ 0.67,\ 1.0,\ 0.33,\ 1.0,\ \text{NA}]
+\]
+
+---
+
+\textbf{5) Interpretación (utilidad en modelos de clasificación)}
+
+Las features derivadas (\(T'\) y \(T''\)) capturan no solo el nivel absoluto de la temperatura, sino también:
+
+- **Cambios rápidos (gradiente):** ayudan a detectar aumentos anómalos incluso si la temperatura absoluta sigue dentro del rango normal.  
+- **Patrones de aceleración:** la segunda derivada permite distinguir un incremento sostenido (problema) de una fluctuación puntual.  
+- En modelos de clasificación (por ejemplo, detección de anomalías o mantenimiento predictivo), estas características enriquecen la representación temporal, permitiendo al modelo aprender dinámicas en lugar de solo estados estáticos.
+
+\[
+\boxed{\text{Las derivadas actúan como detectores de tendencia y estabilidad del sistema.}}
+\]
+
+\textbf{Código en R}
+
+\begin{rcode}
+# Datos
+tiempo <- 0:7
+temp <- c(20.1, 20.3, 20.8, 21.5, 22.6, 24.2, 26.1, 28.5)
+h <- 1
+
+# 1. Primera derivada (diferencias finitas)
+vel <- numeric(length(temp))
+for (i in seq_along(temp)) {
+	if (i == 1) vel[i] <- (temp[i+1] - temp[i]) / h
+	else if (i == length(temp)) vel[i] <- (temp[i] - temp[i-1]) / h
+	else vel[i] <- (temp[i+1] - temp[i-1]) / (2*h)
+}
+
+# 2. Segunda derivada
+acc <- rep(NA, length(temp))
+for (i in 2:(length(temp)-1)) {
+	acc[i] <- (temp[i+1] - 2*temp[i] + temp[i-1]) / (h^2)
+}
+
+# 3. Alertas (cuando velocidad > 0.8 °C/s)
+alerta <- tiempo[vel > 0.8]
+
+# 4. Normalización min-max
+minmax <- function(x) (x - min(x, na.rm=TRUE)) / (max(x, na.rm=TRUE) - min(x, na.rm=TRUE))
+vel_norm <- minmax(vel)
+acc_norm <- minmax(acc)
+
+# Mostrar resultados
+df <- data.frame(tiempo, temp, vel, acc, vel_norm, acc_norm)
+print(round(df, 3))
+
+cat("\nMomentos con alerta (>0.8°C/s):", alerta, "segundos\n")
+\end{rcode}
+
+\textbf{Ejecución}
+
+\begin{rcode}
+> # Datos
+> tiempo <- 0:7
+> temp <- c(20.1, 20.3, 20.8, 21.5, 22.6, 24.2, 26.1, 28.5)
+> h <- 1
+> 
+> # 1. Primera derivada (diferencias finitas)
+> vel <- numeric(length(temp))
+> for (i in seq_along(temp)) {
+	+   if (i == 1) vel[i] <- (temp[i+1] - temp[i]) / h
+	+   else if (i == length(temp)) vel[i] <- (temp[i] - temp[i-1]) / h
+	+   else vel[i] <- (temp[i+1] - temp[i-1]) / (2*h)
+	+ }
+> 
+> # 2. Segunda derivada
+> acc <- rep(NA, length(temp))
+> for (i in 2:(length(temp)-1)) {
+	+   acc[i] <- (temp[i+1] - 2*temp[i] + temp[i-1]) / (h^2)
+	+ }
+> 
+> # 3. Alertas (cuando velocidad > 0.8 °C/s)
+> alerta <- tiempo[vel > 0.8]
+> 
+> # 4. Normalización min-max
+> minmax <- function(x) (x - min(x, na.rm=TRUE)) / (max(x, na.rm=TRUE) - min(x, na.rm=TRUE))
+> vel_norm <- minmax(vel)
+> acc_norm <- minmax(acc)
+> 
+> # Mostrar resultados
+> df <- data.frame(tiempo, temp, vel, acc, vel_norm, acc_norm)
+> print(round(df, 3))
+tiempo temp  vel acc vel_norm acc_norm
+1      0 20.1 0.20  NA    0.000       NA
+2      1 20.3 0.35 0.3    0.068    0.333
+3      2 20.8 0.60 0.2    0.182    0.000
+4      3 21.5 0.90 0.4    0.318    0.667
+5      4 22.6 1.35 0.5    0.523    1.000
+6      5 24.2 1.75 0.3    0.705    0.333
+7      6 26.1 2.15 0.5    0.886    1.000
+8      7 28.5 2.40  NA    1.000       NA
+> 
+> cat("\nMomentos con alerta (>0.8°C/s):", alerta, "segundos\n")
+
+Momentos con alerta (>0.8°C/s): 3 4 5 6 7 segundos
+\end{rcode}
 
 \section{Conclusiones}
 
@@ -551,8 +2460,6 @@ En ingeniería, por ejemplo, se utiliza para calibrar instrumentos, construir cu
 La interpolación constituye una herramienta esencial para el análisis de datos y la aproximación de funciones. Los métodos clásicos como Lagrange y Newton proporcionan una base sólida, mientras que los splines ofrecen mayor estabilidad y suavidad. La elección del método depende del número de puntos, la distribución de los mismos y la precisión requerida \parencite{burden2016, atkinson2009}.
 
 \chapter{Valores y Vectores Propios}
-
-
 
 \section{ ¿Qué son y por qué importan?}
 
@@ -843,3 +2750,678 @@ Esto ocurre porque el término $5^{20}$ domina completamente la ecuación. Geom�
 	\caption{Salida de la consola en R mostrando los valores propios y la matriz resultante $\mathbf{A}^{20}$.}
 	\label{fig:resultados_eigen}
 \end{figure}
+
+\section{Eigenvalues y eigenvectores aplicados}
+
+\textbf{Contexto}
+
+En un hospital general, los pacientes hospitalizados transitan entre distintos
+servicios médicos, y en cada uno de ellos se les prescribe un tipo de dieta
+específica según su condición clínica. Estos desplazamientos no son aleatorios,
+sino que responden a protocolos médicos, evolución del estado de salud y
+decisiones administrativas del hospital.
+
+Sin embargo, no siempre se dispone de bases de datos completas que describan
+con precisión estos flujos. En estos casos, es posible construir un modelo
+matemático hipotético que represente de manera razonable el comportamiento del
+sistema, permitiendo analizar escenarios y apoyar la toma de decisiones.
+
+En este modelo, se consideran cuatro estados principales del sistema hospitalario:
+
+\begin{itemize}
+	\item Emergencia (dieta líquida)
+	\item Medicina Interna (dieta blanda)
+	\item Cirugía (dieta progresiva)
+	\item Alta hospitalaria
+\end{itemize}
+
+Cada estado representa la proporción de pacientes que se encuentran en un
+determinado servicio médico y, por tanto, bajo un tipo de dieta específico.
+
+\textbf{Planteamiento del modelo}
+
+Se modela el sistema mediante una cadena de Markov de tiempo discreto, donde
+las probabilidades de transición representan la posibilidad de que un paciente
+pase de un servicio médico a otro en un intervalo de tiempo determinado.
+La matriz de transición inicial se construye de forma hipotética, basándose en
+criterios clínicos generales y en el flujo típico de pacientes dentro de un
+hospital.
+
+\textbf{Tarea}
+
+\begin{enumerate}
+	\item Proponer una matriz de transición inicial que represente el flujo de
+	pacientes entre los distintos servicios médicos del hospital, asegurando
+	que cada fila sume 1.
+	
+	\item Simular una intervención hospitalaria orientada a fortalecer el
+	servicio de Medicina Interna, asumiendo que:
+	\begin{itemize}
+		\item Aumenta la probabilidad de que pacientes provenientes de Emergencia
+		sean derivados a Medicina Interna.
+		\item Aumenta la probabilidad de permanencia de los pacientes en Medicina
+		Interna.
+		\item Disminuye la probabilidad de alta directa desde Medicina Interna.
+		\item Las demás probabilidades se ajustan para conservar la coherencia
+		del modelo.
+	\end{itemize}
+	
+	\item Calcular los eigenvalues y eigenvectores de la matriz de transición
+	modificada.
+	
+	\item Determinar la distribución estacionaria del sistema y analizar el
+	comportamiento de los pacientes a largo plazo.
+	
+	\item Comparar la distribución estacionaria original y la modificada,
+	evaluando el impacto de la intervención hospitalaria sobre la permanencia
+	de los pacientes en Medicina Interna y en los demás servicios.
+\end{enumerate}
+
+\textbf{Justificación del uso de datos hipotéticos}
+
+La ausencia de una base de datos real no invalida el modelo propuesto, ya que el
+objetivo principal es analizar el comportamiento dinámico del sistema bajo
+supuestos razonables. La matriz de transición se construye a partir de criterios
+clínicos generales, protocolos hospitalarios habituales y consideraciones
+operativas, permitiendo estudiar escenarios hipotéticos y evaluar decisiones de
+gestión hospitalaria.
+
+\textbf{Preguntas de reflexión}
+
+\begin{itemize}
+	\item ¿La intervención en Medicina Interna mejora la eficiencia del flujo de
+	pacientes dentro del hospital?
+	\item ¿Cómo podría este modelo apoyar la planificación de dietas y recursos
+	nutricionales?
+	\item ¿Qué implicancias tendría este cambio en la carga de trabajo del
+	personal de salud?
+\end{itemize}
+
+\textbf{Solución}
+
+1.- Proponer una matriz de transición inicial que represente el flujo de
+pacientes entre los distintos servicios médicos del hospital, asegurando
+que cada fila sume 1.
+
+2.- Simular una intervención hospitalaria orientada a fortalecer el
+servicio de Medicina Interna, asumiendo que:
+\begin{itemize}
+	\item Aumenta la probabilidad de que pacientes provenientes de Emergencia
+	sean derivados a Medicina Interna.
+	\item Aumenta la probabilidad de permanencia de los pacientes en Medicina
+	Interna.
+	\item Disminuye la probabilidad de alta directa desde Medicina Interna.
+	\item Las demás probabilidades se ajustan para conservar la coherencia
+	del modelo.
+\end{itemize}
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+# Importar librerías necesarias
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import linalg
+import pandas as pd
+
+# Configuración de visualización
+plt.rcParams['figure.figsize'] = (12, 8)
+plt.rcParams['font.size'] = 10
+sns.set_style("whitegrid")
+
+print("Librerías importadas correctamente")
+print(f"NumPy versión: {np.__version__}")
+
+# Definición de servicios médicos
+servicios = [
+'Emergencia\n(Dieta líquida)',
+'Medicina Interna\n(Dieta blanda)',
+'Cirugía\n(Dieta progresiva)',
+'Alta hospitalaria'
+]
+
+n_servicios = len(servicios)
+
+# Matriz de transición inicial
+# T[i,j] = probabilidad de pasar del servicio i al servicio j
+T_inicial = np.array([
+[0.20, 0.45, 0.25, 0.10],  # Desde Emergencia
+[0.05, 0.40, 0.25, 0.30],  # Desde Medicina Interna
+[0.05, 0.15, 0.50, 0.30],  # Desde Cirugía
+[0.00, 0.00, 0.00, 1.00]   # Desde Alta hospitalaria
+])
+
+# Crear DataFrame
+df_T_inicial = pd.DataFrame(
+T_inicial,
+index=servicios,
+columns=servicios
+)
+
+print("MATRIZ DE TRANSICIÓN INICIAL")
+print("=" * 70)
+print(df_T_inicial)
+
+print("\nVerificación: cada fila debe sumar 1")
+print("-" * 70)
+for i, serv in enumerate(servicios):
+suma = T_inicial[i, :].sum()
+status = "✓" if abs(suma - 1.0) < 1e-6 else "✗"
+print(f"{status} {serv:35}: suma = {suma:.3f}")
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(
+T_inicial,
+annot=True,
+fmt='.2f',
+cmap='YlGnBu',
+xticklabels=servicios,
+yticklabels=servicios,
+cbar_kws={'label': 'Probabilidad de transición'},
+linewidths=0.5,
+linecolor='gray'
+)
+
+plt.title(
+'Matriz de Transición Inicial\nFlujo de Pacientes y Dietas Hospitalarias',
+fontsize=14,
+fontweight='bold',
+pad=20
+)
+plt.xlabel('Servicio destino', fontsize=12)
+plt.ylabel('Servicio origen', fontsize=12)
+plt.tight_layout()
+plt.show()
+
+print("\nLos valores más altos indican mayor probabilidad de tránsito entre servicios")
+
+# Matriz de transición modificada (intervención hospitalaria)
+T_intervencion = np.array([
+[0.15, 0.55, 0.20, 0.10],  # Desde Emergencia
+[0.05, 0.55, 0.25, 0.15],  # Desde Medicina Interna (más permanencia)
+[0.05, 0.15, 0.50, 0.30],  # Desde Cirugía (sin cambios)
+[0.00, 0.00, 0.00, 1.00]   # Desde Alta hospitalaria
+])
+
+df_T_intervencion = pd.DataFrame(
+T_intervencion,
+index=servicios,
+columns=servicios
+)
+
+print("\nMATRIZ DE TRANSICIÓN MODIFICADA (INTERVENCIÓN)")
+print("=" * 70)
+print(df_T_intervencion)
+
+print("\nVerificación: cada fila debe sumar 1")
+print("-" * 70)
+for i, serv in enumerate(servicios):
+suma = T_intervencion[i, :].sum()
+status = "✓" if abs(suma - 1.0) < 1e-6 else "✗"
+print(f"{status} {serv:35}: suma = {suma:.3f}")
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(
+T_intervencion,
+annot=True,
+fmt='.2f',
+cmap='YlOrRd',
+xticklabels=servicios,
+yticklabels=servicios,
+cbar_kws={'label': 'Probabilidad de transición'},
+linewidths=0.5,
+linecolor='gray'
+)
+
+plt.title(
+'Matriz de Transición con Intervención\nFortalecimiento de Medicina Interna',
+fontsize=14,
+fontweight='bold',
+pad=20
+)
+plt.xlabel('Servicio destino', fontsize=12)
+plt.ylabel('Servicio origen', fontsize=12)
+plt.tight_layout()
+plt.show()
+
+print("\nLa intervención incrementa la retención de pacientes en Medicina Interna")
+\end{pythoncode}
+
+\textbf{Ejecución}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Matriz1.png}
+	\caption{Matriz de transición inicial - Flujo de pacientes y dietas hospitalarias}
+	\label{Matriz1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Matriz2.png}
+	\caption{Matriz de transición con intervención - Fortalecimiento de Medicina Interna}
+	\label{Matriz2}
+\end{figure}
+
+\begin{pythoncode}
+Librerías importadas correctamente
+NumPy versión: 2.3.3
+MATRIZ DE TRANSICIÓN INICIAL
+======================================================================
+Emergencia\n(Dieta líquida)  ...  Alta hospitalaria
+Emergencia\n(Dieta líquida)                              0.20  ...                0.1
+Medicina Interna\n(Dieta blanda)                         0.05  ...                0.3
+Cirugía\n(Dieta progresiva)                              0.05  ...                0.3
+Alta hospitalaria                                        0.00  ...                1.0
+
+[4 rows x 4 columns]
+
+Verificación: cada fila debe sumar 1
+----------------------------------------------------------------------
+✓ Emergencia
+(Dieta líquida)         : suma = 1.000
+✓ Medicina Interna
+(Dieta blanda)    : suma = 1.000
+✓ Cirugía
+(Dieta progresiva)         : suma = 1.000
+✓ Alta hospitalaria                  : suma = 1.000
+
+Los valores más altos indican mayor probabilidad de tránsito entre servicios
+
+MATRIZ DE TRANSICIÓN MODIFICADA (INTERVENCIÓN)
+======================================================================
+Emergencia\n(Dieta líquida)  ...  Alta hospitalaria
+Emergencia\n(Dieta líquida)                              0.15  ...               0.10
+Medicina Interna\n(Dieta blanda)                         0.05  ...               0.15
+Cirugía\n(Dieta progresiva)                              0.05  ...               0.30
+Alta hospitalaria                                        0.00  ...               1.00
+
+[4 rows x 4 columns]
+
+Verificación: cada fila debe sumar 1
+----------------------------------------------------------------------
+✓ Emergencia
+(Dieta líquida)         : suma = 1.000
+✓ Medicina Interna
+(Dieta blanda)    : suma = 1.000
+✓ Cirugía
+(Dieta progresiva)         : suma = 1.000
+✓ Alta hospitalaria                  : suma = 1.000
+
+La intervención incrementa la retención de pacientes en Medicina Interna
+\end{pythoncode}
+
+3.- Calcular los eigenvalues y eigenvectores de la matriz de transición modificada.
+
+\begin{pythoncode}
+# ============================================================
+# CÁLCULO DE EIGENVALUES Y EIGENVECTORES
+# MATRIZ MODIFICADA (INTERVENCIÓN HOSPITALARIA)
+# ============================================================
+
+# Cálculo de eigenvalues y eigenvectors
+# Usamos la transpuesta para cadenas de Markov
+eigenvalues, eigenvectors = linalg.eig(T_intervencion.T)
+
+print("\nEIGENVALUES ENCONTRADOS")
+print("=" * 70)
+
+for i, val in enumerate(eigenvalues):
+if np.isreal(val):
+print(f"  λ_{i+1} = {val.real:8.5f}")
+else:
+print(f"  λ_{i+1} = {val.real:8.5f} + {val.imag:8.5f}i")
+
+# Identificar eigenvalue dominante (|λ| máximo)
+idx_dominante = np.argmax(np.abs(eigenvalues))
+lambda_dominante = eigenvalues[idx_dominante]
+
+print("\n" + "=" * 70)
+print(f"EIGENVALUE DOMINANTE: λ_{idx_dominante+1} = {lambda_dominante.real:.6f}")
+
+print("\nINTERPRETACIÓN:")
+print("   • λ ≈ 1  → Existe un estado estacionario")
+print("   • |λ| < 1 → El sistema converge al equilibrio")
+print("   • La magnitud del segundo eigenvalue determina la velocidad de convergencia")
+print("=" * 70)
+
+# ============================================================
+# VISUALIZACIÓN DE EIGENVALUES EN EL PLANO COMPLEJO
+# ============================================================
+
+plt.figure(figsize=(10, 8))
+
+# Círculo unitario
+theta = np.linspace(0, 2*np.pi, 200)
+plt.plot(np.cos(theta), np.sin(theta), 'k--', alpha=0.4, linewidth=1.5)
+
+# Ejes
+plt.axhline(0, color='black', linewidth=0.7)
+plt.axvline(0, color='black', linewidth=0.7)
+
+# Graficar eigenvalues
+for i, val in enumerate(eigenvalues):
+if i == idx_dominante:
+plt.scatter(val.real, val.imag,
+s=300, marker='*',
+color='red', edgecolor='black',
+linewidth=2, zorder=3,
+label='Eigenvalue dominante')
+else:
+plt.scatter(val.real, val.imag,
+s=150, alpha=0.7,
+edgecolor='black', linewidth=1.2)
+
+plt.annotate(f'λ_{i+1}',
+(val.real, val.imag),
+xytext=(8, 8),
+textcoords='offset points',
+fontsize=10, fontweight='bold')
+
+plt.xlabel('Parte real', fontsize=12, fontweight='bold')
+plt.ylabel('Parte imaginaria', fontsize=12, fontweight='bold')
+plt.title('Eigenvalues de la Matriz de Transición Modificada',
+fontsize=14, fontweight='bold', pad=15)
+
+plt.grid(True, alpha=0.3)
+plt.axis('equal')
+plt.legend()
+plt.tight_layout()
+plt.show()
+\end{pythoncode}
+
+\textbf{Ejecución}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Eigenvalores.png}
+	\caption{Eigenvalores de la matriz de transición modificada}
+	\label{Eigenvalores}
+\end{figure}
+
+\begin{pythoncode}
+EIGENVALUES ENCONTRADOS
+======================================================================
+λ_1 =  1.00000
+λ_2 =  0.78452
+λ_3 =  0.31548
+λ_4 =  0.10000
+
+======================================================================
+EIGENVALUE DOMINANTE: λ_1 = 1.000000
+
+INTERPRETACIÓN:
+• λ ≈ 1  → Existe un estado estacionario
+• |λ| < 1 → El sistema converge al equilibrio
+• La magnitud del segundo eigenvalue determina la velocidad de convergencia
+======================================================================
+\end{pythoncode}
+
+4.- Determinar la distribución estacionaria del sistema y analizar el comportamiento de los pacientes a largo plazo.
+
+\textbf{Código en Python}
+
+\begin{pythoncode}
+# ============================================================
+# DISTRIBUCIÓN ESTACIONARIA DEL SISTEMA HOSPITALARIO
+# ============================================================
+
+# Definición de servicios médicos del hospital
+destinos = [
+'Emergencia',
+'Medicina Interna',
+'Cirugía',
+'Alta'
+]
+
+n_destinos = len(destinos)
+
+# Extraer eigenvector asociado al eigenvalue dominante
+v_dominante = eigenvectors[:, idx_dominante].real
+
+# Normalizar para que sume 1 (distribución de probabilidad)
+dist_estacionaria = v_dominante / v_dominante.sum()
+
+print("\nDISTRIBUCIÓN ESTACIONARIA DE PACIENTES")
+print("=" * 70)
+print("\nDistribución de equilibrio (largo plazo):")
+print("-" * 70)
+
+for i, servicio in enumerate(destinos):
+porcentaje = dist_estacionaria[i] * 100
+barra = "█" * int(porcentaje / 2)
+print(f"{servicio:20} : {porcentaje:6.2f}% {barra}")
+
+# Identificar servicio dominante
+idx_hub = np.argmax(dist_estacionaria)
+
+print("\n" + "=" * 70)
+print(f"SERVICIO DOMINANTE DEL SISTEMA: {destinos[idx_hub]}")
+print(f"   Concentra aproximadamente el {dist_estacionaria[idx_hub]*100:.2f}%")
+print("=" * 70)
+
+# ============================================================
+# VISUALIZACIÓN DE LA DISTRIBUCIÓN ESTACIONARIA
+# ============================================================
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+barras = ax.bar(destinos,
+dist_estacionaria * 100,
+alpha=0.75,
+edgecolor='black',
+linewidth=2)
+
+ax.set_ylabel('Porcentaje de Pacientes (%)',
+fontsize=12, fontweight='bold')
+ax.set_title('Distribución Estacionaria de Pacientes\n(Equilibrio a Largo Plazo)',
+fontsize=14, fontweight='bold', pad=15)
+
+ax.grid(axis='y', alpha=0.3)
+ax.set_ylim([0, max(dist_estacionaria * 100) * 1.2])
+
+# Valores sobre las barras
+for barra in barras:
+altura = barra.get_height()
+ax.text(barra.get_x() + barra.get_width()/2,
+altura,
+f'{altura:.1f}%',
+ha='center', va='bottom',
+fontsize=11, fontweight='bold')
+
+plt.tight_layout()
+plt.show()
+
+# ============================================================
+# INTERPRETACIÓN AUTOMÁTICA
+# ============================================================
+
+print("\nINTERPRETACIÓN DEL COMPORTAMIENTO A LARGO PLAZO:")
+print("   • El estado 'Alta' actúa como un estado absorbente del sistema.")
+print("   • A largo plazo, el 100% de los pacientes termina recibiendo el alta médica.")
+print("   • La distribución estacionaria representa el destino final de los pacientes,")
+print("     no la carga hospitalaria ni la ocupación de servicios.")
+print("   • Para analizar impacto en Medicina Interna, es necesario estudiar")
+print("     la evolución transitoria o redefinir 'Alta' como un estado no absorbente.")
+\end{pythoncode}
+
+\textbf{Ejecución}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figuras/Distribución.png}
+	\caption{Distribución estacionaria de pacientes (Equilibrio a largo plazo)}
+	\label{Distribución}
+\end{figure}
+
+\begin{pythoncode}
+DISTRIBUCIÓN ESTACIONARIA DE PACIENTES
+======================================================================
+
+Distribución de equilibrio (largo plazo):
+----------------------------------------------------------------------
+Emergencia           :   0.00%
+Medicina Interna     :   0.00%
+Cirugía              :   0.00%
+Alta                 : 100.00% ██████████████████████████████████████████████████
+
+======================================================================
+SERVICIO DOMINANTE DEL SISTEMA: Alta
+Concentra aproximadamente el 100.00%
+======================================================================
+
+INTERPRETACIÓN DEL COMPORTAMIENTO A LARGO PLAZO:
+• El estado 'Alta' actúa como un estado absorbente del sistema.
+• A largo plazo, el 100% de los pacientes termina recibiendo el alta médica.
+• La distribución estacionaria representa el destino final de los pacientes,
+no la carga hospitalaria ni la ocupación de servicios.
+• Para analizar impacto en Medicina Interna, es necesario estudiar
+la evolución transitoria o redefinir 'Alta' como un estado no absorbente.
+\end{pythoncode}
+
+5.- Comparar la distribución estacionaria original y la modificada, evaluando el impacto de la intervención hospitalaria sobre la permanencia de los pacientes en Medicina Interna y los demás servicios.
+
+\textbf{Comparación de la distribución estacionaria original y modificada}
+
+La Tabla \ref{tab:comparacion_estacionaria} muestra la comparación entre la
+distribución estacionaria del modelo hospitalario original y la obtenida tras
+la intervención orientada a fortalecer el servicio de Medicina Interna.
+
+\begin{table}[H]
+	\centering
+	\caption{Distribución estacionaria antes y después de la intervención hospitalaria}
+	\label{tab:comparacion_estacionaria}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Servicio} & \textbf{Modelo original (\%)} & \textbf{Modelo modificado (\%)} \\
+		\hline
+		Emergencia         & 0.00 & 0.00 \\
+		Medicina Interna   & 0.00 & 0.00 \\
+		Cirugía            & 0.00 & 0.00 \\
+		Alta               & 100.00 & 100.00 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\textbf{Análisis del impacto de la intervención}
+
+La comparación de ambas distribuciones estacionarias muestra que, en los dos
+escenarios, el sistema converge completamente al estado \emph{Alta}, el cual
+funciona como un estado absorbente del modelo. Esto implica que, a largo plazo,
+el 100\% de los pacientes termina recibiendo el alta médica, independientemente
+de la intervención aplicada.
+
+Desde el punto de vista matemático, la intervención hospitalaria no altera la
+distribución estacionaria del sistema, ya que esta distribución refleja el
+\textbf{destino final de los pacientes} y no el tiempo que permanecen en cada
+servicio.
+
+Sin embargo, esto no significa que la intervención sea irrelevante. El aumento
+en la probabilidad de derivación y permanencia en Medicina Interna afecta el
+\textbf{comportamiento transitorio del sistema}, es decir, la trayectoria que
+siguen los pacientes antes de alcanzar el alta. En particular:
+
+\begin{itemize}
+	\item Se espera que los pacientes pasen más tiempo en Medicina Interna.
+	\item Se modifica la carga temporal de los servicios clínicos.
+	\item La intervención puede impactar en la demanda de camas, personal y
+	recursos, aunque esto no se refleje en la distribución estacionaria.
+\end{itemize}
+
+Por lo tanto, para evaluar adecuadamente el impacto de la intervención sobre la
+permanencia en Medicina Interna, resulta más apropiado analizar la evolución
+temporal del sistema o los tiempos esperados de permanencia, en lugar de basarse
+exclusivamente en la distribución estacionaria.
+
+\textbf{Preguntas de reflexión}
+
+1.- ¿La intervención en Medicina Interna mejora la eficiencia del flujo de pacientes dentro del hospital?
+
+
+Desde el punto de vista del modelo matemático propuesto, la intervención en
+Medicina Interna no modifica la distribución estacionaria del sistema, ya que
+todos los pacientes terminan alcanzando el estado de \emph{Alta}, el cual actúa
+como un estado absorbente. Por lo tanto, en términos de resultados finales, la
+eficiencia global medida por la proporción de pacientes dados de alta permanece
+inalterada.
+
+No obstante, la intervención sí mejora la eficiencia del \textbf{flujo interno}
+de pacientes durante la evolución temporal del sistema. El aumento en la
+probabilidad de derivación desde Emergencia hacia Medicina Interna, así como la
+mayor permanencia en dicho servicio, contribuyen a una redistribución más
+ordenada de los pacientes entre los servicios clínicos antes del alta.
+
+En este sentido, la eficiencia se manifiesta en aspectos operativos como:
+\begin{itemize}
+	\item Mejor canalización de pacientes desde Emergencia.
+	\item Reducción de derivaciones innecesarias a otros servicios.
+	\item Mayor estabilidad en la atención clínica dentro de Medicina Interna.
+\end{itemize}
+
+Por lo tanto, aunque la intervención no altera el resultado final del sistema,
+sí puede considerarse una mejora en la eficiencia operativa del flujo hospitalario,
+especialmente en el corto y mediano plazo.
+
+2.- ¿Cómo podría este modelo apoyar la planificación de dietas y recursos nutricionales?
+
+El modelo de cadenas de Markov permite estimar la \textbf{distribución esperada de
+	pacientes en cada servicio hospitalario a lo largo del tiempo}, lo cual resulta
+fundamental para la planificación de dietas y recursos nutricionales.
+
+Durante la evolución temporal del sistema, el modelo muestra cómo los pacientes
+transitan entre Emergencia, Medicina Interna, Cirugía y Alta, permitiendo
+identificar qué servicios concentran una mayor carga asistencial antes del alta.
+Esta información puede utilizarse para:
+
+\begin{itemize}
+	\item Estimar la demanda diaria de dietas hospitalarias por servicio.
+	\item Ajustar la producción de alimentos según la permanencia esperada de los pacientes.
+	\item Planificar insumos nutricionales específicos (dietas blandas, hiposódicas, enterales, etc.).
+	\item Optimizar la asignación del personal de nutrición clínica.
+\end{itemize}
+
+En particular, el fortalecimiento del servicio de Medicina Interna incrementa el
+tiempo de permanencia de los pacientes en dicho servicio, lo que implica una mayor
+demanda de dietas terapéuticas continuas y seguimiento nutricional. El modelo
+permite anticipar este efecto y adecuar los recursos antes de que ocurran cuellos
+de botella.
+
+De esta manera, aunque el sistema converge finalmente al alta, el análisis
+transitorio proporciona una herramienta cuantitativa para la \textbf{gestión
+	proactiva de la alimentación hospitalaria}, mejorando la eficiencia operativa y la
+calidad de la atención nutricional.
+
+3.- ¿Qué implicancias tendría este cambio en la carga de trabajo del personal de salud?
+
+La intervención hospitalaria orientada a fortalecer el servicio de Medicina Interna
+modifica principalmente la \textbf{dinámica temporal del flujo de pacientes}, más que
+la distribución final del sistema, que converge al estado de alta. Sin embargo,
+este cambio tiene implicancias relevantes en la carga de trabajo del personal de
+salud durante el proceso de atención.
+
+El aumento de la probabilidad de permanencia en Medicina Interna implica que los
+pacientes permanecen más tiempo bajo supervisión clínica continua, lo que genera:
+
+\begin{itemize}
+	\item Mayor demanda de atención médica y de enfermería en Medicina Interna.
+	\item Incremento en la carga de seguimiento clínico, monitoreo y registros.
+	\item Mayor necesidad de coordinación con servicios de apoyo (nutrición, laboratorio, farmacia).
+\end{itemize}
+
+Al mismo tiempo, la reducción de altas directas desde Medicina Interna puede aliviar
+momentáneamente la presión sobre los servicios administrativos asociados al egreso,
+pero traslada la carga operativa hacia el personal asistencial del servicio.
+
+Desde el punto de vista de la gestión hospitalaria, el modelo permite anticipar
+estos cambios y resalta la necesidad de:
+
+\begin{itemize}
+	\item Ajustar la dotación de personal en Medicina Interna.
+	\item Reorganizar turnos y cargas horarias.
+	\item Fortalecer el trabajo interdisciplinario para evitar la saturación del servicio.
+\end{itemize}
+
+En conclusión, aunque el sistema no incrementa el número total de pacientes
+atendidos a largo plazo, la intervención redistribuye la carga laboral en el
+tiempo, haciendo indispensable una planificación adecuada del recurso humano.
