@@ -14,6 +14,7 @@
 \usepackage{subcaption}
 \usepackage{helvet}
 \usepackage{float}
+\usepackage{pdfpages}
 \usepackage{latexsym,amsmath,amssymb,amsthm,amsfonts,cancel,calc,mathtools} % Paquetes para Matemáticas
 \usepackage[most]{tcolorbox}
 \usepackage[backend=biber,
@@ -54,7 +55,9 @@ bookmarksopen=true,
 pdfpagemode=UseOutlines]{hyperref}
 
 \begin{document}
-	
+
+\includepdf[pages=1]{Portada.pdf}
+
 \include{Otros/Caratula}
 
 \include{Otros/Introduccion}
@@ -76,5 +79,7 @@ pdfpagemode=UseOutlines]{hyperref}
 \phantomsection
 \addcontentsline{toc}{chapter}{Bibliografía}
 \printbibliography
+
+\includepdf[pages=2]{Portada.pdf}
 
 \end{document}
