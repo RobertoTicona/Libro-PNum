@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {3.3}Ejemplo 3}{37}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Ejemplo 4}{40}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Ejemplo 5}{42}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Método de Newton Raphson}{45}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Método de Newton-Raphson}{45}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Fundamento teórico}{45}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Condiciones de convergencia}{45}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Criterio de parada}{46}{section.4.3}%
